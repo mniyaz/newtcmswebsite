@@ -4,13 +4,24 @@ Corporate-grade Next.js marketing site with a built-in CMS for content updates. 
 
 ## Marketing Website
 
-The public-facing landing page lives in the `web/` directory. It includes 11 conversion-focused sections (hero, pain points, GPS visibility, customer portal preview, fuel savings, compliance, ecosystem, ROI calculator, social proof, pricing, and final CTA).
+The public-facing site lives in the `web/` directory. It includes:
+
+- **Homepage** — 11 conversion-focused sections (hero, pain points, GPS visibility, customer portal, fuel savings, compliance, ecosystem, ROI calculator, social proof, pricing, final CTA)
+- **Solution pages** — dedicated landing pages for key product modules
 
 **Full developer handoff documentation:**
 
 ➡️ **[docs/MARKETING_WEBSITE.md](docs/MARKETING_WEBSITE.md)**
 
-That document covers architecture, CMS fields, design system, components, SEO, performance, deployment, troubleshooting, and the product roadmap. A new developer can take over the project without verbal handoff.
+## Routes
+
+| URL | Purpose |
+|-----|---------|
+| http://localhost:3000 | Homepage |
+| http://localhost:3000/solutions/accounting-payments | Accounting & payments (Command Center preview) |
+| http://localhost:3000/solutions/fleet-maintenance | Fleet maintenance & inspections (Command Center preview) |
+| http://localhost:3000/solutions/payroll-compliance | Payroll & Malaysian compliance (Command Center preview) |
+| http://localhost:3000/admin | CMS admin panel |
 
 ## Stack
 
@@ -28,50 +39,37 @@ cp .env.example .env.local   # set CMS_ADMIN_PASSWORD
 npm run dev
 ```
 
-| URL | Purpose |
-|-----|---------|
-| http://localhost:3000 | Public marketing site |
-| http://localhost:3000/admin | CMS admin panel |
-
 Default admin password (change immediately): `tcms-admin-change-me`
 
 ## CMS Admin
 
-The admin panel supports editing:
+The admin panel supports editing homepage content:
 
-- SEO metadata
-- Navigation & CTAs
-- Hero section
-- Pain points
-- Pricing plans
-- Final CTA
-- Footer
+- SEO metadata, navigation, hero, pain points, pricing, final CTA, footer
 
-All other sections (visibility, customer experience, fuel chart, compliance, ecosystem, ROI labels, social proof) are editable via `web/content/homepage.json`. See the [CMS Guide](docs/MARKETING_WEBSITE.md#4-cms-guide) for every field.
-
-Content is stored in `web/content/homepage.json` and validated against schemas in `web/src/lib/content/schema.ts`. Saves trigger automatic homepage revalidation.
+Solution pages use a **Command Center** product-preview layout (`CommandCenterShell`) — marketing dashboard mockups, not authenticated app screens. Content is in `web/src/lib/content/solutions.ts`. See [Solution Pages](docs/MARKETING_WEBSITE.md#14-solution-pages).
 
 ## Project Structure
 
 ```
 newtcmswebsite/
-├── docs/
-│   └── MARKETING_WEBSITE.md    # Comprehensive developer handoff
-├── reference/
-│   └── code.html               # Original static HTML mockup
-└── web/                        # Next.js application
-    ├── content/                # CMS content (JSON)
-    ├── public/                 # Static assets
+├── docs/MARKETING_WEBSITE.md
+├── reference/code.html
+├── account_payments.html      # Source mockup (reference)
+├── fleet_maintenance.html     # Source mockup (reference)
+├── payroll.html               # Source mockup (reference)
+└── web/
+    ├── content/homepage.json
     └── src/
-        ├── app/                # Routes & API
+        ├── app/
+        │   ├── page.tsx
+        │   └── solutions/     # Solution page routes
         ├── components/
-        │   ├── admin/          # CMS admin UI
-        │   ├── layout/         # Header, Footer
-        │   ├── sections/       # Page sections
-        │   └── ui/             # Shared UI primitives
-        └── lib/
-            ├── auth/           # CMS authentication
-            └── content/        # Schema, repository, defaults
+        │   ├── sections/      # Homepage sections
+        │   └── solutions/     # Command Center preview components
+        └── lib/content/
+            ├── schema.ts      # Homepage CMS schema
+            └── solutions.ts   # Solution page content
 ```
 
 ## Scripts
@@ -95,7 +93,3 @@ npm run build   # expect "Compiled successfully"
 ```
 
 See [Build Verification](docs/MARKETING_WEBSITE.md#13-build-verification) for the full smoke test checklist.
-
-## Reference
-
-Original static HTML preserved at [reference/code.html](reference/code.html).

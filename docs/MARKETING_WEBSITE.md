@@ -24,6 +24,7 @@ This document is the single source of truth for developers taking over the TCMS.
 11. [Maintenance Guide](#11-maintenance-guide)
 12. [Troubleshooting](#12-troubleshooting)
 13. [Build Verification](#13-build-verification)
+14. [Solution Pages](#14-solution-pages)
 
 ---
 
@@ -132,6 +133,9 @@ web/src/app/
 **Routing conventions:**
 
 - `/` — Statically generated at build time; revalidated on CMS save via `revalidatePath("/")`
+- `/solutions/accounting-payments` — Accounting & payments solution page (static)
+- `/solutions/fleet-maintenance` — Fleet maintenance solution page (static)
+- `/solutions/payroll-compliance` — Payroll & compliance solution page (static)
 - `/admin` — Dynamically rendered (`ƒ`) because it reads cookies for auth
 - `/api/*` — Route handlers for CMS operations
 
@@ -221,13 +225,14 @@ newtcmswebsite/
     │   ├── components/
     │   │   ├── admin/           ← CMS login + editor
     │   │   ├── layout/          ← Header, Footer
-    │   │   ├── sections/        ← Page sections (one file per section)
+    │   │   ├── sections/        ← Homepage sections
+    │   │   ├── solutions/       ← Solution page components
     │   │   ├── ui/              ← Reusable primitives
-    │   │   └── Homepage.tsx     ← Section orchestrator
+    │   │   └── Homepage.tsx     ← Homepage orchestrator
     │   └── lib/
-    │       ├── auth/            ← CMS session helpers
-    │       ├── content/         ← Schema, defaults, repository
-    │       └── utils/           ← cn() classname helper
+    │       ├── auth/
+    │       ├── content/         ← schema, repository, solutions.ts
+    │       └── utils/
     ├── .env.example
     ├── next.config.ts
     └── package.json
@@ -241,6 +246,9 @@ Next.js App Router entry points.
 |------|----------------|
 | `layout.tsx` | Root HTML shell, Inter font, Material Icons link, default metadata |
 | `page.tsx` | Homepage route; `generateMetadata()` + `getHomepageContent()` |
+| `solutions/accounting-payments/page.tsx` | Accounting & payments solution page |
+| `solutions/fleet-maintenance/page.tsx` | Fleet maintenance solution page |
+| `solutions/payroll-compliance/page.tsx` | Payroll & compliance solution page |
 | `globals.css` | Design tokens, animations, utility classes |
 | `admin/page.tsx` | Auth gate; renders `CmsLoginForm` or `CmsEditor` |
 | `api/auth/route.ts` | CMS login/logout |
@@ -252,10 +260,36 @@ Site chrome shared across all pages.
 
 | Component | CMS source | Notes |
 |-----------|-----------|-------|
-| `Header.tsx` | `content.navigation` | Fixed sticky nav, backdrop blur |
+| `Header.tsx` | `content.navigation` + `solutionNavLinks` | Sticky nav with Solutions dropdown |
 | `Footer.tsx` | `content.footer` | Multi-column link grid + copyright |
 
-### 3.3 `src/components/sections`
+### 3.3 `src/components/solutions`
+
+Reusable components for `/solutions/*` pages. These routes render **marketing product-preview dashboards** inside a Command Center shell — they are **not** authenticated app screens and do not connect to live data. Content is sourced from `solutions.ts`.
+
+| Component | Purpose |
+|-----------|---------|
+| `CommandCenterShell.tsx` | Shared dashboard chrome: top nav, left sidebar (desktop), main content slot, footer slot |
+| `CommandCenterFooter.tsx` | Page-specific footer columns inside the shell |
+| `PreviewCard.tsx` | Rounded card wrapper for dashboard preview sections |
+| `AccountingPaymentsPreview.tsx` | Accounting & payments dashboard mockup content |
+| `FleetMaintenancePreview.tsx` | Fleet maintenance dashboard mockup content |
+| `PayrollCompliancePreview.tsx` | Payroll & compliance dashboard mockup content |
+
+**CommandCenterShell** props:
+
+| Prop | Purpose |
+|------|---------|
+| `subtitle` | Sidebar subtitle (`LOGISTICS CORE` or `PRECISION LOGISTICS`) |
+| `activeMenu` | Highlighted sidebar item (`finance`, `fleet`, etc.) |
+| `showSecurity` | Show Security menu item (Fleet page only) |
+| `apiLinkLabel` | Bottom sidebar link text (`API` or `API Docs`) |
+| `children` | Page-specific preview content |
+| `footer` | Footer rendered below main content |
+
+Legacy generic layout components (`SolutionPage`, `SolutionHero`, etc.) remain in the folder but are no longer used by the three solution routes.
+
+### 3.4 `src/components/sections`
 
 One React component per homepage section. Each receives a typed slice of `HomepageContent`.
 
@@ -273,7 +307,7 @@ One React component per homepage section. Each receives a typed slice of `Homepa
 | `PricingSection.tsx` | — |
 | `FinalCtaSection.tsx` | `#contact` |
 
-### 3.4 `src/components/ui`
+### 3.5 `src/components/ui`
 
 Reusable design-system primitives.
 
@@ -290,7 +324,7 @@ Reusable design-system primitives.
 | `RevealOnScroll.tsx` | Intersection Observer fade/scale animations |
 | `AnimatedCounter.tsx` | Count-up animation for stats |
 
-### 3.5 `src/components/admin`
+### 3.6 `src/components/admin`
 
 | Component | Purpose |
 |-----------|---------|
@@ -301,7 +335,7 @@ Reusable design-system primitives.
 
 **JSON-only sections** (edit `content/homepage.json` directly): visibility, customerExperience, fuelCost, compliance, ecosystem, roiCalculator, socialProof.
 
-### 3.6 `src/lib/content`
+### 3.7 `src/lib/content`
 
 | File | Purpose |
 |------|---------|
@@ -309,13 +343,13 @@ Reusable design-system primitives.
 | `default-content.ts` | Factory defaults matching original HTML mockup |
 | `repository.ts` | `getHomepageContent`, `updateHomepageContent`, `resetHomepageContent` |
 
-### 3.7 `src/lib/auth`
+### 3.8 `src/lib/auth`
 
 | File | Purpose |
 |------|---------|
 | `cms-auth.ts` | Password verification, session cookie create/validate/clear |
 
-### 3.8 `content/`
+### 3.9 `content/`
 
 Runtime CMS storage. **Single file:** `homepage.json`.
 
@@ -323,7 +357,7 @@ Runtime CMS storage. **Single file:** `homepage.json`.
 - Must validate against `homepageContentSchema` on every read/write
 - Safe to commit for staging; use env-specific copies in production if content diverges
 
-### 3.9 `public/`
+### 3.10 `public/`
 
 Static files served at site root. Currently contains default Next.js SVG placeholders only. **Marketing images are loaded from remote URLs** (Google CDN) defined in CMS content — add local assets here when migrating to self-hosted images.
 
@@ -1213,7 +1247,10 @@ Route (app)
 ├ ○ /_not-found
 ├ ƒ /admin
 ├ ƒ /api/auth
-└ ƒ /api/content
+├ ƒ /api/content
+├ ○ /solutions/accounting-payments
+├ ○ /solutions/fleet-maintenance
+└ ○ /solutions/payroll-compliance
 
 ○  (Static)   prerendered as static content
 ƒ  (Dynamic)  server-rendered on demand
@@ -1229,6 +1266,10 @@ After `npm run dev`:
 - [ ] Fuel bars animate on scroll
 - [ ] `/admin` login works with CMS password
 - [ ] CMS save updates hero headline on homepage
+- [ ] `/solutions/accounting-payments` loads with chart mockup
+- [ ] `/solutions/fleet-maintenance` loads with maintenance queue
+- [ ] `/solutions/payroll-compliance` loads with payroll summary
+- [ ] Header Solutions dropdown links to all 3 solution pages
 - [ ] Mobile view (375px) — no horizontal overflow
 
 ### 13.4 Troubleshooting Failed Builds
@@ -1249,6 +1290,78 @@ node -e "require('fs').readFileSync('content/homepage.json','utf8')" && echo OK
 
 ---
 
+## 14. Solution Pages
+
+Three dedicated solution landing pages were converted from static HTML mockups (`account_payments.html`, `fleet_maintenance.html`, `payroll.html`) into Next.js routes. Each page uses the **Command Center** product-preview layout — a polished dashboard mockup with top navigation, sidebar (desktop), and page-specific preview content. These are **marketing previews only**; they do not require authentication and do not affect the homepage CMS or `/admin`.
+
+### 14.1 Routes
+
+| Route | Source HTML | Sidebar subtitle | Active menu | Focus |
+|-------|-------------|------------------|-------------|-------|
+| `/solutions/accounting-payments` | `account_payments.html` | LOGISTICS CORE | Finance | Invoicing, bank reconciliation, payment gateways |
+| `/solutions/fleet-maintenance` | `fleet_maintenance.html` | PRECISION LOGISTICS | Fleet (+ Security) | Maintenance queue, mobile app, compliance health |
+| `/solutions/payroll-compliance` | `payroll.html` | LOGISTICS CORE | Finance | Driver payroll, EPF/SOCSO/LHDN/APAD, payslip preview |
+
+The homepage (`/`) and admin panel (`/admin`) are unchanged. Solution pages do **not** reuse the marketing site Header/Footer components; they use `CommandCenterShell` and `CommandCenterFooter` instead.
+
+### 14.2 Content Layer
+
+Solution page content lives in **`web/src/lib/content/solutions.ts`** as typed TypeScript objects (`SolutionPageContent`). Preview components read copy from these objects where practical; hardcoded dashboard metrics (charts, tables, KPIs) are intentional marketing mockups. This is intentionally separate from the homepage CMS (`homepage.json`) so the existing admin panel is unchanged.
+
+```typescript
+import { accountingPaymentsPage, getSolutionPage } from "@/lib/content/solutions";
+
+const page = getSolutionPage("accounting-payments");
+```
+
+Footer column configs live in the same file (`accountingPaymentsFooter`, `fleetMaintenanceFooter`, `payrollComplianceFooter`).
+
+### 14.3 Components
+
+| Component | Purpose |
+|-----------|---------|
+| `CommandCenterShell.tsx` | Top nav + sidebar + content area (`#f7f8fd` background) |
+| `CommandCenterFooter.tsx` | Multi-column footer inside the shell |
+| `PreviewCard.tsx` | Shared card styling for preview sections |
+| `AccountingPaymentsPreview.tsx` | Hero, revenue chart, bento features, stats panel |
+| `FleetMaintenancePreview.tsx` | Maintenance queue, KPIs, phone mockup, tools, compliance panel |
+| `PayrollCompliancePreview.tsx` | March summary, payroll table, statutory cards, payslip preview |
+
+Icons use **lucide-react** (no Material Symbols CDN on solution pages).
+
+### 14.4 Navigation
+
+The **homepage** Header includes a **Solutions dropdown** (desktop `lg+`) populated from `solutionNavLinks` in `solutions.ts`:
+
+- Accounting & Payments → `/solutions/accounting-payments`
+- Fleet Maintenance → `/solutions/fleet-maintenance`
+- Payroll & Compliance → `/solutions/payroll-compliance`
+
+Solution pages themselves use the Command Center top nav (TCMS.ai logo links to `/`). Homepage CMS navigation links remain unchanged.
+
+### 14.5 Responsive Behavior
+
+| Breakpoint | Behavior |
+|------------|----------|
+| Desktop (`md+`) | Fixed 232px sidebar visible; content offset left |
+| Mobile / tablet | Sidebar hidden; simplified top nav; cards stack; tables scroll horizontally |
+
+### 14.6 Editing Solution Content
+
+To update marketing copy, edit the corresponding object in `solutions.ts`. To change layout sections, edit the matching `*Preview.tsx` component.
+
+Run `npm run build` after edits to verify TypeScript types.
+
+### 14.7 Adding a New Solution Page
+
+1. Add content object and footer config to `solutions.ts`; register in `solutionPages`
+2. Add entry to `solutionNavLinks`
+3. Create a `*Preview.tsx` component for dashboard content
+4. Create `src/app/solutions/[slug]/page.tsx` wrapping content in `CommandCenterShell`
+5. Update this documentation and README route list
+
+---
+
 ## Appendix A — Environment Variables
 
 | Variable | Required | Default | Description |
@@ -1261,6 +1374,8 @@ node -e "require('fs').readFileSync('content/homepage.json','utf8')" && echo OK
 | Need to change… | Edit this file |
 |-----------------|----------------|
 | Homepage section order | `src/components/Homepage.tsx` |
+| Solution page copy | `src/lib/content/solutions.ts` |
+| Solution nav links | `src/lib/content/solutions.ts` → `solutionNavLinks` |
 | CMS field definitions | `src/lib/content/schema.ts` |
 | Default content | `src/lib/content/default-content.ts` |
 | Brand colors | `src/app/globals.css` |
