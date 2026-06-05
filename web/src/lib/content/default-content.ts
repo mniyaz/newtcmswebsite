@@ -1,0 +1,363 @@
+import type { HomepageContent } from "./schema";
+
+export const defaultHomepageContent: HomepageContent = {
+  metadata: {
+    title: "TCMS.ai | Run Your Entire Transport Business From One Place",
+    description:
+      "Track vehicles, manage trips, monitor fuel, automate compliance, invoice customers, and grow your transport business with complete visibility.",
+  },
+  navigation: {
+    brand: "TCMS.ai",
+    links: [
+      { label: "Solutions", href: "#solutions", isActive: true },
+      { label: "The Advantage", href: "#advantage" },
+      { label: "Platform", href: "#platform" },
+      { label: "Contact", href: "#contact" },
+    ],
+    loginLabel: "Login",
+    cta: { label: "Book Demo", variant: "primary" },
+  },
+  hero: {
+    headline: "Run Your Entire Transport Business From",
+    headlineHighlight: "One Place.",
+    description:
+      "Track vehicles, manage trips, monitor fuel, automate compliance, invoice customers, and grow your transport business with complete visibility.",
+    primaryCta: { label: "Book Live Demo", variant: "primary" },
+    secondaryCta: { label: "Watch 2-Minute Demo", variant: "secondary" },
+    image: {
+      src: "https://lh3.googleusercontent.com/aida-public/AB6AXuByeQbnpE06XNV9uWGPcJqB3ZHxQvK1DRlTa6v_-HTjS9MnsgCiW1sF1nOyzrPG-PFcL2hNbexS5Q_RPBCG2YYSJ0DfvBZH5LzJe4sgpXTop4ZvEptNhz1mZ19RHTw4mddCFMwI08RiOzCTBxeUzc9PKCqxMNqEBK_RpHznjE4XQenkH3qrEj0H3oFrZ0F-1Fd_7knZN_7Bgjudp5c4mE1LGRYoK3ElGEHD0gGFKhZicmpFJdLbJ5PkrYj1JPIkCOdinIxe0UZdK8A",
+      alt: "Modern heavy-duty logistics prime movers cruising down a Malaysian highway.",
+    },
+    trustBadges: [
+      { icon: "location_on", label: "GPS Tracking" },
+      { icon: "verified", label: "APAD Compliance" },
+      { icon: "local_shipping", label: "Fleet Management" },
+      { icon: "hub", label: "Customer Portal" },
+      { icon: "account_balance_wallet", label: "Payroll & Accounting" },
+    ],
+  },
+  painPoints: {
+    title: "Still Managing Your Fleet Through Calls, WhatsApp and Excel?",
+    subtitle:
+      "Manual operations lead to hidden costs and lost time. TCMS.ai eliminates the chaos.",
+    items: [
+      {
+        icon: "phone_disabled",
+        title: "Drivers not answering calls",
+        description:
+          "Constant calling to check location disrupts drivers and wastes your dispatch team's time.",
+      },
+      {
+        icon: "forum",
+        title: "Customers requesting updates",
+        description:
+          'Dealing with repetitive "Where is my shipment?" calls prevents you from focusing on growth.',
+      },
+      {
+        icon: "gas_meter",
+        title: "Fuel wastage/theft",
+        description:
+          "Undetected siphoning and excessive idling are silently eating into your monthly margins.",
+      },
+      {
+        icon: "build_circle",
+        title: "Missed maintenance",
+        description:
+          "Unplanned breakdowns happen because you're tracking service dates on a wall calendar.",
+      },
+      {
+        icon: "pending_actions",
+        title: "Delayed invoicing",
+        description:
+          "Waiting days for physical PODs to return means you're being paid weeks later than you should.",
+      },
+      {
+        icon: "report_problem",
+        title: "Compliance overload",
+        description:
+          "Struggling to keep up with APAD and JPJ renewals and driver permit expirations.",
+      },
+    ],
+    ctaBanner: {
+      title: "TCMS.ai Solves All Of These",
+      cta: { label: "See How It Works", variant: "secondary" },
+    },
+  },
+  visibility: {
+    title: "Know Where Every Vehicle Is.",
+    titleHighlight: "Right Now.",
+    image: {
+      src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBzEaWBpm62rp7FdRJqHmMesyWPb5liGEJhW6G3RnQzmXLMt6Uj9z8UuWzCn-xWPY0LLwRlaTUJhTV5-17Cfb6-grx2QLA7TQYMfRFnEMEp1KxIaCuR4hzBrsHJ9xCZKhTJB7HquAFJoUHMbs3Z6SfslN_g7hiS0lOYuT2oJVlf_wZXbVpuPCzqFNJ9twz6rLaWveVsSqgVxVm1G0omddRFBznlcLeKxhMVWlBIrqbMQhla11alRaAz2RBAAt0rvb2_cn1hky5Z-Ew",
+      alt: "Fleet management dashboard displaying an interactive map of West Malaysia.",
+    },
+    features: [
+      {
+        icon: "radar",
+        title: "Live GPS Tracking",
+        description: "Real-time location updates every 10 seconds.",
+      },
+      {
+        icon: "history",
+        title: "Route Replay",
+        description: "Review historical trips to verify routes taken.",
+      },
+      {
+        icon: "share_location",
+        title: "Geofencing",
+        description: "Instant alerts when vehicles enter/exit zones.",
+      },
+      {
+        icon: "speed",
+        title: "Speed Monitoring",
+        description: "Control safety and fuel costs by monitoring speed.",
+      },
+    ],
+  },
+  customerExperience: {
+    title: "Give Your Customers Amazon-Like Shipment Visibility",
+    subtitle: '"Fewer calls. More trust. More repeat business."',
+    features: [
+      {
+        icon: "check_circle",
+        title: "Live Shipment Tracking",
+        description: "Send a secure link to your customer for real-time tracking.",
+      },
+      {
+        icon: "notifications_active",
+        title: "WhatsApp Notifications",
+        description: "Auto-alerts when the cargo is loaded or delivered.",
+      },
+      {
+        icon: "digital_out_of_home",
+        title: "Digital POD",
+        description: "Electronic Proof of Delivery with photos and e-signatures.",
+      },
+    ],
+    shipment: {
+      id: "Shipment #MY-982314",
+      status: "IN TRANSIT",
+      steps: [
+        {
+          status: "completed",
+          title: "Picked Up",
+          subtitle: "Klang Warehouse - 09:15 AM",
+        },
+        {
+          status: "active",
+          title: "In Transit",
+          subtitle: "On Federal Highway - ETA 12:30 PM",
+        },
+        {
+          status: "pending",
+          title: "Scheduled Delivery",
+          subtitle: "Bayan Lepas, Penang",
+        },
+      ],
+    },
+  },
+  fuelCost: {
+    title: "Stop Losing Money On Fuel",
+    features: [
+      {
+        icon: "analytics",
+        title: "Fuel Theft Detection",
+        description:
+          "Automated alerts for sudden fuel level drops (siphoning) during trips.",
+      },
+      {
+        icon: "timer",
+        title: "Idle Time Monitoring",
+        description: "Identify drivers leaving engines running unnecessarily.",
+      },
+      {
+        icon: "payments",
+        title: "Trip Profitability",
+        description:
+          "Automatically calculate if a trip was profitable after fuel and driver costs.",
+      },
+    ],
+    chart: {
+      title: "Monthly Fuel Spend Per Fleet (RM)",
+      bars: [
+        { label: "Manual Mgmt", value: "RM 45,000", heightPercent: 100, variant: "manual" },
+        { label: "TCMS.ai", value: "RM 31,500", heightPercent: 70, variant: "tcms" },
+      ],
+      savingsLabel: "Estimated Savings: 30%",
+    },
+  },
+  compliance: {
+    title: "Built For Malaysian Transport Operations",
+    subtitle: "We understand local regulations, so you don't have to worry about them.",
+    items: [
+      {
+        icon: "verified_user",
+        title: "APAD Integration",
+        description: "Automatic permit tracking & reminders.",
+      },
+      {
+        icon: "assignment_ind",
+        title: "JPJ Support",
+        description: "Driver license and road tax management.",
+      },
+      {
+        icon: "health_and_safety",
+        title: "Driver Compliance",
+        description: "Manage medical checkups and GDL/E-Hailing permits.",
+      },
+      {
+        icon: "description",
+        title: "Permit Mgmt",
+        description: "Digital repository for all vehicle permits.",
+      },
+    ],
+  },
+  ecosystem: {
+    title: "Everything Connected",
+    subtitle: "The central brain of your logistics operation.",
+    hubLabel: "TCMS.ai",
+    hubSublabel: "CORE HUB",
+    nodes: [
+      { icon: "local_shipping", label: "Vehicles" },
+      { icon: "person", label: "Drivers" },
+      { icon: "groups", label: "Customers" },
+      { icon: "receipt_long", label: "Accounting" },
+    ],
+  },
+  roiCalculator: {
+    title: "Calculate Your Estimated Savings",
+    fleetSizeDefault: 50,
+    fuelSpendPlaceholder: "RM 50,000",
+    adminHoursPlaceholder: "40",
+    results: {
+      fuelSavingsLabel: "Est. Monthly Fuel Savings",
+      adminTimeLabel: "Admin Time Saved",
+      collectionLabel: "Est. Collection Speedup",
+    },
+    cta: { label: "Get Detailed ROI Report", variant: "primary" },
+  },
+  socialProof: {
+    stats: [
+      { value: 12000, suffix: "+", label: "Vehicles Managed" },
+      { value: 1.5, suffix: "M+", decimals: 1, label: "Trips Completed" },
+      { value: 99.9, suffix: "%", decimals: 1, label: "System Uptime" },
+    ],
+    testimonials: [
+      {
+        quote:
+          "TCMS.ai transformed our fleet operations. We used to spend hours on WhatsApp checking with drivers. Now, our customers track their own goods and our fuel costs have dropped significantly.",
+        name: "Tan Sri Azman",
+        role: "MD, Azman Global Logistics",
+        avatar: {
+          src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAH3hUQhkJ7BPmYWXe9BEMWAkCmpwOEGLKHd5cQ8ACGMT0D4u-RsLnLWYXv-vTUBrkqZM4Krs5Gs5NUHeDepm0rsOb_5wqtly2Jrdt45vm-pVMQNG-GGnqsU_LtJswCUrayqVSJ-avFoW2qR__TStbLYseLj1kzW7CedWR4wqFQRMG7oivHgPZK2rBJv2EAVslxiedj4ygFPbzgoJcPwhnVTOv-Kjn1vkE-N8j39podIhh3NHMnm_4soLUwVtMhW07bsYVIelGoI2o",
+          alt: "Professional portrait of a Malay logistics executive.",
+        },
+      },
+      {
+        quote:
+          "The APAD and JPJ compliance reminders are lifesavers. No more expired permits or fines. It's the only system built specifically for the way we work in Malaysia.",
+        name: "Kevin Lim",
+        role: "Founder, KL Freight Services",
+        avatar: {
+          src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBCjVd8qK1IRdR_sGg-AprqatPbJ5bW_3ZeB-4Dyaq2TXAB-QitfC5dR2zMlGZKPrdPW4VgCvW2m7NNHXXMwmMrtPEaZpWoQ27Fvi5rnr9be8A1YT742KK-k-__UI5p4TnPxp5IM6Esza0SxhFXAROTlAcN_mhVnQqOUmSXAVuAQDh7YAgmyp-0ywfLItHpnMP_YP386OMmP-TL9IhKmpZSQBS2EvnLIXLgCjzVhclutq_DUM0uyPRcOFFJZlVJRl-IMtcJZzOqDl0",
+          alt: "Professional headshot of a transport company owner.",
+        },
+      },
+    ],
+  },
+  pricing: {
+    title: "Simple, Transparent Pricing",
+    subtitle: "Plans that scale with your transport business.",
+    plans: [
+      {
+        name: "Starter",
+        description: "For small fleets up to 10 vehicles.",
+        price: "RM 199",
+        period: "/mo",
+        features: [
+          { label: "Live GPS Tracking", included: true },
+          { label: "Trip Management", included: true },
+          { label: "Basic Reports", included: true },
+          { label: "Fuel Monitoring", included: false },
+        ],
+        cta: { label: "Start Free Trial", variant: "outline" },
+      },
+      {
+        name: "Growth",
+        description: "For growing fleets up to 50 vehicles.",
+        price: "RM 499",
+        period: "/mo",
+        isFeatured: true,
+        badge: "MOST POPULAR",
+        features: [
+          { label: "All Starter Features", included: true },
+          { label: "Fuel Monitoring & Alerts", included: true },
+          { label: "Customer Portal Access", included: true },
+          { label: "APAD Compliance Tool", included: true },
+        ],
+        cta: { label: "Choose Growth", variant: "primary" },
+      },
+      {
+        name: "Enterprise",
+        description: "For large fleets & custom needs.",
+        price: "Custom",
+        features: [
+          { label: "Unlimited Vehicles", included: true },
+          { label: "API & ERP Integrations", included: true },
+          { label: "Dedicated Account Manager", included: true },
+          { label: "Custom Driver Training", included: true },
+        ],
+        cta: { label: "Contact Sales", variant: "outline" },
+      },
+    ],
+  },
+  finalCta: {
+    title: "Ready To Grow Your Transport Business?",
+    description:
+      "Join 500+ Malaysian transport companies using TCMS.ai to increase efficiency and cut costs.",
+    cta: { label: "Book Live Demo Now", variant: "primary" },
+    footnote: "No credit card required. Setup in less than 48 hours.",
+  },
+  footer: {
+    brand: "TCMS.ai",
+    description:
+      "The leading transportation management system built specifically for the Malaysian logistics market.",
+    columns: [
+      {
+        title: "Product",
+        links: [
+          { label: "GPS Tracking", href: "#" },
+          { label: "Fuel Management", href: "#" },
+          { label: "Customer Portal", href: "#" },
+          { label: "Compliance", href: "#" },
+        ],
+      },
+      {
+        title: "Company",
+        links: [
+          { label: "About Us", href: "#" },
+          { label: "Careers", href: "#" },
+          { label: "Press", href: "#" },
+          { label: "Blog", href: "#" },
+        ],
+      },
+      {
+        title: "Resources",
+        links: [
+          { label: "Help Center", href: "#" },
+          { label: "Documentation", href: "#" },
+          { label: "Community", href: "#" },
+        ],
+      },
+      {
+        title: "Legal",
+        links: [
+          { label: "Privacy Policy", href: "#" },
+          { label: "Terms of Service", href: "#" },
+        ],
+      },
+    ],
+    copyright:
+      "© 2024 TCMS.ai. Powered by AOT Technologies. All rights reserved. Registered in Malaysia.",
+    socialIcons: ["face_nod", "linked_camera", "mail"],
+  },
+};

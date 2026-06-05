@@ -1,0 +1,30 @@
+# OS
+.DS_Store
+
+# Next.js app (web/)
+web/node_modules/
+web/.pnp
+web/.pnp.*
+web/.yarn/*
+!web/.yarn/patches
+!web/.yarn/plugins
+!web/.yarn/releases
+!web/.yarn/versions
+web/coverage/
+web/.next/
+web/out/
+web/build/
+web/.vercel
+web/*.tsbuildinfo
+web/next-env.d.ts
+
+# Env files (keep .env.example)
+web/.env
+web/.env.*
+!web/.env.example
+
+# Logs
+web/npm-debug.log*
+web/yarn-debug.log*
+web/yarn-error.log*
+web/.pnpm-debug.log*

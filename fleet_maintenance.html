@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fleet Maintenance &amp; Inspection | TCMS.ai</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#6ffbbe",
+                    "primary-fixed": "#dae2ff",
+                    "primary-fixed-dim": "#b1c5ff",
+                    "surface-variant": "#dce2f3",
+                    "on-secondary-fixed": "#002113",
+                    "secondary-container": "#6cf8bb",
+                    "on-surface-variant": "#434653",
+                    "on-tertiary-fixed": "#380d00",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "inverse-surface": "#2a313d",
+                    "tertiary-container": "#8b2e01",
+                    "surface-dim": "#d3daea",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#802900",
+                    "inverse-on-surface": "#ebf1ff",
+                    "surface": "#f9f9ff",
+                    "on-secondary-container": "#00714d",
+                    "on-primary-fixed-variant": "#00419e",
+                    "surface-container-highest": "#dce2f3",
+                    "on-surface": "#151c27",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#c3c6d5",
+                    "tertiary": "#651f00",
+                    "surface-tint": "#2559bd",
+                    "on-primary": "#ffffff",
+                    "primary": "#00327d",
+                    "on-tertiary-container": "#ffaa8a",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-primary-fixed": "#001946",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#4edea3",
+                    "surface-container-low": "#f0f3ff",
+                    "inverse-primary": "#b1c5ff",
+                    "on-error": "#ffffff",
+                    "primary-container": "#0047ab",
+                    "surface-container": "#e7eefe",
+                    "on-error-container": "#93000a",
+                    "secondary": "#006c49",
+                    "on-primary-container": "#a5bdff",
+                    "background": "#f9f9ff",
+                    "surface-bright": "#f9f9ff",
+                    "tertiary-fixed": "#ffdbcf",
+                    "outline": "#737784",
+                    "on-background": "#151c27",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "container-max": "1440px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "headline-sm": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "label-sm": ["Inter"],
+                    "headline-lg-mobile": ["Montserrat"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .premium-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f8;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        .premium-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-color: #b1c5ff;
+        }
+        .pulse-indicator {
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(0, 108, 73, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 108, 73, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 108, 73, 0); }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/20">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-outline-variant flex items-center justify-between px-margin-desktop py-4">
+<div class="flex items-center gap-12">
+<span class="font-display-lg text-headline-md font-bold tracking-tighter text-primary">TCMS.ai</span>
+<div class="hidden lg:flex items-center gap-8">
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Analytics</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Global View</a>
+<a class="font-label-md text-primary border-b-2 border-primary pb-1" href="#">Reports</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="bg-primary text-on-primary px-5 py-2 rounded-lg font-label-md hover:bg-primary-container transition-all active:scale-95">Live Tracking</button>
+<div class="flex gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">settings</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">help</span>
+</div>
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmYKvkcjKHKLGgc3bXZH8xpdku7TgPzTCM9p2nMmWaJDV-wM77LL6y59UwiB2iJ-d0qjC33QDZmFy-ztpo13UNwd--hH0hytI4S75Y3E_y5PFaJUTfOU1LSgIyGGs3EEPTBog_9oA902byFv_Qk3F20kP__oL29WDBcxHaFZVVAgpPS98HWMTWli_Y-_NQQh7pWzxlbNqRjV_ifbxaRo3Jv6B03zuVE3p08gqox86Oni6aBlm8cY2UIb5Ghn5mFvVKCCr-ycf_PRk"/>
+</div>
+</nav>
+<!-- SideNav -->
+<aside class="fixed left-0 top-0 h-full w-72 z-40 bg-surface-container-low border-r border-outline-variant flex flex-col py-24 px-6 hidden md:flex">
+<div class="mb-10 px-2">
+<h2 class="font-headline-sm text-on-surface">Command Center</h2>
+<p class="font-label-sm uppercase tracking-widest text-on-surface-variant mt-1">Precision Logistics</p>
+</div>
+<div class="space-y-1 flex-grow">
+<div class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all group cursor-pointer">
+<span class="material-symbols-outlined group-hover:text-primary">route</span>
+<span class="font-label-md">Operations</span>
+</div>
+<div class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all group cursor-pointer">
+<span class="material-symbols-outlined group-hover:text-primary">account_balance</span>
+<span class="font-label-md">Finance</span>
+</div>
+<div class="flex items-center gap-4 px-4 py-3 rounded-xl bg-primary-container/20 text-primary border-r-4 border-primary">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-label-md">Fleet</span>
+</div>
+<div class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all group cursor-pointer">
+<span class="material-symbols-outlined group-hover:text-primary">verified</span>
+<span class="font-label-md">Compliance</span>
+</div>
+<div class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all group cursor-pointer">
+<span class="material-symbols-outlined group-hover:text-primary">groups</span>
+<span class="font-label-md">CRM</span>
+</div>
+<div class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-all group cursor-pointer">
+<span class="material-symbols-outlined group-hover:text-primary">shield</span>
+<span class="font-label-md">Security</span>
+</div>
+</div>
+<button class="mt-8 bg-secondary text-on-secondary font-bold py-4 rounded-xl shadow-md hover:brightness-110 transition-all">New Load</button>
+<div class="mt-auto border-t border-outline-variant pt-6 space-y-4 px-2">
+<div class="flex items-center gap-3 text-on-surface-variant hover:text-primary cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-xl">analytics</span>
+<span class="font-label-sm uppercase tracking-widest">System Status</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant hover:text-primary cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-xl">terminal</span>
+<span class="font-label-sm uppercase tracking-widest">API Docs</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="md:ml-72 pt-24 min-h-screen">
+<div class="px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto pb-24">
+<!-- Hero Header -->
+<header class="mb-12 flex flex-col md:flex-row justify-between items-end gap-6 border-b border-outline-variant pb-8">
+<div class="max-w-2xl">
+<div class="flex items-center gap-2 mb-4">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary pulse-indicator"></span>
+<span class="font-label-sm uppercase tracking-widest text-secondary font-bold">Fleet Operational Status: Optimized</span>
+</div>
+<h1 class="font-display-lg text-on-surface mb-4 leading-tight">Zero-Downtime Maintenance</h1>
+<p class="font-body-lg text-on-surface-variant">Predictive monitoring and automated compliance for the modern global fleet. Keep your assets moving with precision engineering.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-surface-container-high text-on-surface-variant border border-outline-variant px-6 py-3 rounded-lg font-bold hover:bg-surface-variant transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">download</span> Export Log
+                    </button>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-bold shadow-lg hover:shadow-xl hover:brightness-110 transition-all">Schedule Service</button>
+</div>
+</header>
+<!-- Dashboard Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-24">
+<!-- Maintenance Queue -->
+<div class="md:col-span-8 premium-card p-8 rounded-2xl">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline-md text-on-surface">Active Maintenance Queue</h3>
+<span class="material-symbols-outlined text-on-surface-variant">history</span>
+</div>
+<div class="space-y-4">
+<!-- Queue Item 1 -->
+<div class="flex items-center justify-between p-5 bg-surface-container-low border border-outline-variant rounded-xl hover:bg-surface-container transition-colors cursor-default group">
+<div class="flex items-center gap-6">
+<div class="bg-secondary/10 p-4 rounded-xl text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">engineering</span>
+</div>
+<div>
+<p class="font-headline-sm text-on-surface">VH-7729-LX</p>
+<p class="text-on-surface-variant text-sm">Volvo FH16 • Full Engine Overhaul</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline-sm text-secondary">04:11:53</p>
+<p class="text-on-surface-variant text-xs uppercase tracking-widest font-bold">Est. Completion</p>
+</div>
+</div>
+<!-- Queue Item 2 -->
+<div class="flex items-center justify-between p-5 bg-surface-container-low border border-outline-variant rounded-xl hover:bg-surface-container transition-colors cursor-default group">
+<div class="flex items-center gap-6">
+<div class="bg-tertiary-fixed text-tertiary p-4 rounded-xl group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">license</span>
+</div>
+<div>
+<p class="font-headline-sm text-on-surface">VH-1104-QM</p>
+<p class="text-on-surface-variant text-sm">Scania R500 • Road Tax Renewal</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline-sm text-error">Expiring Soon</p>
+<p class="text-on-surface-variant text-xs uppercase tracking-widest font-bold">Due in 48h</p>
+</div>
+</div>
+<!-- Queue Item 3 -->
+<div class="flex items-center justify-between p-5 bg-surface-container-low border border-outline-variant rounded-xl hover:bg-surface-container transition-colors cursor-default group">
+<div class="flex items-center gap-6">
+<div class="bg-primary/10 text-primary p-4 rounded-xl group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<p class="font-headline-sm text-on-surface">VH-8821-XP</p>
+<p class="text-on-surface-variant text-sm">DAF XF • Annual Safety Inspection</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline-sm text-primary">Scheduled</p>
+<p class="text-on-surface-variant text-xs uppercase tracking-widest font-bold">Sep 12, 2024</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Stats -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="premium-card p-6 rounded-2xl border-l-[6px] border-error">
+<span class="font-label-sm uppercase tracking-widest text-error font-bold block mb-4">Critical Alerts</span>
+<div class="flex items-center justify-between">
+<span class="text-5xl font-display-lg text-on-surface">03</span>
+<span class="material-symbols-outlined text-error text-4xl">warning</span>
+</div>
+<p class="text-on-surface-variant mt-4 text-sm font-medium">Expired Driver Licenses found.</p>
+</div>
+<div class="premium-card p-6 rounded-2xl border-l-[6px] border-tertiary">
+<span class="font-label-sm uppercase tracking-widest text-tertiary font-bold block mb-4">Pending Service</span>
+<div class="flex items-center justify-between">
+<span class="text-5xl font-display-lg text-on-surface">12</span>
+<span class="material-symbols-outlined text-tertiary text-4xl">settings_suggest</span>
+</div>
+<p class="text-on-surface-variant mt-4 text-sm font-medium">Vehicles due for oil changes.</p>
+</div>
+<div class="premium-card p-6 rounded-2xl border-l-[6px] border-secondary">
+<span class="font-label-sm uppercase tracking-widest text-secondary font-bold block mb-4">Safe Fleet</span>
+<div class="flex items-center justify-between">
+<span class="text-5xl font-display-lg text-on-surface">88%</span>
+<span class="material-symbols-outlined text-secondary text-4xl">check_circle</span>
+</div>
+<p class="text-on-surface-variant mt-4 text-sm font-medium">Compliance health score.</p>
+</div>
+</div>
+</div>
+<!-- Mobile App Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24 bg-surface-container-low rounded-[2rem] p-12 border border-outline-variant">
+<div class="relative flex justify-center">
+<!-- Premium Light Phone Mockup -->
+<div class="relative z-10 w-[300px] h-[610px] border-[12px] border-on-surface rounded-[3.5rem] overflow-hidden bg-white shadow-2xl">
+<div class="h-8 w-1/3 bg-on-surface mx-auto rounded-b-2xl mb-4"></div>
+<div class="px-6 py-2">
+<div class="flex justify-between items-center mb-10">
+<span class="font-display-lg text-xl font-bold tracking-tighter text-primary">TCMS Go</span>
+<span class="material-symbols-outlined text-on-surface-variant">menu</span>
+</div>
+<div class="space-y-5">
+<div class="bg-primary/5 border border-primary/20 p-5 rounded-2xl">
+<p class="text-[10px] uppercase font-bold text-primary mb-2">New Task</p>
+<p class="text-sm font-bold text-on-surface">Complete pre-trip check for Volvo VH-7729.</p>
+</div>
+<div class="bg-surface-container-high p-5 rounded-2xl">
+<p class="text-[10px] font-bold text-on-surface-variant uppercase mb-3">Maintenance Progress</p>
+<div class="flex items-center gap-3">
+<div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+<div class="w-3/4 h-full bg-secondary rounded-full"></div>
+</div>
+<span class="text-xs font-bold text-on-surface">75%</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-4 rounded-2xl text-center border border-outline-variant">
+<span class="material-symbols-outlined text-primary mb-2">qr_code_scanner</span>
+<p class="text-[10px] font-bold text-on-surface">Scan VIN</p>
+</div>
+<div class="bg-surface-container p-4 rounded-2xl text-center border border-outline-variant">
+<span class="material-symbols-outlined text-secondary mb-2">description</span>
+<p class="text-[10px] font-bold text-on-surface">Form</p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-on-surface/20 rounded-full"></div>
+</div>
+<!-- Soft Shadows -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 blur-[100px] rounded-full -z-10"></div>
+</div>
+<div>
+<span class="font-label-sm uppercase tracking-widest text-primary font-bold block mb-4">Mobile App Ecosystem</span>
+<h2 class="font-display-lg text-on-surface mb-8">Synchronized Fleet Intelligence</h2>
+<div class="space-y-10">
+<div class="flex gap-6 group">
+<div class="shrink-0 w-14 h-14 rounded-2xl bg-white border border-outline-variant flex items-center justify-center text-primary shadow-sm group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+<span class="material-symbols-outlined text-2xl">notifications_active</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-on-surface mb-2">Real-time Sync</h4>
+<p class="text-on-surface-variant">Instant push notifications for drivers and dispatch ensure no maintenance milestone is ever overlooked.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="shrink-0 w-14 h-14 rounded-2xl bg-white border border-outline-variant flex items-center justify-center text-primary shadow-sm group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+<span class="material-symbols-outlined text-2xl">digital_out_of_home</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-on-surface mb-2">Paperless Workflows</h4>
+<p class="text-on-surface-variant">Digital inspection forms encrypted for security, instantly feeding into your central dashboard.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="shrink-0 w-14 h-14 rounded-2xl bg-white border border-outline-variant flex items-center justify-center text-primary shadow-sm group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
+<span class="material-symbols-outlined text-2xl">history_edu</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-on-surface mb-2">Auditable Logs</h4>
+<p class="text-on-surface-variant">Generate compliance reports for road authorities with one tap, ensuring full legal transparency.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Grid -->
+<section class="mb-24">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<h2 class="font-display-lg text-on-surface mb-4">Mission-Critical Tools</h2>
+<p class="text-on-surface-variant font-body-lg">Precision-engineered for high-stakes logistics enterprises.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="premium-card p-8 rounded-2xl group cursor-pointer">
+<div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-8 border border-primary/20 group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 text-primary">
+<span class="material-symbols-outlined text-3xl">architecture</span>
+</div>
+<h3 class="font-headline-sm text-on-surface mb-4">Load Planning</h3>
+<p class="text-on-surface-variant mb-8 text-sm leading-relaxed">Cross-reference vehicle health with weight-load limits to prevent structural wear and ensure safety on every route.</p>
+<a class="text-primary font-bold text-sm inline-flex items-center gap-2 hover:gap-4 transition-all" href="#">Explore Tech <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="premium-card p-8 rounded-2xl group cursor-pointer">
+<div class="w-16 h-16 bg-secondary/5 rounded-2xl flex items-center justify-center mb-8 border border-secondary/20 group-hover:bg-secondary group-hover:text-on-primary transition-all duration-300 text-secondary">
+<span class="material-symbols-outlined text-3xl">description</span>
+</div>
+<h3 class="font-headline-sm text-on-surface mb-4">Digital Logs</h3>
+<p class="text-on-surface-variant mb-8 text-sm leading-relaxed">A permanent, immutable digital history of every asset in your global fleet ecosystem, from engine parts to tire rotations.</p>
+<a class="text-secondary font-bold text-sm inline-flex items-center gap-2 hover:gap-4 transition-all" href="#">Review Logs <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="premium-card p-8 rounded-2xl group cursor-pointer">
+<div class="w-16 h-16 bg-tertiary-fixed rounded-2xl flex items-center justify-center mb-8 border border-tertiary-container/20 group-hover:bg-tertiary group-hover:text-on-primary transition-all duration-300 text-tertiary">
+<span class="material-symbols-outlined text-3xl">fact_check</span>
+</div>
+<h3 class="font-headline-sm text-on-surface mb-4">Inspection Intelligence</h3>
+<p class="text-on-surface-variant mb-8 text-sm leading-relaxed">AI-powered visual detection identifies potential damage before it becomes an operational failure, reducing costly downtime.</p>
+<a class="text-tertiary font-bold text-sm inline-flex items-center gap-2 hover:gap-4 transition-all" href="#">See Process <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</section>
+<!-- Global Map Section -->
+<section class="relative h-[600px] rounded-[2.5rem] overflow-hidden border border-outline-variant bg-surface-container shadow-inner">
+<div class="absolute inset-0 z-0">
+<img alt="Global Network Map" class="w-full h-full object-cover opacity-20 grayscale brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWrIzxFiiB_C8BW9111p_15OgjbqbOE6wMXp8ZZVB8l_6BlYGsoAGyGNCW5FAMf53vL4MeHjIHRpFVZpKEEnMYgD8VqTbeOn4C30-2uWsDL-k-R3mrm8ML-ceLJjmOOD2v4gE8f1j68mNzgJOYnCFVFwouiEhrUAVHzq9a0hr7NLab0I8fVZi3XdHS3ftzz2ZAJXsy4QurUeOw-NoS9A-hy4s02cIHPns-cyEY7QLVKO--dC4CYo-i5PoDbyh2cc_uMrZ5PMaYaMw"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="relative z-10 p-16 h-full flex flex-col justify-between">
+<div class="max-w-xl">
+<span class="font-label-sm uppercase tracking-widest text-primary font-bold">Global Compliance</span>
+<h2 class="font-headline-lg text-on-surface mt-4 mb-6">Tracking Fleet Health Across 42 Countries</h2>
+<p class="text-on-surface-variant font-body-lg">Scale with confidence using localized regulatory compliance and unified maintenance standards.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+<div class="premium-card bg-white/60 backdrop-blur-md p-6 rounded-2xl border-none">
+<p class="font-display-lg text-4xl text-on-surface">4.8k</p>
+<p class="text-on-surface-variant text-xs uppercase tracking-widest font-bold mt-2">Active Assets</p>
+</div>
+<div class="premium-card bg-white/60 backdrop-blur-md p-6 rounded-2xl border-none">
+<p class="font-display-lg text-4xl text-secondary">99.9%</p>
+<p class="text-on-surface-variant text-xs uppercase tracking-widest font-bold mt-2">Uptime Target</p>
+</div>
+<div class="premium-card bg-white/60 backdrop-blur-md p-6 rounded-2xl border-none">
+<p class="font-display-lg text-4xl text-tertiary">0</p>
+<p class="text-on-surface-variant text-xs uppercase tracking-widest font-bold mt-2">Missed Renewals</p>
+</div>
+<div class="premium-card bg-white/60 backdrop-blur-md p-6 rounded-2xl border-none">
+<p class="font-display-lg text-4xl text-primary">24/7</p>
+<p class="text-on-surface-variant text-xs uppercase tracking-widest font-bold mt-2">Support</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-low border-t border-outline-variant px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-5 gap-12">
+<div class="md:col-span-1">
+<span class="font-headline-md text-primary block mb-6">TCMS.ai</span>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">© 2024 TCMS.ai. Enterprise Intelligence for Global Freight. Engineered for precision and safety.</p>
+<div class="flex gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">language</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">share</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-sm uppercase tracking-widest text-secondary font-bold mb-6">Tracking</h4>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">GPS Systems</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Route Optimization</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Telematics</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-sm uppercase tracking-widest text-secondary font-bold mb-6">Operations</h4>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Maintenance</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Inspections</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Safety Rules</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-sm uppercase tracking-widest text-secondary font-bold mb-6">Enterprise</h4>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Accounting</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Payroll</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">API Solutions</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-sm uppercase tracking-widest text-secondary font-bold mb-6">Legal</h4>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Terms</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<!-- FAB -->
+<div class="fixed bottom-10 right-10 z-50">
+<button class="bg-primary text-on-primary w-16 h-16 rounded-2xl shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+<script>
+        // Smooth timer micro-interaction
+        document.querySelectorAll('.font-headline-sm.text-secondary').forEach(timer => {
+            let seconds = 15113; // Starting from 04:11:53 approx
+            setInterval(() => {
+                seconds--;
+                const h = Math.floor(seconds / 3600);
+                const m = Math.floor((seconds % 3600) / 60);
+                const s = seconds % 60;
+                if (timer.textContent.includes(':')) {
+                    timer.textContent = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+                }
+            }, 1000);
+        });
+
+        // Toggle mobile nav (mock)
+        document.querySelector('aside .group')?.addEventListener('click', () => {
+             console.log('Navigating to operations...');
+        });
+    </script>
+</body></html>

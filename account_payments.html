@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Accounting &amp; Banking | TCMS.ai</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#6ffbbe",
+                    "primary-fixed": "#dae2ff",
+                    "primary-fixed-dim": "#b1c5ff",
+                    "surface-variant": "#dce2f3",
+                    "on-secondary-fixed": "#002113",
+                    "surface-container-high": "#e2e8f8",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#6cf8bb",
+                    "on-surface-variant": "#434653",
+                    "on-tertiary-fixed": "#380d00",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "inverse-surface": "#2a313d",
+                    "tertiary-container": "#8b2e01",
+                    "surface-dim": "#d3daea",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#802900",
+                    "inverse-on-surface": "#ebf1ff",
+                    "surface": "#f9f9ff",
+                    "on-secondary-container": "#00714d",
+                    "on-primary-fixed-variant": "#00419e",
+                    "surface-container-highest": "#dce2f3",
+                    "on-surface": "#151c27",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#c3c6d5",
+                    "tertiary": "#651f00",
+                    "surface-tint": "#2559bd",
+                    "on-primary": "#ffffff",
+                    "primary": "#00327d",
+                    "on-tertiary-container": "#ffaa8a",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-primary-fixed": "#001946",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#4edea3",
+                    "surface-container-low": "#f0f3ff",
+                    "inverse-primary": "#b1c5ff",
+                    "on-error": "#ffffff",
+                    "primary-container": "#0047ab",
+                    "surface-container": "#e7eefe",
+                    "on-error-container": "#93000a",
+                    "secondary": "#006c49",
+                    "on-primary-container": "#a5bdff",
+                    "background": "#f9f9ff",
+                    "surface-bright": "#f9f9ff",
+                    "tertiary-fixed": "#ffdbcf",
+                    "outline": "#737784",
+                    "on-background": "#151c27",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "container-max": "1440px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "headline-sm": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "label-sm": ["Inter"],
+                    "headline-lg-mobile": ["Montserrat"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .premium-shadow {
+            box-shadow: 0 10px 40px -10px rgba(0, 50, 125, 0.08);
+        }
+        .chart-bar-active {
+            background-color: #00327d;
+        }
+        .chart-bar-inactive {
+            background-color: #e2e8f8;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/30 flex items-center justify-between px-margin-desktop py-4">
+<div class="flex items-center gap-12">
+<span class="font-display-lg text-[28px] font-bold tracking-tighter text-primary">TCMS.ai</span>
+<div class="hidden md:flex gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Analytics</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Global View</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Reports</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="px-6 py-2 bg-primary text-on-primary font-bold rounded-lg hover:bg-primary-container transition-all active:scale-95 shadow-sm">Live Tracking</button>
+<div class="flex gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">settings</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">help</span>
+</div>
+<img alt="User Profile" class="w-10 h-10 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFrG0nBFIv_hSPVnhFyxUDZJrwBteutQBT3myFFiFA3drZCZKiEInXU9kWYLK1CsFvNxCE53C-EMYWUVf827J4SOgzeJBcftUKcewJ2ZXwyEh0BMdo2CQ6rJzr3RzuUXyEH5j1o0OLTEaPtWx0i2hD6D-CJkGe1ql4QHlbYJd1kzje2LiqaX04xwnnLguBAiMFB-a-9jtBBDJUji1UEFMJ50v1rDhMhu7updrgIhqbzgytxnSpxrf_PXxrfcloW4n38ZJoFQ1D_po"/>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 z-40 bg-surface-container-lowest border-r border-outline-variant/30 flex flex-col py-24 px-4 shadow-sm">
+<div class="mb-10 px-2">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-1">Command Center</h2>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant opacity-70">Precision Logistics</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-4 py-3 px-4 rounded-xl transition-all bg-primary/5 text-primary font-bold border-l-4 border-primary" href="#">
+<span class="material-symbols-outlined">account_balance</span>
+<span class="font-label-md text-label-md uppercase">Finance</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-xl text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">route</span>
+<span class="font-label-md text-label-md uppercase">Operations</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-xl text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-label-md text-label-md uppercase">Fleet</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-xl text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">verified</span>
+<span class="font-label-md text-label-md uppercase">Compliance</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-xl text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-md text-label-md uppercase">CRM</span>
+</a>
+</nav>
+<div class="mt-auto pt-8 border-t border-outline-variant/30 space-y-4">
+<button class="w-full py-3 bg-secondary-container text-on-secondary-container font-bold rounded-xl hover:opacity-90 transition-opacity uppercase tracking-tighter shadow-sm">New Load</button>
+<div class="space-y-2">
+<a class="flex items-center gap-3 px-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">analytics</span>
+<span class="font-label-sm text-label-sm uppercase">System Status</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 mt-20 p-12">
+<!-- Hero Section -->
+<section class="mb-24">
+<div class="flex flex-col lg:flex-row gap-16 items-center">
+<div class="lg:w-1/2">
+<span class="inline-block px-4 py-1 bg-primary-fixed text-primary font-label-sm text-label-sm uppercase tracking-widest rounded-full mb-6">Accounting &amp; Banking</span>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 leading-tight">Financial Clarity for Carriers.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
+                        Eliminate manual entry and reclaim your time. TCMS.ai automates the entire financial lifecycle from the second a load is delivered to the moment funds hit your bank account.
+                    </p>
+<div class="flex gap-4">
+<button class="px-8 py-4 bg-primary text-on-primary font-bold rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">Get Started</button>
+<button class="px-8 py-4 border-2 border-outline-variant text-primary font-bold rounded-xl hover:bg-surface-container-low transition-colors">View Demo</button>
+</div>
+</div>
+<div class="lg:w-1/2 w-full">
+<div class="bg-surface-container-lowest p-10 rounded-2xl premium-shadow border border-outline-variant/20">
+<div class="flex justify-between items-center mb-10">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Total Revenue</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Quarterly Performance</p>
+</div>
+<span class="text-secondary font-headline-md text-headline-md">RM 482,901.50</span>
+</div>
+<div class="h-56 flex items-end gap-3">
+<div class="w-full chart-bar-inactive rounded-t-lg transition-all cursor-pointer hover:bg-primary-fixed" style="height: 40%"></div>
+<div class="w-full chart-bar-inactive rounded-t-lg transition-all cursor-pointer hover:bg-primary-fixed" style="height: 60%"></div>
+<div class="w-full chart-bar-inactive rounded-t-lg transition-all cursor-pointer hover:bg-primary-fixed" style="height: 45%"></div>
+<div class="w-full chart-bar-inactive rounded-t-lg transition-all cursor-pointer hover:bg-primary-fixed" style="height: 80%"></div>
+<div class="w-full chart-bar-active rounded-t-lg shadow-md" style="height: 100%"></div>
+<div class="w-full chart-bar-inactive rounded-t-lg transition-all cursor-pointer hover:bg-primary-fixed" style="height: 65%"></div>
+<div class="w-full chart-bar-inactive rounded-t-lg transition-all cursor-pointer hover:bg-primary-fixed" style="height: 50%"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+<!-- Automated Invoicing -->
+<div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-2xl border border-outline-variant/30 premium-shadow group hover:border-primary/30 transition-all duration-300">
+<div class="flex flex-col md:flex-row justify-between items-start gap-10">
+<div class="max-w-md">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4 text-on-surface">One-Click Invoicing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Turn proof-of-delivery photos into professional, audit-ready invoices instantly. Our AI extracts data directly from shipping docs, eliminating human error.
+                        </p>
+</div>
+<div class="flex-1 w-full bg-surface-container-low/50 rounded-2xl border border-outline-variant/30 p-6">
+<div class="space-y-4">
+<div class="flex justify-between items-center p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/20 shadow-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">INV-2024-001</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-[10px] rounded-full uppercase font-bold">Processing</span>
+</div>
+<div class="flex justify-between items-center p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/20 shadow-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">INV-2024-002</span>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+<span class="text-secondary text-[10px] font-bold uppercase">Syncing</span>
+</div>
+</div>
+<button class="w-full py-3 bg-primary text-on-primary rounded-xl font-bold text-sm hover:bg-primary-container transition-all shadow-sm">Generate Invoice</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Malaysian Bank Integration -->
+<div class="bg-surface-container-lowest p-10 rounded-2xl border border-outline-variant/30 premium-shadow group hover:border-primary/30 transition-all flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary mb-6">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Localized Banking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                        Direct API integration with major regional banks. Reconcile settlements in real-time.
+                    </p>
+</div>
+<div class="flex flex-wrap gap-3 opacity-60 group-hover:opacity-100 transition-all duration-300">
+<span class="px-3 py-1 bg-surface-container-high rounded text-[11px] font-bold text-on-surface-variant">MAYBANK</span>
+<span class="px-3 py-1 bg-surface-container-high rounded text-[11px] font-bold text-on-surface-variant">CIMB</span>
+<span class="px-3 py-1 bg-surface-container-high rounded text-[11px] font-bold text-on-surface-variant">RHB</span>
+</div>
+</div>
+<!-- Bank Reconciliations -->
+<div class="bg-surface-container-lowest p-10 rounded-2xl border border-outline-variant/30 premium-shadow group hover:border-primary/30 transition-all">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined">sync</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Zero-Touch Recon</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Automatic matching of bank statements with internal ledger. Marking loads as 'Paid' instantly upon settlement.
+                </p>
+</div>
+<!-- Payment Gateways -->
+<div class="md:col-span-2 relative overflow-hidden rounded-2xl bg-primary text-on-primary p-10 border border-primary/20 premium-shadow">
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Integrated Payment Gateways</h3>
+<p class="font-body-md text-body-md text-primary-fixed-dim max-w-xl">
+                            Accept payments via FPX, Credit Cards, or Wire Transfers. Every transaction is tracked with enterprise-grade encryption.
+                        </p>
+</div>
+<div class="mt-8 flex items-center gap-6">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full bg-white text-primary flex items-center justify-center font-bold border-2 border-primary">V</div>
+<div class="w-10 h-10 rounded-full bg-white text-primary flex items-center justify-center font-bold border-2 border-primary">M</div>
+<div class="w-10 h-10 rounded-full bg-white text-primary flex items-center justify-center font-bold border-2 border-primary">F</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider">Trusted by 500+ Regional Logistics Firms</span>
+</div>
+</div>
+<!-- Subtle background visual -->
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[300px] absolute -right-20 -top-10 rotate-12">payments</span>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="mb-24 py-20 bg-surface-container-low rounded-[32px] border border-outline-variant/30 px-10 text-center">
+<h2 class="font-headline-lg text-headline-lg mb-6 text-on-surface">Stop Chasing Paperwork</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-16">
+                Traditional accounting takes hours of manual work. TCMS.ai reduces that to zero. Focus on moving freight, not numbers.
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-2">
+<span class="block text-secondary font-display-lg text-[42px] leading-none">94%</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-bold">Reduction in Errors</span>
+</div>
+<div class="space-y-2">
+<span class="block text-primary font-display-lg text-[42px] leading-none">12h</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-bold">Saved Per Week</span>
+</div>
+<div class="space-y-2">
+<span class="block text-secondary font-display-lg text-[42px] leading-none">Instant</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-bold">Ledger Updates</span>
+</div>
+<div class="space-y-2">
+<span class="block text-on-surface font-display-lg text-[42px] leading-none">RM 0</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-bold">Manual Data Fees</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-24 border-t border-outline-variant/30 bg-surface-container-lowest py-20 px-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-16">
+<div class="col-span-2 lg:col-span-1">
+<span class="font-display-lg text-[24px] text-primary mb-6 block font-bold">TCMS.ai</span>
+<p class="text-on-surface-variant font-body-sm text-body-sm">© 2024 TCMS.ai. Enterprise Intelligence for Global Freight.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-on-surface uppercase text-xs tracking-wider">Operations</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-sm" href="#">GPS Tracking</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-sm" href="#">Route Optimization</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-sm" href="#">Load Planning</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-on-surface uppercase text-xs tracking-wider">Finance</h4>
+<a class="text-primary font-bold font-body-sm" href="#">Accounting</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-sm" href="#">Payroll</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-sm" href="#">Banking</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-on-surface uppercase text-xs tracking-wider">Compliance</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-sm" href="#">Maintenance</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-sm" href="#">Inspections</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-sm" href="#">Safety Compliance</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-on-surface uppercase text-xs tracking-wider">Resources</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-sm" href="#">Driver Portal</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-sm" href="#">Client Portal</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-sm" href="#">API Access</a>
+</div>
+</div>
+<div class="flex flex-wrap gap-8 py-8 border-t border-outline-variant/20 opacity-70">
+<a class="text-on-surface-variant text-xs hover:text-primary" href="#">SLA Standards</a>
+<a class="text-on-surface-variant text-xs hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant text-xs hover:text-primary" href="#">Terms of Service</a>
+<a class="text-on-surface-variant text-xs hover:text-primary" href="#">Carrier Network</a>
+<a class="text-on-surface-variant text-xs hover:text-primary" href="#">Sustainability</a>
+<a class="text-on-surface-variant text-xs hover:text-primary" href="#">Global Support</a>
+</div>
+</footer>
+</body></html>

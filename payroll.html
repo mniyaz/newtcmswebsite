@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TCMS.ai | Payroll &amp; Compliance (Malaysia)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#6ffbbe",
+                        "primary-fixed": "#dae2ff",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "surface-variant": "#dce2f3",
+                        "on-secondary-fixed": "#002113",
+                        "surface-container-high": "#e2e8f8",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "on-surface-variant": "#434653",
+                        "on-tertiary-fixed": "#380d00",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "inverse-surface": "#2a313d",
+                        "tertiary-container": "#8b2e01",
+                        "surface-dim": "#d3daea",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#802900",
+                        "inverse-on-surface": "#ebf1ff",
+                        "surface": "#f9f9ff",
+                        "on-secondary-container": "#00714d",
+                        "on-primary-fixed-variant": "#00419e",
+                        "surface-container-highest": "#dce2f3",
+                        "on-surface": "#151c27",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c3c6d5",
+                        "tertiary": "#651f00",
+                        "surface-tint": "#2559bd",
+                        "on-primary": "#ffffff",
+                        "primary": "#00327d",
+                        "on-tertiary-container": "#ffaa8a",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary-fixed": "#001946",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-container-low": "#f0f3ff",
+                        "inverse-primary": "#b1c5ff",
+                        "on-error": "#ffffff",
+                        "primary-container": "#0047ab",
+                        "surface-container": "#e7eefe",
+                        "on-error-container": "#93000a",
+                        "secondary": "#006c49",
+                        "on-primary-container": "#a5bdff",
+                        "background": "#f9f9ff",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary-fixed": "#ffdbcf",
+                        "outline": "#737784",
+                        "on-background": "#151c27",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "headline-sm": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .finance-card {
+            background: #ffffff;
+            border: 1px solid #e7eefe;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        .finance-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); opacity: 0.5; }
+            50% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.5; }
+        }
+        .animate-pulse-green {
+            animation: pulse-green 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary/20">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-surface-container-high px-margin-desktop py-4 flex items-center justify-between">
+<div class="flex items-center gap-12">
+<span class="font-display-lg text-headline-md font-bold tracking-tighter text-primary">TCMS.ai</span>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Analytics</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Global View</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Reports</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4 px-4 border-r border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">settings</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">help</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold transition-all hover:bg-primary-container">Live Tracking</button>
+<img alt="User" class="w-10 h-10 rounded-full border border-surface-container-high" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCcXGrCcL9zd-XCFncKhKtvG0wreeFIJL9BHR9efSUfQI-FhJYBrdkwRdFxKrabaImnRgG8pvkkplRiVTrGuya_qrWGz_HxlG54-GP0AgP5HbPCHq6jezO-5qXknoSR0pN0POlR7UIXtus1g7_CscQ7opIFSISlLlmgS0DlSbDhDCRDKFH0FNV2FIpTNtufdF6DREZXP2UecZ3CS89N5MfCeFYR8yYJvrvBp7AKoOwHiix7u7JlkeTVUSBSJEpPznCmMt6kWj4kmY"/>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 z-40 bg-surface-container-lowest border-r border-surface-container-high flex flex-col py-24 px-4">
+<div class="mb-10 px-4">
+<h2 class="font-headline-sm text-primary">Command Center</h2>
+<p class="font-label-sm uppercase tracking-widest text-on-surface-variant">Logistics Core</p>
+</div>
+<nav class="flex-1 space-y-1">
+<div class="flex items-center gap-3 p-3 font-label-md text-on-surface-variant hover:bg-surface-container transition-all cursor-pointer rounded-lg">
+<span class="material-symbols-outlined">route</span>
+<span>Operations</span>
+</div>
+<div class="flex items-center gap-3 p-3 font-label-md bg-primary-container/20 text-primary border-r-4 border-primary transition-all cursor-pointer rounded-lg">
+<span class="material-symbols-outlined">account_balance</span>
+<span>Finance</span>
+</div>
+<div class="flex items-center gap-3 p-3 font-label-md text-on-surface-variant hover:bg-surface-container transition-all cursor-pointer rounded-lg">
+<span class="material-symbols-outlined">local_shipping</span>
+<span>Fleet</span>
+</div>
+<div class="flex items-center gap-3 p-3 font-label-md text-on-surface-variant hover:bg-surface-container transition-all cursor-pointer rounded-lg">
+<span class="material-symbols-outlined">verified</span>
+<span>Compliance</span>
+</div>
+<div class="flex items-center gap-3 p-3 font-label-md text-on-surface-variant hover:bg-surface-container transition-all cursor-pointer rounded-lg">
+<span class="material-symbols-outlined">groups</span>
+<span>CRM</span>
+</div>
+</nav>
+<div class="mt-auto space-y-4 pt-6 border-t border-surface-container-high">
+<button class="w-full py-3 bg-secondary text-on-secondary font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-secondary/10">
+<span class="material-symbols-outlined">add</span>
+            New Load
+        </button>
+<div class="flex flex-col gap-2 px-2">
+<div class="flex items-center gap-2 text-on-surface-variant hover:text-primary cursor-pointer text-xs font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">analytics</span> Status
+            </div>
+<div class="flex items-center gap-2 text-on-surface-variant hover:text-primary cursor-pointer text-xs font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">terminal</span> API
+            </div>
+</div>
+</div>
+</aside>
+<main class="ml-64 pt-24 min-h-screen">
+<!-- Hero Section -->
+<section class="px-margin-desktop py-12 relative overflow-hidden bg-white">
+<div class="absolute inset-0 z-0 opacity-10">
+<div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary-fixed rounded-full blur-[120px]"></div>
+</div>
+<div class="relative z-10 max-w-5xl">
+<div class="inline-flex items-center gap-2 px-4 py-1 bg-secondary-container/20 border border-secondary/20 rounded-full mb-6">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse-green"></span>
+<span class="font-label-sm text-secondary uppercase font-bold">LHDN &amp; APAD Integrated</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 leading-tight">Worry-Free Payroll for <br/><span class="text-primary">Malaysian Logistics.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10">
+                Automated statutory deductions and trip-based allowances integrated directly from your fleet data. Compliance-first payroll for the modern freight enterprise.
+            </p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold text-lg transition-all hover:shadow-xl hover:bg-primary-container">Run March Payroll</button>
+<button class="border border-outline-variant text-on-surface px-8 py-4 rounded-xl font-bold text-lg hover:bg-surface-container transition-all">Download Statutory Reports</button>
+</div>
+</div>
+</section>
+<!-- Stats & Payroll Interface -->
+<section class="px-margin-desktop pb-20 grid grid-cols-12 gap-gutter">
+<!-- Quick Stats -->
+<div class="col-span-12 lg:col-span-4 finance-card rounded-2xl p-8 flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-on-surface mb-2">March Summary</h3>
+<p class="text-on-surface-variant mb-6 font-body-sm">Cycle: 01 Mar - 31 Mar</p>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between items-end pb-2 border-b border-surface-container">
+<span class="text-on-surface-variant font-label-md">Total Gross Pay</span>
+<span class="font-headline-sm text-on-surface">RM 142,500.00</span>
+</div>
+<div class="flex justify-between items-end pb-2 border-b border-surface-container">
+<span class="text-on-surface-variant font-label-md">EPF (Employer)</span>
+<span class="font-headline-sm text-tertiary">RM 18,525.00</span>
+</div>
+<div class="flex justify-between items-end pb-2 border-b border-surface-container">
+<span class="text-on-surface-variant font-label-md">SOCSO + EIS</span>
+<span class="font-headline-sm text-secondary">RM 2,410.50</span>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-surface-container">
+<div class="flex items-center gap-4 bg-secondary-container/10 p-4 rounded-xl">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined font-bold">verified_user</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Compliance Score: 100%</p>
+<p class="text-xs text-on-surface-variant">All LHDN forms ready for submission</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Driver List -->
+<div class="col-span-12 lg:col-span-8 finance-card rounded-2xl overflow-hidden">
+<div class="px-8 py-6 border-b border-surface-container flex justify-between items-center bg-surface-container-lowest">
+<h3 class="font-headline-md text-on-surface">Active Driver Payroll</h3>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container rounded-lg transition-colors"><span class="material-symbols-outlined">filter_list</span></button>
+<button class="p-2 hover:bg-surface-container rounded-lg transition-colors"><span class="material-symbols-outlined">search</span></button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-8 py-4 font-label-sm uppercase tracking-widest text-on-surface-variant">Driver Name</th>
+<th class="px-8 py-4 font-label-sm uppercase tracking-widest text-on-surface-variant">Trips (KM)</th>
+<th class="px-8 py-4 font-label-sm uppercase tracking-widest text-on-surface-variant">Allowances</th>
+<th class="px-8 py-4 font-label-sm uppercase tracking-widest text-on-surface-variant">Net Pay</th>
+<th class="px-8 py-4 font-label-sm uppercase tracking-widest text-on-surface-variant">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<img alt="Driver" class="w-10 h-10 rounded-full border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChHVYvAhcKC0Jw0Bzswr4Ia_f0zxB9GKYf_SArDTCAHV8Qh24xZMYL34M3miQJJ5Vdve7B2gMYlRwbUFreRQMxHU0YehCitKLdRVBTd5KCwNHeGuiwU6ZhdM9KadXQVjoRzLmyc53GJn6_HI1BHYXowN2p09XOCP9DZ8_YI9PynBi5SoJEKCImWmYHWw2kQ9mWliuGy1OF-C0yg1WYgcQFqkqV7q1jws-FMlwZLHM0p5YexMP6-E8EMPdtlX0eFwOx1AK048vov_M"/>
+<div>
+<p class="font-bold text-on-surface">Ahmad Razali</p>
+<p class="text-xs text-on-surface-variant">MY-D-4029</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 font-body-sm text-on-surface">42 (8,400 KM)</td>
+<td class="px-8 py-5 font-body-sm text-secondary font-bold">RM 1,240.00</td>
+<td class="px-8 py-5 font-body-sm text-on-surface font-bold">RM 4,850.20</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 bg-secondary-container/20 text-secondary text-[10px] uppercase font-bold rounded-full border border-secondary/20">Calculated</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<img alt="Driver" class="w-10 h-10 rounded-full border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFH20HonFo7JMAD0Ykpr3Vtg_OMl5ZjQN_2n3LG0JE-F6dNaDUuVH06VBWirByWOiIy-2oeg6SkLPET25Rg_DLpAvpJ5CsxKQy1lo918SK79Jp-j1VNn3qSYkH4gjtxOG8SCvoGlGvixw4kCa0MXiXfiP09bvcmdL5Z9Hp40BNhFUb0yBPhTAjM_UYrFI8f3OYswFZ3xM3pZnRipvkWH8Ilbs3zMermqR0QuCEQofrXzE1d5glFxmppJT12ezUkHi1iyfC15SLwHM"/>
+<div>
+<p class="font-bold text-on-surface">Chong Wei Liang</p>
+<p class="text-xs text-on-surface-variant">MY-D-3881</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 font-body-sm text-on-surface">38 (7,200 KM)</td>
+<td class="px-8 py-5 font-body-sm text-secondary font-bold">RM 980.00</td>
+<td class="px-8 py-5 font-body-sm text-on-surface font-bold">RM 4,210.45</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 bg-secondary-container/20 text-secondary text-[10px] uppercase font-bold rounded-full border border-secondary/20">Calculated</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<img alt="Driver" class="w-10 h-10 rounded-full border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0AJtvRiqSBy6kV-_2yURBWldnEMFP41Me6r1ZajaGKDGyYDZQ57KF4HyfGzb8gUKBq5M_LSTBLg_yYPQmi2HwgGxM2BjzDcLwmXIni1ge9wVT5y8CYxc4nR5LNDXnnuGIsc6nLKHSztbhyanj_b5md5ngR-dIDGlUJxRnyoJZM3sw0fM_QRkCqVk0umK5pFMcwjnNNVb0K9rDCoM99DNGnslOPTBKA0p1imXVWdzi3MoT7ykpneAUVUe3t_RcFEb9bv_-YhTZwYs"/>
+<div>
+<p class="font-bold text-on-surface">S. Kumar</p>
+<p class="text-xs text-on-surface-variant">MY-D-5102</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 font-body-sm text-on-surface">45 (9,100 KM)</td>
+<td class="px-8 py-5 font-body-sm text-secondary font-bold">RM 1,450.00</td>
+<td class="px-8 py-5 font-body-sm text-on-surface font-bold">RM 5,120.80</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 bg-tertiary-fixed text-tertiary text-[10px] uppercase font-bold rounded-full border border-tertiary/20">Review Needed</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 bg-surface-container-lowest border-t border-surface-container flex justify-end">
+<button class="text-primary font-bold hover:underline flex items-center gap-2">View All 42 Drivers <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+</section>
+<!-- Integration & Trust -->
+<section class="px-margin-desktop pb-20 grid grid-cols-12 gap-gutter">
+<div class="col-span-12 lg:col-span-7 relative group overflow-hidden rounded-2xl h-[400px] shadow-lg">
+<img alt="Control Center" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPBpef5hmzymq60AuEtLXRkRwZsFGDzEPBR8mAgSR22r5blIcsksGVBxr9gH898WRe_qcAPv13VaHkqsYEFqnvig-JWWACDw-Qi4bjddaA3pmThb3QYX73Y1TeL0tTdtibf0Nvss_QVX4xLFBvDFXe-R6cYTeJFs83AUqq_Ej7RbuYKM4inHCNaBx7QSlfLmEd9V1Y1ELVbgJTUrWHc53oGzbJyAw0PnQyfbBFJGe2-83UO97L5hPolPuofIPsSv-u9FHYjARHlpY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10 text-white">
+<div class="flex items-center gap-4 mb-4">
+<div class="bg-secondary text-on-secondary px-3 py-1 rounded-full font-bold text-xs">APAD CONNECTED</div>
+<div class="flex gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
+</div>
+</div>
+<h4 class="font-headline-lg mb-2">Automated ICOP Monitoring</h4>
+<p class="text-primary-fixed max-w-md">Our APAD-compliant tracking feeds directly into payroll, ensuring that working hours and rest periods are automatically validated.</p>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-5 finance-card rounded-2xl p-8 flex flex-col justify-center">
+<div class="grid grid-cols-2 gap-6">
+<div class="flex flex-col items-center text-center p-6 rounded-2xl bg-surface-container-low hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-primary/20 cursor-default">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">account_balance_wallet</span>
+<p class="font-bold text-on-surface mb-1">EPF / KWSP</p>
+<p class="text-xs text-on-surface-variant">Monthly E-Caruman Uploads</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 rounded-2xl bg-surface-container-low hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-primary/20 cursor-default">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4">medical_services</span>
+<p class="font-bold text-on-surface mb-1">SOCSO / EIS</p>
+<p class="text-xs text-on-surface-variant">Real-time Benefit Filings</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 rounded-2xl bg-surface-container-low hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-primary/20 cursor-default">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-4">description</span>
+<p class="font-bold text-on-surface mb-1">LHDN PCB</p>
+<p class="text-xs text-on-surface-variant">Accurate EA Form Gen</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 rounded-2xl bg-surface-container-low hover:bg-white hover:shadow-md transition-all border border-transparent hover:border-primary/20 cursor-default">
+<span class="material-symbols-outlined text-4xl text-on-surface mb-4">approval_delegation</span>
+<p class="font-bold text-on-surface mb-1">APAD ICOP</p>
+<p class="text-xs text-on-surface-variant">Safety Audit Trail</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Payslip Preview -->
+<section class="px-margin-desktop pb-24">
+<div class="bg-primary/5 rounded-[32px] p-12 flex flex-col lg:flex-row items-center gap-12">
+<div class="lg:w-1/2">
+<h2 class="font-display-lg text-on-surface mb-6">Designed for <br/><span class="text-primary">Financial Clarity.</span></h2>
+<ul class="space-y-6 mb-10">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary font-bold">check_circle</span>
+<div>
+<p class="font-bold text-on-surface">Smart Trip Allowances</p>
+<p class="text-on-surface-variant">Mileage calculations happen automatically as the trip ends.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary font-bold">check_circle</span>
+<div>
+<p class="font-bold text-on-surface">Employee Self-Service</p>
+<p class="text-on-surface-variant">Drivers access slips and claims via the TCMS Go mobile app.</p>
+</div>
+</li>
+</ul>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-xl font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">Request Demo Slips</button>
+</div>
+<div class="lg:w-1/2 w-full">
+<!-- Mock Payslip UI -->
+<div class="bg-white rounded-2xl p-10 shadow-2xl border border-surface-container-high relative overflow-hidden">
+<div class="flex justify-between items-start mb-8 pb-6 border-b border-surface-container">
+<div>
+<p class="text-3xl font-bold text-on-surface">PAYSLIP</p>
+<p class="text-on-surface-variant font-label-sm uppercase mt-1">ID: TCMS-MY-102</p>
+</div>
+<div class="text-right">
+<p class="font-bold text-on-surface">Global Freight Sdn Bhd</p>
+<p class="text-on-surface-variant font-body-sm">March 2024</p>
+</div>
+</div>
+<div class="space-y-4 mb-10">
+<div class="flex justify-between text-on-surface"><span class="font-medium">Basic Salary</span><span class="font-bold">RM 3,500.00</span></div>
+<div class="flex justify-between text-on-surface"><span class="font-medium">Trip Allowances (Total 42)</span><span class="font-bold">RM 1,240.00</span></div>
+<div class="pt-4 border-t border-surface-container">
+<div class="flex justify-between text-error"><span class="font-medium">EPF (Employee)</span><span>- RM 315.00</span></div>
+<div class="flex justify-between text-error"><span class="font-medium">SOCSO / EIS</span><span>- RM 24.80</span></div>
+<div class="flex justify-between text-error"><span class="font-medium">LHDN PCB</span><span>- RM 45.00</span></div>
+</div>
+</div>
+<div class="flex justify-between items-center p-6 bg-surface-container-low rounded-2xl border-2 border-dashed border-outline-variant">
+<span class="font-bold text-on-surface text-lg uppercase tracking-wider">Net Pay</span>
+<span class="text-3xl font-bold text-primary">RM 4,355.20</span>
+</div>
+<!-- UI Overlay -->
+<div class="absolute bottom-6 right-6 bg-secondary text-on-secondary px-4 py-2 rounded-lg flex items-center gap-2 shadow-lg animate-bounce">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+<span class="text-xs font-bold uppercase tracking-tighter">Automated Audit Passed</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-surface-container-high bg-white">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-gutter px-margin-desktop py-20">
+<div class="col-span-2">
+<h3 class="font-display-lg text-headline-md text-primary mb-6">TCMS.ai</h3>
+<p class="text-on-surface-variant font-body-md max-w-sm">© 2024 TCMS.ai. Enterprise Intelligence for Global Freight. Specialized Malaysian Payroll and Compliance Engine.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-on-surface uppercase tracking-widest text-xs">Platform</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">GPS Tracking</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Route Optimization</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Load Planning</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-on-surface uppercase tracking-widest text-xs">Finance</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-primary font-medium hover:underline transition-colors text-sm" href="#">Accounting</a>
+<a class="text-primary font-medium hover:underline transition-colors text-sm" href="#">Payroll</a>
+<a class="text-primary font-medium hover:underline transition-colors text-sm" href="#">Banking</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-on-surface uppercase tracking-widest text-xs">Legal</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Security Audit</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm" href="#">Compliance</a>
+</nav>
+</div>
+</div>
+</footer>
+<script>
+    // Interaction effects
+    document.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('mousedown', () => btn.classList.add('scale-95'));
+        btn.addEventListener('mouseup', () => btn.classList.remove('scale-95'));
+    });
+</script>
+</body></html>

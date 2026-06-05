@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TCMS.ai | Run Your Entire Transport Business From One Place</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#191c1d",
+                    "surface-container-low": "#f3f4f5",
+                    "primary": "#00327d",
+                    "tertiary": "#353739",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#e2e2e5",
+                    "primary-fixed": "#dae2ff",
+                    "on-secondary-fixed-variant": "#00531a",
+                    "secondary-container": "#80f98b",
+                    "background": "#f8f9fa",
+                    "secondary-fixed-dim": "#66df75",
+                    "inverse-surface": "#2e3132",
+                    "primary-container": "#0047ab",
+                    "on-error": "#ffffff",
+                    "on-surface": "#191c1d",
+                    "surface-bright": "#f8f9fa",
+                    "surface-container": "#edeeef",
+                    "on-primary-fixed": "#001946",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#434653",
+                    "on-tertiary-fixed-variant": "#454749",
+                    "secondary-fixed": "#83fc8e",
+                    "outline-variant": "#c3c6d5",
+                    "on-primary-fixed-variant": "#00419e",
+                    "secondary": "#006e25",
+                    "surface-container-high": "#e7e8e9",
+                    "surface-dim": "#d9dadb",
+                    "tertiary-fixed-dim": "#c6c6c9",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#a5bdff",
+                    "tertiary-container": "#4c4d4f",
+                    "on-secondary-container": "#007327",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#b1c5ff",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#2559bd",
+                    "primary-fixed-dim": "#b1c5ff",
+                    "surface-variant": "#e1e3e4",
+                    "outline": "#737784",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface": "#f8f9fa",
+                    "inverse-on-surface": "#f0f1f2",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#bebec1",
+                    "on-secondary-fixed": "#002106",
+                    "on-tertiary-fixed": "#1a1c1e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "gutter": "20px",
+                    "sm": "8px",
+                    "xl": "32px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "xs": "4px",
+                    "margin": "24px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "title-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "title-lg": ["18px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["11px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #191c1d; overflow-x: hidden; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .shadow-soft { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+        .shadow-hover { box-shadow: 0 10px 25px -5px rgba(0, 50, 125, 0.1), 0 8px 10px -6px rgba(0, 50, 125, 0.1); }
+
+        /* Animation Keyframes */
+        @keyframes revealUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse-subtle {
+            0% { transform: scale(1); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+            50% { transform: scale(1.02); box-shadow: 0 8px 20px rgba(0, 50, 125, 0.15); }
+            100% { transform: scale(1); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+        }
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* Animation Utility Classes */
+        .reveal-hidden { opacity: 0; transform: translateY(20px); transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .reveal-visible { opacity: 1; transform: translateY(0); }
+        
+        .scale-reveal-hidden { opacity: 0; transform: scale(0.95); transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .scale-reveal-visible { opacity: 1; transform: scale(1); }
+
+        .btn-hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .btn-hover-lift:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0, 50, 125, 0.2); }
+
+        .pulse-primary { animation: pulse-subtle 3s infinite ease-in-out; }
+        .breathe-node { animation: breathe 4s infinite ease-in-out; }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-hidden, .scale-reveal-hidden, .btn-hover-lift, .pulse-primary, .breathe-node {
+                animation: none !important;
+                transition: none !important;
+                transform: none !important;
+                opacity: 1 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Header Navigation -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant">
+<div class="flex justify-between items-center px-margin max-w-container-max mx-auto h-16">
+<div class="font-headline-md text-headline-md font-bold text-primary">TCMS.ai</div>
+<nav class="hidden md:flex space-x-xl">
+<a class="text-primary font-semibold border-b-2 border-primary py-xs font-body-md text-body-md" href="#">Solutions</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">The Advantage</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Platform</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="hidden md:block text-primary font-semibold font-body-md text-body-md px-md py-sm hover:text-primary-container transition-colors">Login</button>
+<button class="bg-primary text-on-primary px-lg py-sm rounded font-body-md text-body-md font-semibold btn-hover-lift transition-all">Book Demo</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="pt-32 pb-xl px-margin">
+<div class="max-w-container-max mx-auto">
+<div class="grid lg:grid-cols-2 gap-xl items-center">
+<div class="space-y-lg">
+<h1 class="font-display-lg text-display-lg text-on-background leading-tight reveal-hidden" style="transition-delay: 100ms;">
+                        Run Your Entire Transport Business From <span class="text-primary">One Place.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl reveal-hidden" style="transition-delay: 200ms;">
+                        Track vehicles, manage trips, monitor fuel, automate compliance, invoice customers, and grow your transport business with complete visibility.
+                    </p>
+<div class="flex flex-wrap gap-md reveal-hidden" style="transition-delay: 300ms;">
+<button class="bg-primary text-on-primary px-xl py-md rounded-lg font-title-lg text-title-lg shadow-soft btn-hover-lift pulse-primary transition-transform">Book Live Demo</button>
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface px-xl py-md rounded-lg font-title-lg text-title-lg flex items-center gap-sm hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">play_circle</span> Watch 2-Minute Demo
+                        </button>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden aspect-[16/10] shadow-2xl reveal-hidden" style="transition-delay: 400ms;">
+<img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="A wide-angle cinematic shot of multiple modern heavy-duty logistics prime movers and trailers cruising down a sun-drenched Malaysian highway surrounded by lush tropical greenery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByeQbnpE06XNV9uWGPcJqB3ZHxQvK1DRlTa6v_-HTjS9MnsgCiW1sF1nOyzrPG-PFcL2hNbexS5Q_RPBCG2YYSJ0DfvBZH5LzJe4sgpXTop4ZvEptNhz1mZ19RHTw4mddCFMwI08RiOzCTBxeUzc9PKCqxMNqEBK_RpHznjE4XQenkH3qrEj0H3oFrZ0F-1Fd_7knZN_7Bgjudp5c4mE1LGRYoK3ElGEHD0gGFKhZicmpFJdLbJ5PkrYj1JPIkCOdinIxe0UZdK8A"/>
+</div>
+</div>
+<!-- Trust Row -->
+<div class="mt-xl border-t border-outline-variant pt-lg reveal-hidden" style="transition-delay: 500ms;">
+<div class="flex flex-wrap justify-between items-center gap-md opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-xs font-label-md text-label-md uppercase tracking-wider">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">location_on</span> GPS Tracking
+                    </div>
+<div class="flex items-center gap-xs font-label-md text-label-md uppercase tracking-wider">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified</span> APAD Compliance
+                    </div>
+<div class="flex items-center gap-xs font-label-md text-label-md uppercase tracking-wider">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_shipping</span> Fleet Management
+                    </div>
+<div class="flex items-center gap-xs font-label-md text-label-md uppercase tracking-wider">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">hub</span> Customer Portal
+                    </div>
+<div class="flex items-center gap-xs font-label-md text-label-md uppercase tracking-wider">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span> Payroll &amp; Accounting
+                    </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Pain Points -->
+<section class="bg-surface-container-low py-xl px-margin">
+<div class="max-w-container-max mx-auto text-center mb-xl reveal-hidden">
+<h2 class="font-headline-lg text-headline-lg mb-md">Still Managing Your Fleet Through Calls, WhatsApp and Excel?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Manual operations lead to hidden costs and lost time. TCMS.ai eliminates the chaos.</p>
+</div>
+<div class="max-w-container-max mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-gutter stagger-reveal">
+<!-- Problem Card -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border-b-4 border-transparent border-outline-variant hover:border-error transition-all duration-300 hover:shadow-lg reveal-hidden">
+<span class="material-symbols-outlined text-error mb-md text-[32px]">phone_disabled</span>
+<h3 class="font-title-lg text-title-lg mb-sm">Drivers not answering calls</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Constant calling to check location disrupts drivers and wastes your dispatch team's time.</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border-b-4 border-transparent border-outline-variant hover:border-error transition-all duration-300 hover:shadow-lg reveal-hidden">
+<span class="material-symbols-outlined text-error mb-md text-[32px]">forum</span>
+<h3 class="font-title-lg text-title-lg mb-sm">Customers requesting updates</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Dealing with repetitive "Where is my shipment?" calls prevents you from focusing on growth.</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border-b-4 border-transparent border-outline-variant hover:border-error transition-all duration-300 hover:shadow-lg reveal-hidden">
+<span class="material-symbols-outlined text-error mb-md text-[32px]">gas_meter</span>
+<h3 class="font-title-lg text-title-lg mb-sm">Fuel wastage/theft</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Undetected siphoning and excessive idling are silently eating into your monthly margins.</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border-b-4 border-transparent border-outline-variant hover:border-error transition-all duration-300 hover:shadow-lg reveal-hidden">
+<span class="material-symbols-outlined text-error mb-md text-[32px]">build_circle</span>
+<h3 class="font-title-lg text-title-lg mb-sm">Missed maintenance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Unplanned breakdowns happen because you're tracking service dates on a wall calendar.</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border-b-4 border-transparent border-outline-variant hover:border-error transition-all duration-300 hover:shadow-lg reveal-hidden">
+<span class="material-symbols-outlined text-error mb-md text-[32px]">pending_actions</span>
+<h3 class="font-title-lg text-title-lg mb-sm">Delayed invoicing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Waiting days for physical PODs to return means you're being paid weeks later than you should.</p>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border-b-4 border-transparent border-outline-variant hover:border-error transition-all duration-300 hover:shadow-lg reveal-hidden">
+<span class="material-symbols-outlined text-error mb-md text-[32px]">report_problem</span>
+<h3 class="font-title-lg text-title-lg mb-sm">Compliance overload</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Struggling to keep up with APAD and JPJ renewals and driver permit expirations.</p>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-xl bg-primary-container p-lg rounded-xl flex items-center justify-between text-on-primary scale-reveal-hidden">
+<h4 class="font-headline-md text-headline-md">TCMS.ai Solves All Of These</h4>
+<button class="bg-surface-container-lowest text-primary px-lg py-md rounded-lg font-title-lg font-bold btn-hover-lift">See How It Works</button>
+</div>
+</section>
+<!-- Section 3: Complete Visibility -->
+<section class="py-xl px-margin bg-surface">
+<div class="max-w-container-max mx-auto grid lg:grid-cols-2 gap-xl items-center">
+<div class="order-2 lg:order-1 reveal-hidden">
+<div class="bg-white rounded-xl shadow-2xl border border-outline-variant overflow-hidden group">
+<img class="w-full transition-transform duration-1000 group-hover:scale-110" data-alt="A clean, sophisticated user interface of a fleet management dashboard displaying a high-resolution interactive map of West Malaysia." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzEaWBpm62rp7FdRJqHmMesyWPb5liGEJhW6G3RnQzmXLMt6Uj9z8UuWzCn-xWPY0LLwRlaTUJhTV5-17Cfb6-grx2QLA7TQYMfRFnEMEp1KxIaCuR4hzBrsHJ9xCZKhTJB7HquAFJoUHMbs3Z6SfslN_g7hiS0lOYuT2oJVlf_wZXbVpuPCzqFNJ9twz6rLaWveVsSqgVxVm1G0omddRFBznlcLeKxhMVWlBIrqbMQhla11alRaAz2RBAAt0rvb2_cn1hky5Z-Ew"/>
+</div>
+</div>
+<div class="order-1 lg:order-2 space-y-lg reveal-hidden">
+<h2 class="font-headline-lg text-headline-lg">Know Where Every Vehicle Is. <span class="text-primary">Right Now.</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex gap-md group">
+<span class="material-symbols-outlined text-primary text-[28px] group-hover:rotate-12 transition-transform">radar</span>
+<div>
+<h4 class="font-title-lg text-title-lg">Live GPS Tracking</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time location updates every 10 seconds.</p>
+</div>
+</div>
+<div class="flex gap-md group">
+<span class="material-symbols-outlined text-primary text-[28px] group-hover:rotate-12 transition-transform">history</span>
+<div>
+<h4 class="font-title-lg text-title-lg">Route Replay</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Review historical trips to verify routes taken.</p>
+</div>
+</div>
+<div class="flex gap-md group">
+<span class="material-symbols-outlined text-primary text-[28px] group-hover:rotate-12 transition-transform">share_location</span>
+<div>
+<h4 class="font-title-lg text-title-lg">Geofencing</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Instant alerts when vehicles enter/exit zones.</p>
+</div>
+</div>
+<div class="flex gap-md group">
+<span class="material-symbols-outlined text-primary text-[28px] group-hover:rotate-12 transition-transform">speed</span>
+<div>
+<h4 class="font-title-lg text-title-lg">Speed Monitoring</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Control safety and fuel costs by monitoring speed.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Customer Experience -->
+<section class="bg-surface-container-low py-xl px-margin">
+<div class="max-w-container-max mx-auto text-center mb-xl reveal-hidden">
+<h2 class="font-headline-lg text-headline-lg">Give Your Customers Amazon-Like Shipment Visibility</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">"Fewer calls. More trust. More repeat business."</p>
+</div>
+<div class="max-w-container-max mx-auto grid lg:grid-cols-5 gap-xl items-center">
+<div class="lg:col-span-2 space-y-md stagger-reveal">
+<div class="bg-surface-container-lowest p-md rounded-lg border border-outline-variant hover:border-primary transition-colors reveal-hidden">
+<h4 class="font-title-lg text-title-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary">check_circle</span> Live Shipment Tracking
+                    </h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Send a secure link to your customer for real-time tracking.</p>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-lg border border-outline-variant hover:border-primary transition-colors reveal-hidden">
+<h4 class="font-title-lg text-title-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary">notifications_active</span> WhatsApp Notifications
+                    </h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Auto-alerts when the cargo is loaded or delivered.</p>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-lg border border-outline-variant hover:border-primary transition-colors reveal-hidden">
+<h4 class="font-title-lg text-title-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary">digital_out_of_home</span> Digital POD
+                    </h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Electronic Proof of Delivery with photos and e-signatures.</p>
+</div>
+</div>
+<div class="lg:col-span-3 reveal-hidden">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl p-xl border border-outline-variant">
+<div class="flex justify-between items-center mb-lg">
+<h5 class="font-title-lg text-title-lg">Shipment #MY-982314</h5>
+<span class="bg-secondary-container text-on-secondary-container px-md py-xs rounded-full font-label-md text-label-md">IN TRANSIT</span>
+</div>
+<div class="space-y-lg relative">
+<div class="absolute left-[11px] top-4 bottom-4 w-[2px] bg-outline-variant"></div>
+<div class="flex items-center gap-md relative group">
+<div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-on-secondary z-10">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="group-hover:translate-x-1 transition-transform">
+<p class="font-body-md text-body-md font-bold">Picked Up</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Klang Warehouse - 09:15 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-md relative group">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary z-10 shadow-lg animate-pulse">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+</div>
+<div class="group-hover:translate-x-1 transition-transform">
+<p class="font-body-md text-body-md font-bold text-primary">In Transit</p>
+<p class="font-label-md text-label-md text-on-surface-variant">On Federal Highway - ETA 12:30 PM</p>
+</div>
+</div>
+<div class="flex items-center gap-md relative group">
+<div class="w-6 h-6 rounded-full bg-surface-container-high border-2 border-outline-variant z-10"></div>
+<div class="group-hover:translate-x-1 transition-transform">
+<p class="font-body-md text-body-md text-on-surface-variant">Scheduled Delivery</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Bayan Lepas, Penang</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Fuel & Cost Control -->
+<section class="py-xl px-margin bg-surface">
+<div class="max-w-container-max mx-auto grid lg:grid-cols-2 gap-xl items-center">
+<div class="space-y-lg reveal-hidden">
+<h2 class="font-headline-lg text-headline-lg">Stop Losing Money On Fuel</h2>
+<div class="space-y-md">
+<div class="flex items-start gap-md group">
+<div class="bg-primary-fixed p-sm rounded-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div>
+<h4 class="font-title-lg text-title-lg">Fuel Theft Detection</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Automated alerts for sudden fuel level drops (siphoning) during trips.</p>
+</div>
+</div>
+<div class="flex items-start gap-md group">
+<div class="bg-primary-fixed p-sm rounded-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">timer</span>
+</div>
+<div>
+<h4 class="font-title-lg text-title-lg">Idle Time Monitoring</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Identify drivers leaving engines running unnecessarily.</p>
+</div>
+</div>
+<div class="flex items-start gap-md group">
+<div class="bg-primary-fixed p-sm rounded-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<div>
+<h4 class="font-title-lg text-title-lg">Trip Profitability</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Automatically calculate if a trip was profitable after fuel and driver costs.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="reveal-hidden">
+<div class="bg-surface-container-lowest p-xl rounded-xl border border-outline-variant shadow-soft hover:shadow-xl transition-shadow duration-500">
+<h5 class="font-title-lg text-title-lg mb-xl text-center">Monthly Fuel Spend Per Fleet (RM)</h5>
+<div class="flex items-end justify-around h-64 gap-lg">
+<div class="flex flex-col items-center w-full max-w-[80px]">
+<div class="bg-on-surface-variant w-full h-full rounded-t-lg transition-all duration-1000 bar-manual" style="height: 0;"></div>
+<p class="mt-sm font-label-md text-label-md text-center">Manual Mgmt</p>
+<p class="font-body-md font-bold text-on-surface-variant">RM 45,000</p>
+</div>
+<div class="flex flex-col items-center w-full max-w-[80px]">
+<div class="bg-primary w-full h-0 rounded-t-lg transition-all duration-1000 bar-tcms"></div>
+<p class="mt-sm font-label-md text-label-md text-center">TCMS.ai</p>
+<p class="font-body-md font-bold text-primary">RM 31,500</p>
+</div>
+</div>
+<div class="mt-xl p-md bg-secondary-container/20 border border-secondary/30 rounded-lg text-center reveal-hidden">
+<p class="font-title-lg text-title-lg text-secondary font-bold">Estimated Savings: 30%</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Malaysian Compliance -->
+<section class="bg-surface-container-low py-xl px-margin">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-xl reveal-hidden">
+<h2 class="font-headline-lg text-headline-lg mb-md">Built For Malaysian Transport Operations</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">We understand local regulations, so you don't have to worry about them.</p>
+</div>
+<div class="grid md:grid-cols-4 gap-gutter stagger-reveal">
+<div class="bg-white p-lg rounded-xl shadow-soft text-center border border-outline-variant hover:border-primary transition-all hover:scale-[1.02] reveal-hidden">
+<div class="w-16 h-16 mx-auto mb-md bg-surface-container flex items-center justify-center rounded-full transition-colors hover:bg-primary-fixed">
+<span class="material-symbols-outlined text-primary text-[32px]">verified_user</span>
+</div>
+<h4 class="font-title-lg text-title-lg">APAD Integration</h4>
+<p class="font-body-sm text-label-md text-on-surface-variant mt-xs">Automatic permit tracking &amp; reminders.</p>
+</div>
+<div class="bg-white p-lg rounded-xl shadow-soft text-center border border-outline-variant hover:border-primary transition-all hover:scale-[1.02] reveal-hidden">
+<div class="w-16 h-16 mx-auto mb-md bg-surface-container flex items-center justify-center rounded-full transition-colors hover:bg-primary-fixed">
+<span class="material-symbols-outlined text-primary text-[32px]">assignment_ind</span>
+</div>
+<h4 class="font-title-lg text-title-lg">JPJ Support</h4>
+<p class="font-body-sm text-label-md text-on-surface-variant mt-xs">Driver license and road tax management.</p>
+</div>
+<div class="bg-white p-lg rounded-xl shadow-soft text-center border border-outline-variant hover:border-primary transition-all hover:scale-[1.02] reveal-hidden">
+<div class="w-16 h-16 mx-auto mb-md bg-surface-container flex items-center justify-center rounded-full transition-colors hover:bg-primary-fixed">
+<span class="material-symbols-outlined text-primary text-[32px]">health_and_safety</span>
+</div>
+<h4 class="font-title-lg text-title-lg">Driver Compliance</h4>
+<p class="font-body-sm text-label-md text-on-surface-variant mt-xs">Manage medical checkups and GDL/E-Hailing permits.</p>
+</div>
+<div class="bg-white p-lg rounded-xl shadow-soft text-center border border-outline-variant hover:border-primary transition-all hover:scale-[1.02] reveal-hidden">
+<div class="w-16 h-16 mx-auto mb-md bg-surface-container flex items-center justify-center rounded-full transition-colors hover:bg-primary-fixed">
+<span class="material-symbols-outlined text-primary text-[32px]">description</span>
+</div>
+<h4 class="font-title-lg text-title-lg">Permit Mgmt</h4>
+<p class="font-body-sm text-label-md text-on-surface-variant mt-xs">Digital repository for all vehicle permits.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Everything Connected -->
+<section class="py-xl px-margin bg-surface">
+<div class="max-w-container-max mx-auto text-center mb-xl reveal-hidden">
+<h2 class="font-headline-lg text-headline-lg">Everything Connected</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">The central brain of your logistics operation.</p>
+</div>
+<div class="relative max-w-4xl mx-auto py-xl">
+<!-- Simplified Ecosystem Diagram -->
+<div class="flex justify-center items-center">
+<div class="w-48 h-48 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-2xl relative z-10 border-4 border-primary-fixed breathe-node">
+<div class="text-center">
+<p class="font-headline-md font-bold">TCMS.ai</p>
+<p class="font-label-sm">CORE HUB</p>
+</div>
+</div>
+<!-- Orbiting Elements -->
+<div class="absolute w-[80%] h-full flex justify-between items-center pointer-events-none">
+<div class="bg-white p-md rounded-xl border border-outline-variant shadow-lg -translate-x-1/2 pointer-events-auto hover:scale-110 hover:shadow-xl transition-all duration-300 reveal-hidden" style="transition-delay: 100ms;">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+<p class="font-label-md font-bold">Vehicles</p>
+</div>
+<div class="bg-white p-md rounded-xl border border-outline-variant shadow-lg translate-x-1/2 pointer-events-auto hover:scale-110 hover:shadow-xl transition-all duration-300 reveal-hidden" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-primary">person</span>
+<p class="font-label-md font-bold">Drivers</p>
+</div>
+</div>
+<div class="absolute w-full h-[70%] flex flex-col justify-between items-center pointer-events-none">
+<div class="bg-white p-md rounded-xl border border-outline-variant shadow-lg pointer-events-auto hover:scale-110 hover:shadow-xl transition-all duration-300 reveal-hidden" style="transition-delay: 300ms;">
+<span class="material-symbols-outlined text-primary">groups</span>
+<p class="font-label-md font-bold">Customers</p>
+</div>
+<div class="bg-white p-md rounded-xl border border-outline-variant shadow-lg pointer-events-auto hover:scale-110 hover:shadow-xl transition-all duration-300 reveal-hidden" style="transition-delay: 400ms;">
+<span class="material-symbols-outlined text-primary">receipt_long</span>
+<p class="font-label-md font-bold">Accounting</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 8: ROI Calculator -->
+<section class="py-xl px-margin bg-surface-container-low overflow-hidden">
+<div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-outline-variant scale-reveal-hidden">
+<div class="bg-primary p-lg text-on-primary">
+<h3 class="font-headline-md text-headline-md">Calculate Your Estimated Savings</h3>
+</div>
+<div class="p-xl grid md:grid-cols-2 gap-xl">
+<div class="space-y-lg">
+<div>
+<label class="font-label-md text-label-md uppercase mb-sm block">Fleet Size (Vehicles)</label>
+<input class="w-full h-2 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary" max="200" min="1" type="range" value="50"/>
+<div class="flex justify-between mt-xs font-body-md"><span>1</span><span>200+</span></div>
+</div>
+<div>
+<label class="font-label-md text-label-md uppercase mb-sm block">Avg. Monthly Fuel Spend (RM)</label>
+<input class="w-full p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="RM 50,000" type="number"/>
+</div>
+<div>
+<label class="font-label-md text-label-md uppercase mb-sm block">Manual Admin Hours/Week</label>
+<input class="w-full p-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="40" type="number"/>
+</div>
+</div>
+<div class="bg-surface-container p-lg rounded-xl space-y-md">
+<div class="border-b border-outline-variant pb-md">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Est. Monthly Fuel Savings</p>
+<p class="font-headline-md text-headline-md text-secondary counter-animate" data-prefix="RM " data-target="7500">RM 0</p>
+</div>
+<div class="border-b border-outline-variant pb-md">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Admin Time Saved</p>
+<p class="font-headline-md text-headline-md text-primary counter-animate" data-suffix=" Hours" data-target="65">0 Hours</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Est. Collection Speedup</p>
+<p class="font-headline-md text-headline-md text-primary counter-animate" data-suffix=" Days Faster" data-target="12">0 Days Faster</p>
+</div>
+<button class="w-full bg-primary text-on-primary py-md rounded-lg font-title-lg font-bold mt-md btn-hover-lift pulse-primary">Get Detailed ROI Report</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 9: Social Proof -->
+<section class="py-xl px-margin bg-white">
+<div class="max-w-container-max mx-auto">
+<div class="grid md:grid-cols-3 gap-xl text-center mb-xl stagger-reveal">
+<div class="reveal-hidden">
+<p class="font-display-lg text-display-lg text-primary counter-animate" data-suffix="+" data-target="12000">0+</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Vehicles Managed</p>
+</div>
+<div class="reveal-hidden">
+<p class="font-display-lg text-display-lg text-primary counter-animate" data-decimals="1" data-suffix="M+" data-target="1.5">0M+</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Trips Completed</p>
+</div>
+<div class="reveal-hidden">
+<p class="font-display-lg text-display-lg text-primary counter-animate" data-decimals="1" data-suffix="%" data-target="99.9">0%</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant">System Uptime</p>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-gutter stagger-reveal">
+<div class="p-xl bg-surface-container rounded-xl reveal-hidden hover:shadow-md transition-shadow">
+<p class="font-body-lg text-body-lg italic mb-lg">"TCMS.ai transformed our fleet operations. We used to spend hours on WhatsApp checking with drivers. Now, our customers track their own goods and our fuel costs have dropped significantly."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-outline-variant rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a Malay logistics executive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH3hUQhkJ7BPmYWXe9BEMWAkCmpwOEGLKHd5cQ8ACGMT0D4u-RsLnLWYXv-vTUBrkqZM4Krs5Gs5NUHeDepm0rsOb_5wqtly2Jrdt45vm-pVMQNG-GGnqsU_LtJswCUrayqVSJ-avFoW2qR__TStbLYseLj1kzW7CedWR4wqFQRMG7oivHgPZK2rBJv2EAVslxiedj4ygFPbzgoJcPwhnVTOv-Kjn1vkE-N8j39podIhh3NHMnm_4soLUwVtMhW07bsYVIelGoI2o"/>
+</div>
+<div>
+<p class="font-title-lg text-title-lg">Tan Sri Azman</p>
+<p class="font-label-md text-label-md text-on-surface-variant">MD, Azman Global Logistics</p>
+</div>
+</div>
+</div>
+<div class="p-xl bg-surface-container rounded-xl reveal-hidden hover:shadow-md transition-shadow">
+<p class="font-body-lg text-body-lg italic mb-lg">"The APAD and JPJ compliance reminders are lifesavers. No more expired permits or fines. It's the only system built specifically for the way we work in Malaysia."</p>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 bg-outline-variant rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a transport company owner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCjVd8qK1IRdR_sGg-AprqatPbJ5bW_3ZeB-4Dyaq2TXAB-QitfC5dR2zMlGZKPrdPW4VgCvW2m7NNHXXMwmMrtPEaZpWoQ27Fvi5rnr9be8A1YT742KK-k-__UI5p4TnPxp5IM6Esza0SxhFXAROTlAcN_mhVnQqOUmSXAVuAQDh7YAgmyp-0ywfLItHpnMP_YP386OMmP-TL9IhKmpZSQBS2EvnLIXLgCjzVhclutq_DUM0uyPRcOFFJZlVJRl-IMtcJZzOqDl0"/>
+</div>
+<div>
+<p class="font-title-lg text-title-lg">Kevin Lim</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Founder, KL Freight Services</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 10: Pricing -->
+<section class="py-xl px-margin bg-surface-container-low">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-xl reveal-hidden">
+<h2 class="font-headline-lg text-headline-lg">Simple, Transparent Pricing</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Plans that scale with your transport business.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter stagger-reveal items-stretch">
+<!-- Pricing Card -->
+<div class="bg-white p-xl rounded-xl border border-outline-variant flex flex-col hover:border-primary transition-all duration-300 hover:shadow-xl reveal-hidden">
+<h4 class="font-headline-md text-headline-md">Starter</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">For small fleets up to 10 vehicles.</p>
+<div class="mb-xl">
+<span class="text-[40px] font-bold">RM 199</span><span class="text-on-surface-variant">/mo</span>
+</div>
+<ul class="space-y-md mb-xl flex-grow">
+<li class="flex items-center gap-sm"><span class="material-symbols-outlined text-secondary">check</span> Live GPS Tracking</li>
+<li class="flex items-center gap-sm"><span class="material-symbols-outlined text-secondary">check</span> Trip Management</li>
+<li class="flex items-center gap-sm"><span class="material-symbols-outlined text-secondary">check</span> Basic Reports</li>
+<li class="flex items-center gap-sm text-on-surface-variant opacity-50"><span class="material-symbols-outlined">close</span> Fuel Monitoring</li>
+</ul>
+<button class="w-full border border-primary text-primary py-md rounded-lg font-bold hover:bg-primary hover:text-on-primary transition-all">Start Free Trial</button>
+</div>
+<!-- Featured Pricing -->
+<div class="bg-white p-xl rounded-xl border-2 border-primary shadow-xl flex flex-col relative md:scale-105 z-10 transition-all duration-300 hover:scale-110 hover:shadow-2xl reveal-hidden">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-on-primary px-lg py-xs rounded-full font-label-md">MOST POPULAR</div>
+<h4 class="font-headline-md text-headline-md">Growth</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">For growing fleets up to 50 vehicles.</p>
+<div class="mb-xl">
+<span class="text-[40px] font-bold">RM 499</span><span class="text-on-surface-variant">/mo</span>
+</div>
+<ul class="space-y-md mb-xl flex-grow">
+<li class="flex items-center gap-sm"><span class="material-symbols-outlined text-secondary">check</span> All Starter Features</li>
+<li class="flex items-center gap-sm"><span class="material-symbols-outlined text-secondary">check</span> Fuel Monitoring &amp; Alerts</li>
+<li class="flex items-center gap-sm"><span class="material-symbols-outlined text-secondary">check</span> Customer Portal Access</li>
+<li class="flex items-center gap-sm"><span class="material-symbols-outlined text-secondary">check</span> APAD Compliance Tool</li>
+</ul>
+<button class="w-full bg-primary text-on-primary py-md rounded-lg font-bold shadow-lg btn-hover-lift pulse-primary">Choose Growth</button>
+</div>
+<div class="bg-white p-xl rounded-xl border border-outline-variant flex flex-col hover:border-primary transition-all duration-300 hover:shadow-xl reveal-hidden">
+<h4 class="font-headline-md text-headline-md">Enterprise</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">For large fleets &amp; custom needs.</p>
+<div class="mb-xl">
+<span class="text-[40px] font-bold">Custom</span>
+</div>
+<ul class="space-y-md mb-xl flex-grow">
+<li class="flex items-center gap-sm"><span class="material-symbols-outlined text-secondary">check</span> Unlimited Vehicles</li>
+<li class="flex items-center gap-sm"><span class="material-symbols-outlined text-secondary">check</span> API &amp; ERP Integrations</li>
+<li class="flex items-center gap-sm"><span class="material-symbols-outlined text-secondary">check</span> Dedicated Account Manager</li>
+<li class="flex items-center gap-sm"><span class="material-symbols-outlined text-secondary">check</span> Custom Driver Training</li>
+</ul>
+<button class="w-full border border-primary text-primary py-md rounded-lg font-bold hover:bg-primary hover:text-on-primary transition-all">Contact Sales</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-xl px-margin bg-primary text-on-primary text-center overflow-hidden">
+<div class="max-w-2xl mx-auto space-y-lg reveal-hidden">
+<h2 class="font-display-lg text-display-lg">Ready To Grow Your Transport Business?</h2>
+<p class="font-body-lg text-body-lg opacity-80">Join 500+ Malaysian transport companies using TCMS.ai to increase efficiency and cut costs.</p>
+<button class="bg-white text-primary px-xl py-lg rounded-xl font-headline-md font-bold shadow-2xl transition-all hover:scale-110 active:scale-95 pulse-primary">Book Live Demo Now</button>
+<p class="font-label-md text-label-md opacity-60">No credit card required. Setup in less than 48 hours.</p>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface border-t border-outline-variant">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-gutter px-margin py-xl max-w-container-max mx-auto">
+<div class="col-span-2">
+<div class="font-headline-md text-headline-md font-bold text-primary mb-md">TCMS.ai</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">The leading transportation management system built specifically for the Malaysian logistics market.</p>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-primary mb-md uppercase">Product</p>
+<ul class="space-y-sm font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">GPS Tracking</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Fuel Management</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Customer Portal</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Compliance</a></li>
+</ul>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-primary mb-md uppercase">Company</p>
+<ul class="space-y-sm font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Press</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-primary mb-md uppercase">Resources</p>
+<ul class="space-y-sm font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Documentation</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Community</a></li>
+</ul>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-primary mb-md uppercase">Legal</p>
+<ul class="space-y-sm font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="px-margin py-lg border-t border-outline-variant max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
+<p class="font-label-md text-label-md text-on-surface-variant">© 2024 TCMS.ai. Powered by AOT Technologies. All rights reserved. Registered in Malaysia.</p>
+<div class="flex gap-lg">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer hover:scale-110 transition-transform">face_nod</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer hover:scale-110 transition-transform">linked_camera</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer hover:scale-110 transition-transform">mail</span>
+</div>
+</div>
+</footer>
+<script>
+    // Intersection Observer for Reveal Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('scale-reveal-hidden')) {
+                    entry.target.classList.add('scale-reveal-visible');
+                } else {
+                    entry.target.classList.add('reveal-visible');
+                }
+                
+                // Trigger counter if present
+                if (entry.target.classList.contains('counter-animate')) {
+                    animateCounter(entry.target);
+                }
+
+                // Trigger Bar Animation
+                if (entry.target.classList.contains('bar-manual')) entry.target.style.height = '100%';
+                if (entry.target.classList.contains('bar-tcms')) entry.target.style.height = '70%';
+            }
+        });
+    }, observerOptions);
+
+    // Initial trigger for top of page elements
+    document.querySelectorAll('.reveal-hidden, .scale-reveal-hidden, .counter-animate, .bar-manual, .bar-tcms').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    // Stagger delays for grids
+    document.querySelectorAll('.stagger-reveal').forEach(container => {
+        const items = container.querySelectorAll('.reveal-hidden');
+        items.forEach((item, index) => {
+            item.style.transitionDelay = `${(index + 1) * 100}ms`;
+        });
+    });
+
+    // Counter Animation Logic
+    function animateCounter(el) {
+        if (el.dataset.animated) return;
+        el.dataset.animated = "true";
+        
+        const target = parseFloat(el.dataset.target);
+        const prefix = el.dataset.prefix || "";
+        const suffix = el.dataset.suffix || "";
+        const decimals = parseInt(el.dataset.decimals) || 0;
+        const duration = 2000;
+        const startTime = performance.now();
+
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easeProgress = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+            const currentVal = (easeProgress * target).toFixed(decimals);
+            
+            el.textContent = prefix + parseFloat(currentVal).toLocaleString() + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            }
+        }
+        requestAnimationFrame(update);
+    }
+
+    // ROI Calculator Interaction Enhancement
+    const range = document.querySelector('input[type="range"]');
+    if (range) {
+        range.addEventListener('input', function() {
+            const fleetSize = this.value;
+            const savingsEl = document.querySelectorAll('.font-headline-md.text-secondary')[0];
+            const hoursEl = document.querySelectorAll('.font-headline-md.text-primary')[0];
+            
+            const savingsVal = fleetSize * 150;
+            const hoursVal = (fleetSize * 1.3).toFixed(0);
+            
+            savingsEl.textContent = 'RM ' + savingsVal.toLocaleString();
+            hoursEl.textContent = hoursVal + ' Hours';
+            
+            // Subtle feedback scale
+            savingsEl.style.transform = 'scale(1.05)';
+            setTimeout(() => savingsEl.style.transform = 'scale(1)', 100);
+        });
+    }
+</script>
+</body></html>
