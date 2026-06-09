@@ -17,17 +17,17 @@ export function SectionHeader({
   return (
     <div
       className={cn(
-        "mb-12 md:mb-16",
-        align === "center" && "mx-auto max-w-3xl text-center",
+        "mb-5 md:mb-10",
+        align === "center" && "mx-auto text-center",
         align === "left" && "max-w-2xl text-left",
         className,
       )}
     >
-      <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+      <h2 className="text-2xl text-start md:text-center font-bold tracking-tight md:text-4xl">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-base leading-relaxed text-slate-600 md:text-lg">
+        <p className="mt-4 text-sm text-start md:text-center leading-relaxed text-[#434653] md:text-base">
           {subtitle}
         </p>
       )}

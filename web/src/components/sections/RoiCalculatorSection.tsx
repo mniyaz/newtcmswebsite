@@ -23,16 +23,16 @@ export function RoiCalculatorSection({ roiCalculator }: RoiCalculatorSectionProp
   );
 
   return (
-    <Section variant="muted" containerClassName="max-w-4xl">
-      <RevealOnScroll variant="scale">
-        <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-card-hover">
-          <div className="bg-primary px-6 py-5 md:px-8 md:py-6">
+    <div className="md:py-10 py-5 px-5 md:px-10 lg:px-0 !bg-[#F3F4F5]">
+      <RevealOnScroll variant="scale" className="max-w-5xl mx-auto">
+        <div className="overflow-hidden rounded-2xl border border-[#C3C6D5] bg-white shadow-card-hover">
+          <div className="bg-[#00327D] px-6 py-5 md:px-8 md:py-6">
             <h3 className="text-xl font-bold text-white md:text-2xl">
               {roiCalculator.title}
             </h3>
           </div>
           <div className="grid gap-8 p-6 md:grid-cols-2 md:gap-0 md:p-0">
-            <div className="space-y-6 md:border-r md:border-slate-200 md:p-8">
+            <div className="space-y-6 md:p-8">
               <div>
                 <label className="mb-3 block text-xs font-bold uppercase tracking-wider text-slate-500">
                   Fleet Size (Vehicles)
@@ -58,7 +58,7 @@ export function RoiCalculatorSection({ roiCalculator }: RoiCalculatorSectionProp
                 <input
                   type="number"
                   placeholder={roiCalculator.fuelSpendPlaceholder}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  className="w-full rounded-md border border-[#C3C6D5] bg-white px-4 py-4 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
                 />
               </div>
               <div>
@@ -68,42 +68,49 @@ export function RoiCalculatorSection({ roiCalculator }: RoiCalculatorSectionProp
                 <input
                   type="number"
                   placeholder={roiCalculator.adminHoursPlaceholder}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  className="w-full rounded-md border border-[#C3C6D5] bg-white px-4 py-4 text-sm outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
                 />
               </div>
             </div>
-            <div className="space-y-5 bg-slate-50 p-6 md:p-8">
-              <div className="border-b border-slate-200 pb-5">
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+            <div className="space-y-5 bg-[#EDEEEF] p-6 md:p-8 md:m-5 m-0 rounded-lg">
+              <div className="border-b-2 border-[#C3C6D5] pb-5">
+                <p className="text-xs uppercase text-[#434653]">
                   {roiCalculator.results.fuelSavingsLabel}
                 </p>
-                <p className="mt-1 text-3xl font-bold text-emerald-600">
+                <p className="mt-1 text-2xl font-bold text-emerald-600">
                   RM {calculations.fuelSavings.toLocaleString()}
                 </p>
               </div>
-              <div className="border-b border-slate-200 pb-5">
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+              <div className="border-b-2 border-[#C3C6D5] pb-5">
+                <p className="text-xs uppercase text-[#434653]">
                   {roiCalculator.results.adminTimeLabel}
                 </p>
-                <p className="mt-1 text-3xl font-bold text-primary">
+                <p className="mt-1 text-2xl font-bold text-primary">
                   {calculations.adminHours} Hours
                 </p>
               </div>
               <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                <p className="text-xs uppercase text-[#434653]">
                   {roiCalculator.results.collectionLabel}
                 </p>
-                <p className="mt-1 text-3xl font-bold text-primary">
+                <p className="mt-1 text-2xl font-bold text-primary">
                   {calculations.collectionDays} Days Faster
                 </p>
               </div>
-              <Button pulse size="lg" className="mt-2 w-full">
-                {roiCalculator.cta.label}
-              </Button>
+              <div className="md:hidden block">
+                <Button className="mt-2 w-full !rounded-md bg-[#00327D] text-white !text-base">
+                  {roiCalculator.cta.label}
+                </Button>
+              </div>
+              <div className="hidden md:block">
+                <Button size="lg" className="mt-2 w-full !rounded-md bg-[#00327D] text-white !text-base">
+                  {roiCalculator.cta.label}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       </RevealOnScroll>
-    </Section>
+    </div>
   );
 }

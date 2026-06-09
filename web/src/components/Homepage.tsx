@@ -32,7 +32,7 @@ export function Homepage({ content }: HomepageProps) {
         <RoiCalculatorSection roiCalculator={content.roiCalculator} />
         <SocialProofSection socialProof={content.socialProof} />
         <PricingSection pricing={content.pricing} />
-        <FinalCtaSection finalCta={content.finalCta} />
+        {/* <FinalCtaSection finalCta={content.finalCta} /> */}
       </main>
       <Footer footer={content.footer} />
     </>

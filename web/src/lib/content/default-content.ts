@@ -9,9 +9,9 @@ export const defaultHomepageContent: HomepageContent = {
   navigation: {
     brand: "TCMS.ai",
     links: [
-      { label: "Solutions", href: "#solutions", isActive: true },
+      { label: "Platforms", href: "#solutions", isActive: true },
       { label: "The Advantage", href: "#advantage" },
-      { label: "Platform", href: "#platform" },
+      { label: "Solutions", href: "#platform" },
       { label: "Contact", href: "#contact" },
     ],
     loginLabel: "Login",

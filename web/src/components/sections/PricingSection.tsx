@@ -12,17 +12,17 @@ interface PricingSectionProps {
 
 export function PricingSection({ pricing }: PricingSectionProps) {
   return (
-    <Section variant="muted">
+    <div className="md:py-10 py-5 px-5 md:px-10 lg:px-0 !bg-[#F3F4F5]">
       <SectionHeader title={pricing.title} subtitle={pricing.subtitle} />
-      <StaggerReveal className="grid items-stretch gap-6 lg:grid-cols-3 lg:gap-8">
+      <StaggerReveal className="grid items-stretch gap-6 lg:grid-cols-3 lg:gap-8 container mx-auto">
         {pricing.plans.map((plan, index) => (
           <StaggerItem key={plan.name} index={index}>
             <div
               className={cn(
-                "relative flex h-full flex-col rounded-2xl border bg-white p-6 shadow-card transition-all duration-300 md:p-8",
+                "relative flex h-full flex-col rounded-2xl border bg-white p-4 shadow-card transition-all duration-300 md:p-8",
                 plan.isFeatured
-                  ? "z-10 border-2 border-primary shadow-card-hover lg:-mt-2 lg:mb-2 lg:scale-[1.03]"
-                  : "border-slate-200/80 hover:border-primary/30 hover:shadow-card-hover",
+                  ? "z-10 border-2 border-[#00327D] shadow-card-hover lg:-mt-2 lg:mb-2 lg:scale-[1.03]"
+                  : "border-[#C3C6D5] hover:border-[#00327D] hover:shadow-card-hover",
               )}
             >
               {plan.badge && (
@@ -30,7 +30,7 @@ export function PricingSection({ pricing }: PricingSectionProps) {
                   {plan.badge}
                 </div>
               )}
-              <h4 className="text-xl font-bold text-slate-900">{plan.name}</h4>
+              <h4 className="text-2xl font-bold text-slate-900">{plan.name}</h4>
               <p className="mt-2 text-sm text-slate-600">{plan.description}</p>
               <div className="my-6 border-b border-slate-100 pb-6">
                 <span className="text-4xl font-bold text-slate-900">{plan.price}</span>
@@ -43,12 +43,12 @@ export function PricingSection({ pricing }: PricingSectionProps) {
                   <li
                     key={feature.label}
                     className={cn(
-                      "flex items-start gap-2.5 text-sm",
+                      "flex items-center gap-2.5 text-sm",
                       !feature.included && "text-slate-400",
                     )}
                   >
                     <MaterialIcon
-                      name={feature.included ? "check_circle" : "cancel"}
+                      name={feature.included ? "check" : "cancel"}
                       className={cn(
                         "mt-0.5 shrink-0 text-[18px]",
                         feature.included ? "text-emerald-600" : "text-slate-300",
@@ -59,18 +59,30 @@ export function PricingSection({ pricing }: PricingSectionProps) {
                   </li>
                 ))}
               </ul>
-              <Button
-                variant={plan.isFeatured ? "primary" : "outline"}
-                pulse={plan.isFeatured}
-                size="lg"
-                className="w-full"
-              >
-                {plan.cta.label}
-              </Button>
+              <div className="hidden md:block">
+                <Button
+                  variant={plan.isFeatured ? "primary" : "outline"}
+                  pulse={plan.isFeatured}
+                  size="lg"
+                  className="w-full"
+                >
+                  {plan.cta.label}
+                </Button>
+              </div>
+              <div className="block md:hidden">
+                <Button
+                  variant={plan.isFeatured ? "primary" : "outline"}
+                  pulse={plan.isFeatured}
+
+                  className="w-full"
+                >
+                  {plan.cta.label}
+                </Button>
+              </div>
             </div>
           </StaggerItem>
         ))}
       </StaggerReveal>
-    </Section>
+    </div>
   );
 }

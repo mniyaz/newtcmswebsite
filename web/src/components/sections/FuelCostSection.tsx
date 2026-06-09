@@ -69,8 +69,8 @@ function FuelBar({
 
 export function FuelCostSection({ fuelCost }: FuelCostSectionProps) {
   return (
-    <Section variant="white">
-      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+    <div className="!bg-[#F8F9FA] md:py-10 py-5 px-5 md:px-10 lg:px-0">
+      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16 container mx-auto">
         <div className="space-y-8">
           <RevealOnScroll>
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
@@ -90,7 +90,7 @@ export function FuelCostSection({ fuelCost }: FuelCostSectionProps) {
           </div>
         </div>
         <RevealOnScroll>
-          <Card padding="lg" className="shadow-card-hover">
+          <Card padding="lg" className="shadow-card-hover !border !border-[#C3C6D5] hidden md:block">
             <h5 className="mb-8 text-center text-lg font-semibold text-slate-900">
               {fuelCost.chart.title}
             </h5>
@@ -99,14 +99,29 @@ export function FuelCostSection({ fuelCost }: FuelCostSectionProps) {
                 <FuelBar key={bar.label} bar={bar} />
               ))}
             </div>
-            <div className="mt-8 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-4 text-center">
-              <p className="text-lg font-bold text-emerald-700">
+            <div className="mt-8 rounded-xl border border-[#006E25] bg-[#80F98B] px-4 py-4 text-center">
+              <p className="text-lg font-bold text-[#006E25]">
+                {fuelCost.chart.savingsLabel}
+              </p>
+            </div>
+          </Card>
+          <Card padding="lg" className="shadow-card-hover !border !border-[#C3C6D5] block md:hidden !p-4">
+            <h5 className="mb-8 text-center text-lg font-semibold text-slate-900">
+              {fuelCost.chart.title}
+            </h5>
+            <div className="flex items-end justify-center gap-8 border-b border-slate-200 pb-2 md:gap-12">
+              {fuelCost.chart.bars.map((bar) => (
+                <FuelBar key={bar.label} bar={bar} />
+              ))}
+            </div>
+            <div className="mt-8 rounded-lg border border-[#006E25] bg-[#80F98B] md:px-4 px-2 py-2 md:py-4 text-center">
+              <p className="text-lg font-bold text-[#006E25]">
                 {fuelCost.chart.savingsLabel}
               </p>
             </div>
           </Card>
         </RevealOnScroll>
       </div>
-    </Section>
+    </div>
   );
 }

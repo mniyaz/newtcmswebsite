@@ -11,11 +11,11 @@ export function FinalCtaSection({ finalCta }: FinalCtaSectionProps) {
   return (
     <section
       id="contact"
-      className="overflow-hidden bg-primary py-16 text-center text-white md:py-20"
+      className="overflow-hidden bg-[#00327D] py-5 text-center text-white md:py-15"
     >
       <Container className="mx-auto max-w-2xl">
         <RevealOnScroll>
-          <div className="space-y-6">
+          <div className="space-y-6 max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
               {finalCta.title}
             </h2>

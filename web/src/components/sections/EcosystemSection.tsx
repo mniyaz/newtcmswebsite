@@ -12,78 +12,102 @@ export function EcosystemSection({ ecosystem }: EcosystemSectionProps) {
   const [vehicles, drivers, customers, accounting] = ecosystem.nodes;
 
   return (
-    <Section variant="white">
+    <div className="md:py-10 py-5 px-5 md:px-10 lg:px-0 !bg-[#F8F9FA]">
       <SectionHeader title={ecosystem.title} subtitle={ecosystem.subtitle} />
-      <div className="relative mx-auto max-w-3xl py-8 md:py-12">
-        {/* Connector lines */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 hidden md:block"
-        >
-          <div className="absolute left-1/2 top-[18%] h-0.5 w-[38%] -translate-x-full bg-slate-200" />
-          <div className="absolute right-1/2 top-[18%] h-0.5 w-[38%] translate-x-full bg-slate-200" />
-          <div className="absolute left-1/2 top-[18%] h-[32%] w-0.5 -translate-x-1/2 bg-slate-200" />
-          <div className="absolute bottom-[18%] left-1/2 h-[32%] w-0.5 -translate-x-1/2 bg-slate-200" />
-          <div className="absolute bottom-[18%] left-1/2 h-0.5 w-[38%] -translate-x-full bg-slate-200" />
-          <div className="absolute bottom-[18%] right-1/2 h-0.5 w-[38%] translate-x-full bg-slate-200" />
-        </div>
+      {/* Mobile & Tablet */}
+      <div className="grid grid-cols-2 gap-4 md:gap-6 lg:hidden">
+        {[vehicles, drivers, customers, accounting].map(
+          (item, index) =>
+            item && (
+              <RevealOnScroll key={index}>
+                <div className="flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-3 shadow-lg text-center">
+                  <MaterialIcon
+                    name={item.icon}
+                    className="text-3xl text-primary mb-2"
+                  />
+                  <p className="text-base font-semibold text-gray-900">
+                    {item.label}
+                  </p>
+                </div>
+              </RevealOnScroll>
+            )
+        )}
+      </div>
 
-        <div className="relative flex min-h-[22rem] flex-col items-center justify-center md:min-h-[26rem]">
-          {/* Top nodes */}
-          <div className="mb-8 flex w-full max-w-md justify-center md:absolute md:inset-x-0 md:top-0 md:mb-0">
+      {/* Desktop */}
+      <div className="relative mx-auto hidden max-w-7xl items-center justify-between lg:flex">
+        {/* Vehicles */}
+        {vehicles && (
+          <RevealOnScroll>
+            <div className="flex px-10 py-4 flex-col items-center justify-center bg-white border border-gray-200 rounded-2xl shadow-lg">
+              <MaterialIcon
+                name={vehicles.icon}
+                className="text-3xl text-primary"
+              />
+              <p className="font-semibold text-gray-900 text-lg">
+                {vehicles.label}
+              </p>
+            </div>
+          </RevealOnScroll>
+        )}
+
+        {/* Center Hub */}
+        <RevealOnScroll>
+          <div className="relative w-70 h-70">
+            {/* Customers */}
             {customers && (
-              <RevealOnScroll delayMs={200}>
-                <div className="rounded-2xl border border-slate-200/80 bg-white px-5 py-4 text-center shadow-card transition-all duration-300 hover:shadow-card-hover">
-                  <MaterialIcon name={customers.icon} className="mx-auto text-primary" />
-                  <p className="mt-1 text-sm font-bold text-slate-900">{customers.label}</p>
-                </div>
-              </RevealOnScroll>
-            )}
-          </div>
-
-          {/* Center hub + side nodes */}
-          <div className="flex w-full items-center justify-center gap-6 md:gap-0">
-            {vehicles && (
-              <RevealOnScroll delayMs={100} className="md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2">
-                <div className="rounded-2xl border border-slate-200/80 bg-white px-5 py-4 text-center shadow-card transition-all duration-300 hover:shadow-card-hover">
-                  <MaterialIcon name={vehicles.icon} className="mx-auto text-primary" />
-                  <p className="mt-1 text-sm font-bold text-slate-900">{vehicles.label}</p>
-                </div>
-              </RevealOnScroll>
-            )}
-
-            <RevealOnScroll>
-              <div className="breathe-node relative z-10 flex h-40 w-40 flex-col items-center justify-center rounded-2xl bg-primary text-white shadow-image md:h-44 md:w-44">
-                <p className="text-xl font-bold">{ecosystem.hubLabel}</p>
-                <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.2em] opacity-90">
-                  {ecosystem.hubSublabel}
+              <div className="absolute left-1/2 top-2 -translate-x-1/2 flex px-10 py-4 flex-col items-center justify-center bg-white border border-gray-200 rounded-2xl shadow-lg">
+                <MaterialIcon
+                  name={customers.icon}
+                  className="text-3xl text-primary-dark"
+                />
+                <p className="font-semibold text-gray-900 text-lg">
+                  {customers.label}
                 </p>
               </div>
-            </RevealOnScroll>
-
-            {drivers && (
-              <RevealOnScroll delayMs={150} className="md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2">
-                <div className="rounded-2xl border border-slate-200/80 bg-white px-5 py-4 text-center shadow-card transition-all duration-300 hover:shadow-card-hover">
-                  <MaterialIcon name={drivers.icon} className="mx-auto text-primary" />
-                  <p className="mt-1 text-sm font-bold text-slate-900">{drivers.label}</p>
-                </div>
-              </RevealOnScroll>
             )}
-          </div>
 
-          {/* Bottom node */}
-          <div className="mt-8 flex w-full max-w-md justify-center md:absolute md:inset-x-0 md:bottom-0 md:mt-0">
+            {/* Hub */}
+            <div className="absolute z-40 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-full text-center text-white rounded-2xl bg-[#00327D] border-4 border-blue-200 shadow-2xl flex flex-col items-center justify-center animate-pulse">
+              <h3 className="text-5xl font-bold">
+                {ecosystem.hubLabel}
+              </h3>
+
+              <p className="mt-4 text-lg font-semibold uppercase tracking-[0.3em]">
+                {ecosystem.hubSublabel}
+              </p>
+            </div>
+
+            {/* Accounting */}
             {accounting && (
-              <RevealOnScroll delayMs={250}>
-                <div className="rounded-2xl border border-slate-200/80 bg-white px-5 py-4 text-center shadow-card transition-all duration-300 hover:shadow-card-hover">
-                  <MaterialIcon name={accounting.icon} className="mx-auto text-primary" />
-                  <p className="mt-1 text-sm font-bold text-slate-900">{accounting.label}</p>
-                </div>
-              </RevealOnScroll>
+              <div className="absolute left-1/2 bottom-2 -translate-x-1/2 flex px-10 py-4 flex-col items-center justify-center bg-white border border-gray-200 rounded-2xl shadow-lg">
+                <MaterialIcon
+                  name={accounting.icon}
+                  className="text-3xl text-primary-dark"
+                />
+                <p className="font-semibold text-gray-900 text-lg">
+                  {accounting.label}
+                </p>
+              </div>
             )}
           </div>
-        </div>
+        </RevealOnScroll>
+
+        {/* Drivers */}
+        {drivers && (
+          <RevealOnScroll>
+            <div className="flex px-10 py-4 flex-col items-center justify-center bg-white border border-gray-200 rounded-2xl shadow-lg">
+              <MaterialIcon
+                name={drivers.icon}
+                className="text-3xl text-primary"
+              />
+              <p className="font-semibold text-gray-900 text-lg">
+                {drivers.label}
+              </p>
+            </div>
+          </RevealOnScroll>
+        )}
       </div>
-    </Section>
+    </div>
   );
 }

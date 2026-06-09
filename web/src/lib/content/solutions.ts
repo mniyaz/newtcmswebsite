@@ -49,7 +49,7 @@ export interface SolutionPageContent {
   };
 }
 
-export const solutionNavLinks = [
+export const platformNavLinks = [
   {
     label: "Accounting & Payments",
     href: "/solutions/accounting-payments",
