@@ -8,7 +8,7 @@ interface FooterProps {
 
 export function Footer({ footer }: FooterProps) {
   return (
-    <footer className="px-10 !bg-[#F8F9FA]">
+    <footer className="md:px-10 px-5 !bg-[#F8F9FA]">
       <div className="py-14 md:py-10">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-6">
           <div className="sm:col-span-2 lg:col-span-2">
