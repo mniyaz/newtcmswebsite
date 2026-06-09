@@ -41,8 +41,17 @@ const menuItems: {
   { id: "fleet", label: "Fleet", icon: Truck },
   { id: "compliance", label: "Compliance", icon: BadgeCheck },
   { id: "crm", label: "CRM", icon: Users },
-  { id: "security", label: "Security", icon: Shield, securityOnly: true },
+  { id: "security", label: "Security", icon: Shield },
 ];
+
+const menuHrefs: Partial<Record<CommandCenterMenu, string>> = {
+  operations: "/operations",
+  finance: "/solutions/accounting-payments",
+  fleet: "/fleet",
+  compliance: "/compliance",
+  crm: "/crm",
+  security: "/security",
+};
 
 const topNavLinks = ["Dashboard", "Analytics", "Global View", "Reports"];
 
@@ -108,16 +117,25 @@ export function CommandCenterShell({
           {visibleMenu.map((item) => {
             const Icon = item.icon;
             const isActive = item.id === activeMenu;
+            const href = menuHrefs[item.id];
+            const className = cn(
+              "flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold uppercase tracking-wide transition-colors",
+              isActive
+                ? "border-l-4 border-primary bg-primary/5 text-primary"
+                : "text-slate-500 hover:bg-slate-50 hover:text-primary",
+            );
+
+            if (href) {
+              return (
+                <Link key={item.id} href={href} className={className}>
+                  <Icon className="h-5 w-5 shrink-0" />
+                  {item.label}
+                </Link>
+              );
+            }
+
             return (
-              <div
-                key={item.id}
-                className={cn(
-                  "flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold uppercase tracking-wide transition-colors",
-                  isActive
-                    ? "border-l-4 border-primary bg-primary/5 text-primary"
-                    : "text-slate-500 hover:bg-slate-50 hover:text-primary",
-                )}
-              >
+              <div key={item.id} className={className}>
                 <Icon className="h-5 w-5 shrink-0" />
                 {item.label}
               </div>

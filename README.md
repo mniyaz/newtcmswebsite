@@ -18,6 +18,11 @@ The public-facing site lives in the `web/` directory. It includes:
 | URL | Purpose |
 |-----|---------|
 | http://localhost:3000 | Homepage |
+| http://localhost:3000/operations | Operations & execution module |
+| http://localhost:3000/fleet | Fleet management module |
+| http://localhost:3000/compliance | Compliance & governance module |
+| http://localhost:3000/crm | Customer relationship management module |
+| http://localhost:3000/security | Security & access control module |
 | http://localhost:3000/solutions/accounting-payments | Accounting & payments (Command Center preview) |
 | http://localhost:3000/solutions/fleet-maintenance | Fleet maintenance & inspections (Command Center preview) |
 | http://localhost:3000/solutions/payroll-compliance | Payroll & Malaysian compliance (Command Center preview) |
