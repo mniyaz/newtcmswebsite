@@ -19,10 +19,19 @@ export function FinalCtaSection({ finalCta }: FinalCtaSectionProps) {
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
               {finalCta.title}
             </h2>
-            <p className="text-base leading-relaxed text-white/85 md:text-lg">
+            <p className="text-sm leading-relaxed text-white/85 md:text-lg">
               {finalCta.description}
             </p>
-            <div className="pt-2">
+            <div className="block md:hidden">
+              <Button
+                variant="white"
+                pulse
+                className="min-w-[240px] text-base font-bold"
+              >
+                {finalCta.cta.label}
+              </Button>
+            </div>
+            <div className="pt-2 hidden md:block">
               <Button
                 variant="white"
                 size="lg"
