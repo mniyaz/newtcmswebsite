@@ -54,6 +54,7 @@ const menuHrefs: Partial<Record<CommandCenterMenu, string>> = {
   compliance: "/compliance",
   crm: "/crm",
   security: "/security",
+  payroll: "/solutions/payroll-compliance",
 };
 
 const topNavLinks = ["Dashboard", "Analytics", "Global View", "Reports"];
