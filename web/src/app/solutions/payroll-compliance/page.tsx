@@ -18,7 +18,7 @@ export default function PayrollCompliancePage() {
   return (
     <CommandCenterShell
       subtitle="LOGISTICS CORE"
-      activeMenu="finance"
+      activeMenu="payroll"
       apiLinkLabel="API Docs"
       footer={
         <CommandCenterFooter

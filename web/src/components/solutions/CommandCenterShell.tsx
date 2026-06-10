@@ -10,6 +10,7 @@ import {
   User,
   Users,
   BadgeCheck,
+  Wallet,
 } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 
@@ -19,7 +20,8 @@ export type CommandCenterMenu =
   | "fleet"
   | "compliance"
   | "crm"
-  | "security";
+  | "security"
+  |"payroll";
 
 interface CommandCenterShellProps {
   subtitle: string;
@@ -42,6 +44,7 @@ const menuItems: {
   { id: "compliance", label: "Compliance", icon: BadgeCheck },
   { id: "crm", label: "CRM", icon: Users },
   { id: "security", label: "Security", icon: Shield },
+  { id: "payroll", label: "Payroll", icon: Wallet },
 ];
 
 const menuHrefs: Partial<Record<CommandCenterMenu, string>> = {
