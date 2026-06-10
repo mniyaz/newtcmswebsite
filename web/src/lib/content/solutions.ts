@@ -49,23 +49,33 @@ export interface SolutionPageContent {
   };
 }
 
-export const platformNavLinks = [
+export const platformMenu = [
   {
-    label: "Accounting & Payments",
-    href: "/solutions/accounting-payments",
-    description: "Invoicing, banking & reconciliation",
+    label: "GPS",
+    href: "/platform/gps",
+    description: "Live vehicle tracking",
   },
   {
-    label: "Fleet Maintenance",
-    href: "/solutions/fleet-maintenance",
-    description: "Inspections, service & compliance health",
+    label: "TCMS",
+    children: [
+      {
+        label: "Accounting & Payments",
+        href: "/solutions/accounting-payments",
+        description: "Invoicing, banking & reconciliation",
+      },
+      {
+        label: "Fleet Maintenance",
+        href: "/solutions/fleet-maintenance",
+        description: "Inspections, service & compliance health",
+      },
+      {
+        label: "Payroll & Compliance",
+        href: "/solutions/payroll-compliance",
+        description: "EPF, SOCSO, LHDN & APAD for drivers",
+      },
+    ],
   },
-  {
-    label: "Payroll & Compliance",
-    href: "/solutions/payroll-compliance",
-    description: "EPF, SOCSO, LHDN & APAD for drivers",
-  },
-] as const;
+];
 
 export const accountingPaymentsPage: SolutionPageContent = {
   slug: "accounting-payments",
