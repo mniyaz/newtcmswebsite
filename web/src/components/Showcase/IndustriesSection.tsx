@@ -3,64 +3,66 @@
 import { useState } from "react";
 
 export default function IndustriesSection() {
-    const industries = [
-        {
-            title: "Manufacturing",
-            desc: "Optimize production workflows with real-time logistics coordination.",
-            image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80"
-        },
-        {
-            title: "Retail & E-Commerce",
-            desc: "Fast fulfillment, inventory sync, and seamless last-mile delivery.",
-            image: "https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1200&q=80",
-        },
-        {
-            title: "Distribution",
-            desc: "Streamlined distribution networks with smart routing systems.",
-            image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
-        },
-        {
-            title: "3PL / Logistics Providers",
-            desc: "Unified control tower for multi-client logistics operations.",
-            image: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=1200&q=80",
-        },
-        {
-            title: "Transportation Companies",
-            desc: "Fleet tracking, route optimization, and fuel efficiency insights.",
-            image: "https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?auto=format&fit=crop&w=1200&q=80",
-        },
-        {
-            title: "Freight Operators",
-            desc: "Digital freight management with end-to-end visibility.",
-            image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80",
-        },
-        {
-            title: "Supply Chain & Warehousing",
-            desc: "Smart warehouse automation and inventory intelligence.",
-            image: "https://images.unsplash.com/photo-1601598851547-4302969d0614?auto=format&fit=crop&w=1200&q=80"
-        },
-    ];
+const industries = [
+    {
+        title: "Manufacturing Logistics",
+        desc: "Optimize manufacturing supply chains with transportation management software, shipment planning, warehouse coordination, and real-time delivery visibility.",
+        image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+        title: "Retail & E-Commerce Logistics",
+        desc: "Accelerate order fulfillment with inventory synchronization, last-mile delivery tracking, route optimization, and logistics automation.",
+        image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+        title: "Distribution Networks",
+        desc: "Manage complex distribution operations through centralized shipment planning, freight visibility, and intelligent transportation workflows.",
+        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+        title: "3PL & Logistics Providers",
+        desc: "Deliver superior third-party logistics services with multi-client management, carrier coordination, shipment tracking, and operational analytics.",
+        image: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+        title: "Transportation Companies",
+        desc: "Improve fleet utilization with GPS tracking, route optimization, transport planning, fuel management, and real-time logistics insights.",
+        image: "https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+        title: "Freight & Carrier Operations",
+        desc: "Streamline freight management with digital documentation, carrier allocation, shipment execution, and end-to-end transportation visibility.",
+        image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+        title: "Supply Chain & Warehousing",
+        desc: "Enhance warehouse efficiency through inventory visibility, dock scheduling, transportation planning, and integrated supply chain management.",
+        image: "https://images.unsplash.com/photo-1601598851547-4302969d0614?auto=format&fit=crop&w=1200&q=80",
+    },
+];
 
     const [active, setActive] = useState(0);
 
     return (
-        <section className="pt-10">
+        <section className="md:pt-10 pt-5">
             <div className="mx-auto">
 
                 {/* Header */}
-                <div className="text-center mb-10">
+                <div className="md:text-center mb-10">
                     <h2 className="text-3xl md:text-4xl font-bold">
-                        Industries We Serve
+                        Industries Powered by TCMS Transportation Management Software
                     </h2>
                     <p className="text-gray-500 mt-3">
-                        A unified logistics ecosystem built for every stage of the supply chain.
+                            From manufacturing and retail to freight, warehousing, and third-party logistics,
+    TCMS helps organizations optimize transportation operations, improve supply chain
+    visibility, and deliver exceptional customer experiences.
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-10 items-start">
+                <div className="grid lg:grid-cols-2 gap-10 items-start">
 
                     {/* LEFT: GRID */}
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid lg:grid-cols-2 gap-4">
                         {industries.map((item, i) => (
                             <div
                                 key={i}
@@ -79,7 +81,7 @@ export default function IndustriesSection() {
                     </div>
 
                     {/* RIGHT: PREVIEW PANEL */}
-                    <div className="relative rounded-2xl overflow-hidden border border-white/10 h-[420px]">
+                    <div className="relative rounded-lg overflow-hidden border border-white/10 h-[30vh] md:h-[420px]">
 
                         <img
                             src={industries[active].image}

@@ -50,9 +50,9 @@ export const operationsPage: ModulePageContent = {
       "Manage bookings, dispatching, manifests, driver assignments, delivery proof, and customer updates from one command center built for Malaysian transporters.",
   },
   badge: "OPERATIONS & EXECUTION",
-  headline: "Control Every Shipment From Booking to Delivery.",
+  headline: "Transportation Management Software for End-to-End Shipment Operations",
   description:
-    "Manage bookings, dispatching, manifests, driver assignments, delivery proof, delays, and customer updates from one command center.",
+    "TCMS is a cloud-based Transportation Management Software (TMS) that helps businesses manage shipment booking, route planning, fleet operations, delivery tracking, freight billing, and logistics analytics from a single platform.",
   primaryCta: "Get Started",
   secondaryCta: "View Demo",
   sidebarSubtitle: "LOGISTICS CORE",

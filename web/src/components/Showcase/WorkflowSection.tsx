@@ -62,11 +62,11 @@ export default function WorkflowSection() {
     ];
 
     return (
-        <section className="py-10">
+        <section className="md:py-10 py-5">
             <div className="mx-auto">
 
                 {/* Header */}
-                <div className="text-center mb-10">
+                <div className="md:text-center mb-10">
                     <h2 className="text-3xl md:text-4xl font-bold">
                         End-to-End Transportation Workflow
                     </h2>
@@ -77,14 +77,14 @@ export default function WorkflowSection() {
 
                 {/* Flow */}
                 <div className="relative">
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {steps.map((step, i) => {
                             const Icon = step.icon;
 
                             return (
                                 <div
                                     key={i}
-                                    className="relative p-6 rounded-xl bg-white border border-slate-200 shadow"
+                                    className="relative p-4 md:p-6 rounded-xl bg-white border border-slate-200 shadow"
                                 >
                                     {/* Step number */}
                                     <div className="absolute -top-3 -left-3 w-8 h-8 flex items-center justify-center rounded-full bg-[#003b8f] text-white text-sm font-bold">

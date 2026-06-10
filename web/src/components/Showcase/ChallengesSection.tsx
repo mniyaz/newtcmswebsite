@@ -45,22 +45,22 @@ const challenges = [
 
 export default function ChallengesSection() {
     return (
-        <section className="relative py-10 ">
+        <section className="relative md:py-10 ">
 
 
             <div className="relative mx-auto">
                 {/* HEADER */}
-                <div className="text-center max-w-3xl mx-auto">
+                <div className="md:text-center max-w-3xl mx-auto">
                     <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary">
                         Transportation Challenges
                     </span>
 
-                    <h2 className="mt-6 text-4xl md:text-4xl font-bold text-slate-900 leading-tight">
+                    <h2 className="mt-6 text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
                         Logistics Operations Face
                         <span className="text-indigo-600"> Growing Complexity</span>
                     </h2>
 
-                    <p className="mt-5 text-base text-slate-600">
+                    <p className="mt-5 text-slate-600">
                         Traditional transportation management methods create inefficiencies
                         that increase costs and reduce visibility across operations.
                     </p>
@@ -74,7 +74,7 @@ export default function ChallengesSection() {
                         return (
                             <div
                                 key={item.title}
-                                className="group relative p-8 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                                className="group relative p-4 md:p-8 rounded-lg bg-white border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
                             >
                                 {/* subtle gradient border effect */}
                                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500/0 via-indigo-500/0 to-indigo-500/0 group-hover:from-indigo-500/10 group-hover:via-indigo-500/5 group-hover:to-transparent transition" />

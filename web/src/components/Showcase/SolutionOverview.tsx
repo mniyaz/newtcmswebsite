@@ -54,9 +54,9 @@ const features = [
             <div className="mx-auto">
 
                 {/* HEADER */}
-                <div className="text-center max-w-3xl mx-auto">
+                <div className="md:text-center max-w-3xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold">
-                        Complete Transportation Control in One Platform
+                        Complete Transportation Management Platform
                     </h2>
                     <p className="mt-5 text-gray-500">
                         TCMS LightApp simplifies logistics with automation, visibility, and intelligence.
@@ -64,7 +64,7 @@ const features = [
                 </div>
 
                 {/* FEATURE FLOW */}
-                <div className="mt-10 space-y-24">
+                <div className="md:mt-10 mt-5 lg:space-y-24 space-y-10">
 
                     {features.map((item, i) => {
                         const Icon = item.icon;
@@ -73,17 +73,17 @@ const features = [
                         return (
                             <div
                                 key={i}
-                                className={`grid md:grid-cols-2 gap-10 items-center ${isReverse ? "md:flex-row-reverse" : ""
+                                className={`grid lg:grid-cols-2 gap-10 items-center ${isReverse ? "md:flex-row-reverse" : ""
                                     }`}
                             >
 
                                 {/* IMAGE */}
                                 <div className={`relative group ${isReverse ? "md:order-2" : ""}`}>
-                                    <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                                    <div className="rounded-md overflow-hidden shadow-md border border-white/10">
                                         <img
                                             src={item.image}
                                             alt={item.title}
-                                            className="w-full h-[380px] group-hover:scale-105 transition-transform duration-700"
+                                            className="w-full md:h-[380px] group-hover:scale-105 transition-transform duration-700"
                                         />
                                     </div>
 

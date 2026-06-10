@@ -37,7 +37,7 @@ export default function BenefitsSection() {
             <div className="mx-auto">
 
                 {/* Heading */}
-                <div className="text-center mb-10">
+                <div className="md:text-center mb-10">
                     <h2 className="text-3xl md:text-4xl font-bold">
                         Business Benefits
                     </h2>
@@ -47,11 +47,11 @@ export default function BenefitsSection() {
                 </div>
 
                 {/* Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     {benefits.map((item, i) => (
                         <div
                             key={i}
-                            className="p-6 rounded-xl bg-[#003b8f] text-white border border-slate-200 shadow"
+                            className="md:p-6 p-4 rounded-md bg-[#003b8f] text-white border border-slate-200 shadow"
                         >
                             <h3 className="text-lg font-semibold mb-2">
                                 {item.title}
