@@ -6,6 +6,10 @@ import {
   payrollComplianceFooter,
   payrollCompliancePage,
 } from "@/lib/content/solutions";
+import DeliveryKPIReport from "@/components/PayrollShowcase/DeliveryKPIReport";
+import PickupKPIReport from "@/components/PayrollShowcase/PickupKPIReport";
+import ExcelReports from "@/components/PayrollShowcase/ExcelReports";
+import PayslipModule from "@/components/PayrollShowcase/PayslipModule";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -29,6 +33,10 @@ export default function PayrollCompliancePage() {
       }
     >
       <PayrollCompliancePreview />
+      <DeliveryKPIReport/>
+      <PickupKPIReport/>
+      <ExcelReports/>
+      <PayslipModule/>
     </CommandCenterShell>
   );
 }

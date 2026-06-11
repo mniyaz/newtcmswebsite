@@ -10,6 +10,7 @@ import WorkflowSection from "@/components/Showcase/WorkflowSection";
 import DashboardPreview from "@/components/Showcase/DashboardPreview";
 import BenefitsSection from "@/components/Showcase/BenefitsSection";
 import IndustriesSection from "@/components/Showcase/IndustriesSection";
+import ClaimsWorkflow from "@/components/Showcase/ClaimsWorkflow";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -38,6 +39,7 @@ export default function OperationsPage() {
       <WorkflowSection/>
       <BenefitsSection/>
       <IndustriesSection/>
+      <ClaimsWorkflow/>
     </CommandCenterShell>
   );
 }

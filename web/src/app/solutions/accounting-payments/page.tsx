@@ -7,6 +7,9 @@ import {
   accountingPaymentsPage,
 } from "@/lib/content/solutions";
 import BillingFeatures from "@/components/FinanceShow/BillingFeatures";
+import BillingWorkflow from "@/components/FinanceShow/BillingWorkflow";
+import BillingBenefits from "@/components/FinanceShow/BillingBenefits";
+import BillingCTA from "@/components/FinanceShow/BillingCTA";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -31,6 +34,8 @@ export default function AccountingPaymentsPage() {
     >
       <AccountingPaymentsPreview />
       <BillingFeatures/>
+      <BillingWorkflow/>
+      <BillingBenefits/>
     </CommandCenterShell>
   );
 }

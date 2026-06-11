@@ -3,6 +3,8 @@ import { ModulePagePreview } from "@/components/modules/ModulePagePreview";
 import { CommandCenterFooter } from "@/components/solutions/CommandCenterFooter";
 import { CommandCenterShell } from "@/components/solutions/CommandCenterShell";
 import { securityPage } from "@/lib/content/modules";
+import AuthenticationShowcase from "@/components/Security/AuthenticationShowcase";
+import RBACShowcase from "@/components/Security/RBACShowcase";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -26,6 +28,8 @@ export default function SecurityPage() {
       }
     >
       <ModulePagePreview page={securityPage} />
+      <AuthenticationShowcase/>
+      <RBACShowcase/>
     </CommandCenterShell>
   );
 }
