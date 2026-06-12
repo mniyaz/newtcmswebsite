@@ -23,7 +23,7 @@ export function RoiCalculatorSection({ roiCalculator }: RoiCalculatorSectionProp
   );
 
   return (
-    <div className="md:py-10 py-5 px-5 md:px-10 lg:px-10 xl:px-0 !bg-[#F3F4F5]">
+    <div className="md:py-15 py-5 px-5 md:px-10 lg:px-10 xl:px-0 !bg-[#F3F4F5]">
       <RevealOnScroll variant="scale" className="max-w-5xl mx-auto">
         <div className="overflow-hidden rounded-2xl border border-[#C3C6D5] bg-white shadow-card-hover">
           <div className="bg-[#00327D] px-6 py-5 md:px-8 md:py-6">

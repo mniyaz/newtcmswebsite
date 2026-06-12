@@ -10,7 +10,7 @@ interface VisibilitySectionProps {
 
 export function VisibilitySection({ visibility }: VisibilitySectionProps) {
   return (
-    <div id="platform" className="!bg-[#F8F9FA] md:py-10 py-5 px-5 md:px-10 lg:px-10 xl:px-0">
+    <div id="platform" className="!bg-[#F8F9FA] md:py-15 py-5 px-5 md:px-10 lg:px-10 xl:px-0">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16 container mx-auto">
         <RevealOnScroll className="order-2 lg:order-1">
           <div className="group overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-image ring-1 ring-slate-200/50">

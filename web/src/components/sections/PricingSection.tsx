@@ -12,7 +12,7 @@ interface PricingSectionProps {
 
 export function PricingSection({ pricing }: PricingSectionProps) {
   return (
-    <div className="md:py-10 py-5 px-5 md:px-10 lg:px-10 xl:px-0 !bg-[#F3F4F5]">
+    <div className="md:py-15 py-5 px-5 md:px-10 lg:px-10 xl:px-0 !bg-[#F3F4F5]">
       <SectionHeader title={pricing.title} subtitle={pricing.subtitle} />
       <StaggerReveal className="grid items-stretch gap-6 lg:grid-cols-3 lg:gap-8 container mx-auto">
         {pricing.plans.map((plan, index) => (

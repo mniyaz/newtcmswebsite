@@ -69,7 +69,7 @@ function FuelBar({
 
 export function FuelCostSection({ fuelCost }: FuelCostSectionProps) {
   return (
-    <div className="!bg-[#F8F9FA] md:py-10 py-5 px-5 md:px-10 lg:px-10 xl:px-0">
+    <div className="!bg-[#F8F9FA] md:py-15 py-5 px-5 md:px-10 lg:px-10 xl:px-0">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16 container mx-auto">
         <div className="space-y-8">
           <RevealOnScroll>

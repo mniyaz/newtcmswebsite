@@ -12,7 +12,7 @@ interface PainPointsSectionProps {
 
 export function PainPointsSection({ painPoints }: PainPointsSectionProps) {
   return (
-    <div id="solutions"  className="lg:px-10 xl:px-0 md:px-0 px-5  bg-[#F3F4F5] md:py-10 py-5">
+    <div id="solutions"  className="lg:px-10 xl:px-0 md:px-0 px-5  bg-[#F3F4F5] md:py-15 py-5">
       <div className="container mx-auto">
         <SectionHeader title={painPoints.title} subtitle={painPoints.subtitle} />
         <StaggerReveal className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">

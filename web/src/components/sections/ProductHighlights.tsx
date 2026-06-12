@@ -53,11 +53,11 @@ export default function ProductHighlights() {
                 {/* Header */}
                 <div className="mx-auto max-w-3xl text-center">
 
-                    <h2 className="text-2xl text-start md:text-center font-bold tracking-tight md:text-4xl">
+                    <h2 className="text-2xl text-start md:text-center font-bold tracking-tight md:text-4xl md:max-w-3xl">
                         Everything You Need To Manage Your Fleet
                     </h2>
 
-                    <p className="mt-4 text-sm text-start md:text-center leading-relaxed text-[#434653] md:text-base">
+                    <p className="mt-4 text-sm text-start md:text-center leading-relaxed text-[#434653] md:text-base md:max-w-3xl">
                         Powerful tools designed to improve visibility, efficiency, safety,
                         and customer satisfaction across your operations.
                     </p>
