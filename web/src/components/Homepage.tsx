@@ -14,6 +14,7 @@ import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
 import type { HomepageContent } from "@/lib/content/schema";
 import PremiumHeroSlider from "./sections/PremiumHeroSlider";
 import TrustedSec from "./sections/TrustedSec";
+import ProductHighlights from "./sections/ProductHighlights";
 
 interface HomepageProps {
   content: HomepageContent;
@@ -27,6 +28,7 @@ export function Homepage({ content }: HomepageProps) {
         <PremiumHeroSlider hero={content.hero}/>
         {/* <TrustedSec hero={content.hero}/> */}
         <HeroSection hero={content.hero} />
+        <ProductHighlights/>
         <PainPointsSection painPoints={content.painPoints} />
         <VisibilitySection visibility={content.visibility} />
         <CustomerExperienceSection customerExperience={content.customerExperience} />

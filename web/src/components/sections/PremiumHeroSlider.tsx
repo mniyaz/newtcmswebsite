@@ -27,34 +27,34 @@ const slides = [
         description:
             "Manage vehicles, drivers, fuel consumption, compliance, and fleet operations from a single platform.",
         image:
-            "/slide1.png",
+            "/hero1.png",
     },
     {
         id: 2,
-        bgColor: "#FFF5E5",
+        bgColor: "#F3F4F5",
         textColor: "#111111",
         title: "Track Your Entire Fleet in Real Time",
         description: "Monitor vehicle locations, routes, driver activities, and operational performance from a centralized dashboard.",
         image:
-            "/slide2.png",
+            "/hero2.png",
     },
     {
         id: 3,
-        bgColor: "#F8F3E1",
+        bgColor: "#F8F9FA",
         textColor: "#111111",
         title: "Simplify APAD Compliance Reporting",
         description: "Automate compliance processes and reduce manual administrative work with built-in reporting tools.",
         image:
-            "/slide3.png",
+            "/hero3.png",
     },
     {
         id: 4,
-        bgColor: "#FFFBF1",
+        bgColor: "#FFFFFF",
         textColor: "#111111",
         title: "Reduce Fuel Costs and Improve Efficiency",
         description: "Identify fuel wastage, optimize routes, and improve fleet profitability through actionable insights.",
         image:
-            "/slide4.png",
+            "/hero4.png",
     },
 ];
 
@@ -168,7 +168,7 @@ export default function PremiumHeroSlider({ hero }: HeroSectionProps) {
             </AnimatePresence>
 
             {/* Content */}
-            <div className="relative z-20 mx-auto flex flex-col h-full items-center justify-center container">
+            <div className="relative z-20 mx-auto flex flex-col h-full items-center justify-center container lg:px-10 xl:px-0">
                 <div className="grid w-full items-center gap-12 lg:grid-cols-2">
                     {/* Text */}
                     <div className="overflow-hidden ">
@@ -248,7 +248,7 @@ export default function PremiumHeroSlider({ hero }: HeroSectionProps) {
                     </div>
 
                     {/* Image */}
-                    <div className="relative flex justify-center overflow-hidden rounded-2xl shadow-lg">
+                    <div className="relative flex justify-center overflow-hidden">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={currentSlide.id}

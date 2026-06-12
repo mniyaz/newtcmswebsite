@@ -10,7 +10,7 @@ interface ComplianceSectionProps {
 
 export function ComplianceSection({ compliance }: ComplianceSectionProps) {
   return (
-    <div className="lg:px-0 md:px-10 md:py-10 py-5 px-5 !bg-[#F3F4F5]">
+    <div className="lg:px-10 xl:px-0 md:px-10 md:py-10 py-5 px-5 !bg-[#F3F4F5]">
       <div className="container mx-auto">
       <SectionHeader title={compliance.title} subtitle={compliance.subtitle} />
       <StaggerReveal className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">

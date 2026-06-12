@@ -15,7 +15,7 @@ export function CustomerExperienceSection({
   const { shipment } = customerExperience;
 
   return (
-    <div id="advantage" className="!bg-[#F3F4F5] md:py-10 py-5 px-5 md:px-10 lg:px-0">
+    <div id="advantage" className="!bg-[#F3F4F5]  md:py-10 py-5 px-5 md:px-10 lg:px-10 xl:px-0">
       <SectionHeader
         title={customerExperience.title}
         subtitle={customerExperience.subtitle}

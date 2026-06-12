@@ -46,7 +46,7 @@ const closeMobile = () => {
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
-      <div className="flex h-[4.25rem] items-center justify-between md:h-[4.5rem] px-6 lg:px-0 container mx-auto">
+      <div className="flex h-[4.25rem] items-center justify-between md:h-[4.5rem] px-6 lg:px-10 xl:px-0 container mx-auto">
 
         {/* Logo */}
         <Link

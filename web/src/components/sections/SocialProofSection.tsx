@@ -11,7 +11,7 @@ interface SocialProofSectionProps {
 
 export function SocialProofSection({ socialProof }: SocialProofSectionProps) {
   return (
-    <div className="lg:px-0 md:px-10 px-5 py-5 md:py-10 !bg-[#FFFFFF]">
+    <div className="lg:px-10 xl:px-0 md:px-10 px-5 py-5 md:py-10 !bg-[#FFFFFF]">
       <div className="container mx-auto">
       <StaggerReveal className="mb-5 grid gap-5 md:mb-1 md:grid-cols-3 md:gap-6">
         {socialProof.stats.map((stat, index) => (

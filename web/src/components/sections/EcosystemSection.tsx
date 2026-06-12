@@ -12,7 +12,7 @@ export function EcosystemSection({ ecosystem }: EcosystemSectionProps) {
   const [vehicles, drivers, customers, accounting] = ecosystem.nodes;
 
   return (
-    <div className="md:py-10 py-5 px-5 md:px-10 lg:px-0 !bg-[#F8F9FA]">
+    <div className="md:py-10 py-5 px-5 md:px-10 lg:px-10 xl:px-0 !bg-[#F8F9FA]">
       <SectionHeader title={ecosystem.title} subtitle={ecosystem.subtitle} />
       {/* Mobile & Tablet */}
       <div className="grid grid-cols-2 gap-4 md:gap-6 lg:hidden">
