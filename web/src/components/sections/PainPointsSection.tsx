@@ -12,8 +12,8 @@ interface PainPointsSectionProps {
 
 export function PainPointsSection({ painPoints }: PainPointsSectionProps) {
   return (
-    <div id="solutions"  className="md:px-10 px-5  bg-[#F3F4F5] md:py-10 py-5">
-      <div className="">
+    <div id="solutions"  className="md:px-0 px-5  bg-[#F3F4F5] md:py-10 py-5">
+      <div className="container mx-auto">
         <SectionHeader title={painPoints.title} subtitle={painPoints.subtitle} />
         <StaggerReveal className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {painPoints.items.map((item, index) => (
@@ -32,7 +32,7 @@ export function PainPointsSection({ painPoints }: PainPointsSectionProps) {
         </StaggerReveal>
       </div>
 
-      <div className="bg-[#0047AB] mt-8 rounded-lg">
+      <div className="bg-[#0047AB] mt-8 rounded-lg container mx-auto">
         <div>
           <RevealOnScroll variant="scale">
             <div className="flex flex-col items-center justify-between gap-4 md:gap-6 py-5 text-center md:flex-row px-3 md:px-5 md:py-5 md:text-left">

@@ -12,6 +12,8 @@ import { SocialProofSection } from "@/components/sections/SocialProofSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
 import type { HomepageContent } from "@/lib/content/schema";
+import PremiumHeroSlider from "./sections/PremiumHeroSlider";
+import TrustedSec from "./sections/TrustedSec";
 
 interface HomepageProps {
   content: HomepageContent;
@@ -22,6 +24,8 @@ export function Homepage({ content }: HomepageProps) {
     <>
       <Header navigation={content.navigation} />
       <main className="bg-white text-slate-900">
+        <PremiumHeroSlider hero={content.hero}/>
+        {/* <TrustedSec hero={content.hero}/> */}
         <HeroSection hero={content.hero} />
         <PainPointsSection painPoints={content.painPoints} />
         <VisibilitySection visibility={content.visibility} />

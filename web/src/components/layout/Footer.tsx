@@ -9,7 +9,7 @@ interface FooterProps {
 export function Footer({ footer }: FooterProps) {
   return (
     <footer className="md:px-10 px-5 !bg-[#F8F9FA]">
-      <div className="py-14 md:py-10">
+      <div className="py-14 md:py-10 container mx-auto">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-6">
           <div className="sm:col-span-2 lg:col-span-2">
             <div className="text-2xl font-bold text-primary">{footer.brand}</div>
@@ -38,7 +38,7 @@ export function Footer({ footer }: FooterProps) {
           ))}
         </div>
       </div>
-      <div className="flex flex-col items-center justify-between gap-4 border-t-2 border-[#C3C6D5] py-6 md:flex-row">
+      <div className="flex flex-col items-center justify-between gap-4 border-t-2 border-[#C3C6D5] py-6 md:flex-row container mx-auto">
         <p className="text-center text-sm text-[#434653] md:text-left">
           {footer.copyright}
         </p>
