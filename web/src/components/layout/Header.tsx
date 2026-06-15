@@ -15,8 +15,8 @@ interface HeaderProps {
 
 export function Header({ navigation }: HeaderProps) {
   const pathname = usePathname();
-const [tcmsOpen, setTcmsOpen] = useState(false);
-const [mobileTcmsOpen, setMobileTcmsOpen] = useState(false);
+  const [tcmsOpen, setTcmsOpen] = useState(false);
+  const [mobileTcmsOpen, setMobileTcmsOpen] = useState(false);
   const [platformOpen, setPlatformOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobilePlatformOpen, setMobilePlatformOpen] = useState(false);
@@ -38,11 +38,11 @@ const [mobileTcmsOpen, setMobileTcmsOpen] = useState(false);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-const closeMobile = () => {
-  setMobileOpen(false);
-  setMobilePlatformOpen(false);
-  setMobileTcmsOpen(false);
-};
+  const closeMobile = () => {
+    setMobileOpen(false);
+    setMobilePlatformOpen(false);
+    setMobileTcmsOpen(false);
+  };
 
   return (
     <header className="fixed top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
@@ -82,65 +82,65 @@ const closeMobile = () => {
                     />
                   </button>
 
-{platformOpen && (
-  <div className="absolute left-0 top-full z-50 mt-2 w-72 rounded-2xl border border-[#c3c6d5] bg-white p-2 shadow-card-hover">
+                  {platformOpen && (
+                    <div className="absolute left-0 top-full z-50 mt-2 w-72 rounded-2xl border border-[#c3c6d5] bg-white p-2 shadow-card-hover">
 
-    {/* GPS */}
-    <Link
-      href="/platform/gps"
-      onClick={() => setPlatformOpen(false)}
-      className="block rounded-xl px-4 py-3 hover:bg-slate-200"
-    >
-      <p className="text-sm font-semibold">GPS</p>
-      <p className="text-xs text-slate-500">
-        Live vehicle tracking
-      </p>
-    </Link>
+                      {/* GPS */}
+                      <Link
+                        href="/platform/gps"
+                        onClick={() => setPlatformOpen(false)}
+                        className="block rounded-xl px-4 py-3 hover:bg-slate-200"
+                      >
+                        <p className="text-sm font-semibold">GPS</p>
+                        <p className="text-xs text-slate-500">
+                          Live vehicle tracking
+                        </p>
+                      </Link>
 
-    {/* TCMS Parent */}
-    <button
-      onClick={() => setTcmsOpen((prev) => !prev)}
-      className="flex w-full items-center justify-between rounded-xl px-4 py-3 hover:bg-slate-50"
-    >
-      <div className="text-left">
-        <p className="text-sm font-semibold">TCMS</p>
-        <p className="text-xs text-slate-500">
-          Transport Management Suite
-        </p>
-      </div>
+                      {/* TCMS Parent */}
+                      <button
+                        onClick={() => setTcmsOpen((prev) => !prev)}
+                        className="flex w-full items-center justify-between rounded-xl px-4 py-3 hover:bg-slate-50"
+                      >
+                        <div className="text-left">
+                          <p className="text-sm font-semibold">TCMS</p>
+                          <p className="text-xs text-slate-500">
+                            Transport Management Suite
+                          </p>
+                        </div>
 
-      <MaterialIcon
-        name="chevron_right"
-        className={cn(
-          "transition-transform",
-          tcmsOpen && "rotate-90"
-        )}
-      />
-    </button>
+                        <MaterialIcon
+                          name="chevron_right"
+                          className={cn(
+                            "transition-transform",
+                            tcmsOpen && "rotate-90"
+                          )}
+                        />
+                      </button>
 
-    {/* TCMS Submenu */}
-    {tcmsOpen && (
-      <div className="ml-4 border-l border-[#c3c6d5] pl-3">
-        {platformMenu[1].children?.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            onClick={() => {
-              setPlatformOpen(false);
-              setTcmsOpen(false);
-            }}
-            className="block rounded-lg px-3 py-2 hover:bg-slate-200"
-          >
-            <p className="text-sm font-medium">{item.label}</p>
-            <p className="text-xs text-slate-500">
-              {item.description}
-            </p>
-          </Link>
-        ))}
-      </div>
-    )}
-  </div>
-)}
+                      {/* TCMS Submenu */}
+                      {tcmsOpen && (
+                        <div className="ml-4 border-l border-[#c3c6d5] pl-3">
+                          {platformMenu[1].children?.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              onClick={() => {
+                                setPlatformOpen(false);
+                                setTcmsOpen(false);
+                              }}
+                              className="block rounded-lg px-3 py-2 hover:bg-slate-200"
+                            >
+                              <p className="text-sm font-medium">{item.label}</p>
+                              <p className="text-xs text-slate-500">
+                                {item.description}
+                              </p>
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               );
             }
@@ -163,9 +163,9 @@ const closeMobile = () => {
             {navigation.loginLabel}
           </button>
           <div className="hidden lg:block">
-          <Button size="sm" className="bg-[#00327D] ">
-            {navigation.cta.label}
-          </Button>
+            <Button size="sm" className="bg-[#00327D] ">
+              {navigation.cta.label}
+            </Button>
           </div>
 
           {/* Hamburger */}
@@ -201,52 +201,52 @@ const closeMobile = () => {
                     />
                   </button>
 
-{mobilePlatformOpen && (
-  <div className="mt-3 space-y-2">
+                  {mobilePlatformOpen && (
+                    <div className="mt-3 space-y-2">
 
-    {/* GPS */}
-    <Link
-      href="/platform/gps"
-      onClick={closeMobile}
-      className="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100"
-    >
-      GPS
-    </Link>
+                      {/* GPS */}
+                      <Link
+                        href="/platform/gps"
+                        onClick={closeMobile}
+                        className="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100"
+                      >
+                        GPS
+                      </Link>
 
-    {/* TCMS */}
-    <div>
-      <button
-        onClick={() => setMobileTcmsOpen((prev) => !prev)}
-        className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
-      >
-        TCMS
+                      {/* TCMS */}
+                      <div>
+                        <button
+                          onClick={() => setMobileTcmsOpen((prev) => !prev)}
+                          className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
+                        >
+                          TCMS
 
-        <MaterialIcon
-          name="expand_more"
-          className={cn(
-            "transition-transform",
-            mobileTcmsOpen && "rotate-180"
-          )}
-        />
-      </button>
+                          <MaterialIcon
+                            name="expand_more"
+                            className={cn(
+                              "transition-transform",
+                              mobileTcmsOpen && "rotate-180"
+                            )}
+                          />
+                        </button>
 
-      {mobileTcmsOpen && (
-        <div className="ml-4 mt-2 border-l border-slate-200 pl-3 space-y-2">
-          {platformMenu[1].children?.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={closeMobile}
-              className="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      )}
-    </div>
-  </div>
-)}
+                        {mobileTcmsOpen && (
+                          <div className="ml-4 mt-2 border-l border-slate-200 pl-3 space-y-2">
+                            {platformMenu[1].children?.map((item) => (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                onClick={closeMobile}
+                                className="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-100"
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
                 </div>
               );
             }
