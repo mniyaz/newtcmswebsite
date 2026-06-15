@@ -132,7 +132,7 @@ export default function PremiumHeroSlider({ hero }: HeroSectionProps) {
     });
 
     return (
-        <section {...swipeHandlers} className="relative h-screen overflow-hidden lg:block hidden">
+        <section {...swipeHandlers} className="relative h-fit py-30 overflow-hidden lg:block hidden">
             {/* Base Background */}
             <div
                 className="absolute inset-0"
@@ -271,7 +271,7 @@ export default function PremiumHeroSlider({ hero }: HeroSectionProps) {
                                     duration: 0.9,
                                     ease: [0.22, 1, 0.36, 1],
                                 }}
-                                className="relative aspect-[16/10] overflow-hidden "
+                                className="relative aspect-[16/10] overflow-hidden lg:h-[300px] xl:h-[400px]"
                             >
                                 <img
                                     src={currentSlide.image}
