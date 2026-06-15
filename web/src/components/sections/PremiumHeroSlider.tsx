@@ -27,7 +27,7 @@ const slides = [
         description:
             "Manage vehicles, drivers, fuel consumption, compliance, and fleet operations from a single platform.",
         image:
-            "/hero1.png",
+            "/hs1.png",
     },
     {
         id: 2,
@@ -36,7 +36,7 @@ const slides = [
         title: "Track Your Entire Fleet in Real Time",
         description: "Monitor vehicle locations, routes, driver activities, and operational performance from a centralized dashboard.",
         image:
-            "/hero2.png",
+            "/hs2.png",
     },
     {
         id: 3,
@@ -271,7 +271,7 @@ export default function PremiumHeroSlider({ hero }: HeroSectionProps) {
                                     duration: 0.9,
                                     ease: [0.22, 1, 0.36, 1],
                                 }}
-                                className="relative aspect-auto lg:h-[300px] xl:h-[400px] overflow-hidden "
+                                className="relative aspect-[16/10] overflow-hidden lg:h-[300px] xl:h-[400px]"
                             >
                                 <img
                                     src={currentSlide.image}

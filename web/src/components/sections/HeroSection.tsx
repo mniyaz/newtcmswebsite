@@ -18,42 +18,43 @@ interface HeroSectionProps {
 }
 
 const slides = [
-  {
-    id: 1,
-    bgColor: "#EEEEEE",
-    textColor: "#111111",
-    title: "Malaysia's Complete Transport Management System",
-    description:
-      "Manage vehicles, drivers, fuel consumption, compliance, and fleet operations from a single platform.",
-    image: "/slide1.png",
-  },
-  {
-    id: 2,
-    bgColor: "#FFF5E5",
-    textColor: "#111111",
-    title: "Track Your Entire Fleet in Real Time",
-    description:
-      "Monitor vehicle locations, routes, driver activities, and operational performance from a centralized dashboard.",
-    image: "/slide2.png",
-  },
-  {
-    id: 3,
-    bgColor: "#F8F3E1",
-    textColor: "#111111",
-    title: "Simplify APAD Compliance Reporting",
-    description:
-      "Automate compliance processes and reduce manual administrative work with built-in reporting tools.",
-    image: "/slide3.png",
-  },
-  {
-    id: 4,
-    bgColor: "#FFFBF1",
-    textColor: "#111111",
-    title: "Reduce Fuel Costs and Improve Efficiency",
-    description:
-      "Identify fuel wastage, optimize routes, and improve fleet profitability through actionable insights.",
-    image: "/slide4.png",
-  },
+    {
+        id: 1,
+        bgColor: "#EEEEEE",
+        textColor: "#111111",
+        title: "Malaysia's Complete Transport Management System",
+        description:
+            "Manage vehicles, drivers, fuel consumption, compliance, and fleet operations from a single platform.",
+        image:
+            "/hero1.png",
+    },
+    {
+        id: 2,
+        bgColor: "#F3F4F5",
+        textColor: "#111111",
+        title: "Track Your Entire Fleet in Real Time",
+        description: "Monitor vehicle locations, routes, driver activities, and operational performance from a centralized dashboard.",
+        image:
+            "/hero2.png",
+    },
+    {
+        id: 3,
+        bgColor: "#F8F9FA",
+        textColor: "#111111",
+        title: "Simplify APAD Compliance Reporting",
+        description: "Automate compliance processes and reduce manual administrative work with built-in reporting tools.",
+        image:
+            "/hero3.png",
+    },
+    {
+        id: 4,
+        bgColor: "#FFFFFF",
+        textColor: "#111111",
+        title: "Reduce Fuel Costs and Improve Efficiency",
+        description: "Identify fuel wastage, optimize routes, and improve fleet profitability through actionable insights.",
+        image:
+            "/hero4.png",
+    },
 ];
 
 export function HeroSection({ hero }: HeroSectionProps) {
@@ -131,7 +132,7 @@ export function HeroSection({ hero }: HeroSectionProps) {
 
                 {/* Image */}
                 <RevealOnScroll delayMs={400} >
-                  <div className="relative aspect-[16/10] overflow-hidden shadow rounded-2xl ring-1 ring-slate-200/60">
+                  <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
                       src={slide.image}
                       alt={slide.title}
