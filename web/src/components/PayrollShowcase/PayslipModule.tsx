@@ -98,7 +98,7 @@ const PayslipModule: React.FC = () => {
 
               {/* IMAGE */}
               <img
-                src="/slip.png"
+                src="/webpImages/slip.webp"
                 alt="Payslip Dashboard Preview"
                 className="w-full h-auto object-cover"
               />

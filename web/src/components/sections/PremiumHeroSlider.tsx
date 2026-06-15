@@ -27,7 +27,7 @@ const slides = [
         description:
             "Manage vehicles, drivers, fuel consumption, compliance, and fleet operations from a single platform.",
         image:
-            "/hs1.png",
+            "/webpImages/hs1.webp",
     },
     {
         id: 2,
@@ -36,7 +36,7 @@ const slides = [
         title: "Track Your Entire Fleet in Real Time",
         description: "Monitor vehicle locations, routes, driver activities, and operational performance from a centralized dashboard.",
         image:
-            "/hs2.png",
+            "/webpImages/hs2.webp",
     },
     {
         id: 3,
@@ -45,7 +45,7 @@ const slides = [
         title: "Simplify APAD Compliance Reporting",
         description: "Automate compliance processes and reduce manual administrative work with built-in reporting tools.",
         image:
-            "/hero3.png",
+            "/webpImages/hero3.webp",
     },
     {
         id: 4,
@@ -54,7 +54,7 @@ const slides = [
         title: "Reduce Fuel Costs and Improve Efficiency",
         description: "Identify fuel wastage, optimize routes, and improve fleet profitability through actionable insights.",
         image:
-            "/hero4.png",
+            "/webpImages/hero4.webp",
     },
 ];
 

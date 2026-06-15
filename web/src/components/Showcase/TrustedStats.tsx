@@ -39,7 +39,7 @@ export default function TrustedStats() {
                     <div className="relative h-full">
                         <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-md h-full">
                             <img
-                                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80"
+                                src="/webpImages/LogisticsOperations.webp"
                                 alt="TCMS Dashboard"
                                 className="h-full w-full object-cover"
                             />

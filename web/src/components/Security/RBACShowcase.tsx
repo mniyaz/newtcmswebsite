@@ -127,7 +127,7 @@ const RBACShowcase: React.FC = () => {
           <div className="relative bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
             {/* LOGIN PAGE IMAGE */}
             <img
-              src="/login.png"
+              src="/webpImages/login.webp"
               alt="Login UI Preview"
               className="w-auto h-[40vh] mx-auto"
             />

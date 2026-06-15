@@ -17,35 +17,35 @@ const features = [
         title: "Smart Booking & Shipment Intake",
         description:
             "Streamlines shipment creation with intelligent validation, automated data capture, and a centralized booking workflow for faster onboarding.",
-        image: "./smart.png",
+        image: "/webpImages/smart.webp",
     },
     {
         icon: Route,
         title: "Distribution Planning",
         description:
             "Enables optimized route and dispatch planning with real-time visibility across pickup, transit, and last-mile delivery operations.",
-        image: "./plan.png",
+        image: "/webpImages/plan.webp",
     },
     {
         icon: Truck,
         title: "End To End Visibility & Execution",
         description:
             "Ensures seamless execution across the supply chain by matching shipments with the most efficient carriers based on cost, capacity, and performance.",
-        image: "./endtoend.png",
+        image: "/webpImages/endtoend.webp",
     },
     {
         icon: BarChart3,
         title: "Stakeholder Utilization Analytics",
         description:
             "Provides centralized digital documentation, operational insights, and performance analytics to eliminate manual reporting and improve decision-making.",
-        image: "./analytics.png",
+        image: "/webpImages/analytics.webp",
     },
     {
         icon: Handshake,
         title: "Vendor RFQ & Tracking",
         description:
             "Simplifies vendor coordination with RFQ automation while enabling live tracking of vehicle movement, ETAs, and delivery milestones.",
-        image: "./vendor.png",
+        image: "/webpImages/vendor.webp",
     },
 ];
 

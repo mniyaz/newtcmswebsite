@@ -43,7 +43,7 @@ export default function BillingFeatures() {
                     <div className="relative h-full">
 
                         <img
-                            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80"
+                            src="/webpImages/FinancialControl.webp"
                             alt="Finance Dashboard"
                             className="relative rounded-md shadow w-full h-full object-cover"
                         />

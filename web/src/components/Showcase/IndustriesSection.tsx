@@ -12,32 +12,32 @@ const industries = [
     {
         title: "Retail & E-Commerce Logistics",
         desc: "Accelerate order fulfillment with inventory synchronization, last-mile delivery tracking, route optimization, and logistics automation.",
-        image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80"
+        image: "/webpImages/ecomLog.webp"
     },
     {
         title: "Distribution Networks",
         desc: "Manage complex distribution operations through centralized shipment planning, freight visibility, and intelligent transportation workflows.",
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+        image: "/webpImages/LogisticsOperations.webp",
     },
     {
         title: "3PL & Logistics Providers",
         desc: "Deliver superior third-party logistics services with multi-client management, carrier coordination, shipment tracking, and operational analytics.",
-        image: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=1200&q=80",
+        image: "/webpImages/plLog.webp",
     },
     {
         title: "Transportation Companies",
         desc: "Improve fleet utilization with GPS tracking, route optimization, transport planning, fuel management, and real-time logistics insights.",
-        image: "https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?auto=format&fit=crop&w=1200&q=80",
+        image: "/webpImages/transCom.webp",
     },
     {
         title: "Freight & Carrier Operations",
         desc: "Streamline freight management with digital documentation, carrier allocation, shipment execution, and end-to-end transportation visibility.",
-        image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80",
+        image: "/webpImages/fcCom.webp",
     },
     {
         title: "Supply Chain & Warehousing",
         desc: "Enhance warehouse efficiency through inventory visibility, dock scheduling, transportation planning, and integrated supply chain management.",
-        image: "https://images.unsplash.com/photo-1601598851547-4302969d0614?auto=format&fit=crop&w=1200&q=80",
+        image: "/webpImages/warehousing.webp",
     },
 ];
 

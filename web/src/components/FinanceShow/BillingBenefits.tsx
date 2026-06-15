@@ -43,7 +43,7 @@ export default function BillingBenefits() {
                     {/* Image container */}
                     <div className="relative h-full rounded-lg overflow-hidden shadow-lg border border-slate-200">
                         <img
-                            src="/billing.png"
+                            src="/webpImages/billing.webp"
                             alt="Smart Billing Dashboard"
                             className="w-full h-full "
                         />

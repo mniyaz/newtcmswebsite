@@ -11,6 +11,7 @@ import {
   Users,
   BadgeCheck,
   Wallet,
+  Receipt,
 } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 
@@ -39,12 +40,13 @@ const menuItems: {
   securityOnly?: boolean;
 }[] = [
   { id: "operations", label: "Operations", icon: Route },
+  // { id: "operations", label: "Invoice", icon: Receipt },
   { id: "finance", label: "Finance", icon: Landmark },
   { id: "fleet", label: "Fleet", icon: Truck },
   { id: "compliance", label: "Compliance", icon: BadgeCheck },
   { id: "crm", label: "CRM", icon: Users },
-  { id: "security", label: "Security", icon: Shield },
   { id: "payroll", label: "Payroll", icon: Wallet },
+  { id: "security", label: "Security", icon: Shield },
 ];
 
 const menuHrefs: Partial<Record<CommandCenterMenu, string>> = {

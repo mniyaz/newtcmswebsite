@@ -72,7 +72,7 @@ const DeliveryKPIReport: React.FC = () => {
           {/* Right Image */}
           <div className="flex justify-center">
             <img
-              src="/kpi.jpeg"
+              src="/webpImages/kpi.webp"
               alt="Delivery KPI Dashboard"
               className="w-full rounded-md shadow-2xl border border-slate-200"
             />

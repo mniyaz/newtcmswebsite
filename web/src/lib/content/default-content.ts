@@ -2,9 +2,9 @@ import type { HomepageContent } from "./schema";
 
 export const defaultHomepageContent: HomepageContent = {
   metadata: {
-    title: "TCMS.ai | Run Your Entire Transport Business From One Place",
+    title: "TCMS.ai | Transport Management System Malaysia | GPS Tracking & APAD Compliance",
     description:
-      "Track vehicles, manage trips, monitor fuel, automate compliance, invoice customers, and grow your transport business with complete visibility.",
+      "Malaysia's complete transport management platform with GPS tracking, APAD compliance, fleet monitoring, fuel management, reporting, and analytics.",
   },
   navigation: {
     brand: "TCMS.ai",
