@@ -6,43 +6,50 @@ import {
     BarChart3,
     MonitorSmartphone,
 } from "lucide-react";
-
+import Link from "next/link";
 const highlights = [
     {
         title: "GPS Tracking",
         description:
             "Real-time vehicle location tracking with route history and live updates.",
         icon: MapPinned,
+        link: "/platform/gps"
+
     },
     {
         title: "APAD Compliance",
         description:
             "Stay compliant with regulations through automated monitoring and reporting.",
         icon: ShieldCheck,
+        link: "/compliance"
     },
     {
         title: "Fuel Monitoring",
         description:
             "Track fuel consumption, detect anomalies, and optimize operating costs.",
         icon: Fuel,
+        link: "/fleet/#fuel"
     },
     {
         title: "Driver Management",
         description:
             "Monitor driver performance, behavior, and safety metrics efficiently.",
         icon: UserCog,
+        link: "/fleet"
     },
     {
         title: "Fleet Analytics",
         description:
             "Gain actionable insights with advanced reports and performance dashboards.",
         icon: BarChart3,
+        link: "/fleet"
     },
     {
         title: "Customer Portal",
         description:
             "Provide customers with transparent access to tracking and service updates.",
         icon: MonitorSmartphone,
+        link: "/crm"
     },
 ];
 
@@ -69,9 +76,10 @@ export default function ProductHighlights() {
                         const Icon = item.icon;
 
                         return (
-                            <div
+                            <Link
                                 key={item.title}
-                                className="group bg-[#003b8f] relative overflow-hidden rounded-lg p-4 md:p-7 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/30 hover:shadow-[0_20px_50px_rgba(6,182,212,0.15)]"
+                                href={item.link}
+                                className="group bg-[#003b8f] cursor-pointer relative overflow-hidden rounded-lg p-4 md:p-7 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/30 hover:shadow-[0_20px_50px_rgba(6,182,212,0.15)]"
                             >
 
                                 {/* Icon */}
@@ -92,7 +100,7 @@ export default function ProductHighlights() {
 
                                 {/* Accent Line */}
                                 <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-full" />
-                            </div>
+                            </Link>
                         );
                     })}
                 </div>

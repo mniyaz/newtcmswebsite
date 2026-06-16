@@ -85,7 +85,7 @@ export function ModulePagePreview({ page }: ModulePagePreviewProps) {
         <ModuleDashboardMockup variant={page.slug} />
       </section>
 
-      <section
+      <section id="fuel"
         className={cn(
           "grid gap-5 sm:grid-cols-2 lg:gap-6",
           page.features.length > 4 ? "lg:grid-cols-3" : "lg:grid-cols-4",
@@ -95,7 +95,7 @@ export function ModulePagePreview({ page }: ModulePagePreviewProps) {
           const Icon = featureIcons[feature.title] ?? Star;
           return (
             <PreviewCard key={feature.title}>
-              <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <div  className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <Icon className="h-6 w-6" />
               </div>
               <h3 className="text-lg font-bold text-slate-900">{feature.title}</h3>

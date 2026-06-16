@@ -32,6 +32,7 @@ export const painPointSchema = z.object({
   icon: z.string().min(1),
   title: z.string().min(1),
   description: z.string().min(1),
+  link: z.string().min(1),
 });
 
 export const featureItemSchema = z.object({

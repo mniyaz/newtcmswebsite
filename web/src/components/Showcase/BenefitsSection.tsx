@@ -33,7 +33,7 @@ export default function BenefitsSection() {
     ];
 
     return (
-        <section className="py-5">
+        <section id="benefits" className="py-5">
             <div className="mx-auto">
 
                 {/* Heading */}

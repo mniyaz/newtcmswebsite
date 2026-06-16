@@ -27,7 +27,7 @@ const slides = [
         description:
             "Manage vehicles, drivers, fuel consumption, compliance, and fleet operations from a single platform.",
         image:
-            "/webpImages/hs1.webp",
+            "/webpImages/dashboard.webp",
     },
     {
         id: 2,
@@ -36,7 +36,7 @@ const slides = [
         title: "Track Your Entire Fleet in Real Time",
         description: "Monitor vehicle locations, routes, driver activities, and operational performance from a centralized dashboard.",
         image:
-            "/webpImages/hs2.webp",
+            "/webpImages/fleetHero.webp",
     },
     {
         id: 3,

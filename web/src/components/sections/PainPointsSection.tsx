@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { MaterialIcon } from "@/components/ui/MaterialIcon";
 import { RevealOnScroll, StaggerItem, StaggerReveal } from "@/components/ui/RevealOnScroll";
-
+import Link from "next/link";
 interface PainPointsSectionProps {
   painPoints: HomepageContent["painPoints"];
 }
@@ -18,7 +18,7 @@ export function PainPointsSection({ painPoints }: PainPointsSectionProps) {
         <StaggerReveal className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {painPoints.items.map((item, index) => (
             <StaggerItem key={item.title} index={index}>
-              <div className="flex h-full flex-col rounded-lg border border-[#C3C6D5] bg-white p-6 shadow-card transition-all duration-300 hover:border-red-200 hover:shadow-card-hover">
+              <Link href={item.link} className="flex h-full flex-col rounded-lg border border-[#C3C6D5] bg-white p-6 shadow-card transition-all duration-300 hover:border-red-200 hover:shadow-card-hover">
                 <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-red-50">
                   <MaterialIcon name={item.icon} className="text-[22px] text-error" />
                 </div>
@@ -26,7 +26,7 @@ export function PainPointsSection({ painPoints }: PainPointsSectionProps) {
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-[#434653]">
                   {item.description}
                 </p>
-              </div>
+              </Link>
             </StaggerItem>
           ))}
         </StaggerReveal>
@@ -39,9 +39,14 @@ export function PainPointsSection({ painPoints }: PainPointsSectionProps) {
               <h3 className="text-xl font-bold text-white md:text-2xl">
                 {painPoints.ctaBanner.title}
               </h3>
-              <Button variant="white" className="shrink-0 font-bold !rounded-lg">
-                {painPoints.ctaBanner.cta.label}
-              </Button>
+<Link href="/operations/#benefits">
+  <Button
+    variant="white"
+    className="shrink-0 font-bold !rounded-lg cursor-pointer"
+  >
+    {painPoints.ctaBanner.cta.label}
+  </Button>
+</Link>
             </div>
           </RevealOnScroll>
         </div>

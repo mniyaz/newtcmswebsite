@@ -44,36 +44,42 @@ export const defaultHomepageContent: HomepageContent = {
       {
         icon: "phone_disabled",
         title: "Drivers not answering calls",
+        link: "/operations/#benefits",
         description:
           "Constant calling to check location disrupts drivers and wastes your dispatch team's time.",
       },
       {
         icon: "forum",
         title: "Customers requesting updates",
+        link: "/crm",
         description:
           'Dealing with repetitive "Where is my shipment?" calls prevents you from focusing on growth.',
       },
       {
         icon: "gas_meter",
         title: "Fuel wastage/theft",
+         link: "/fleet",
         description:
           "Undetected siphoning and excessive idling are silently eating into your monthly margins.",
       },
       {
         icon: "build_circle",
         title: "Missed maintenance",
+         link: "/compliance",
         description:
           "Unplanned breakdowns happen because you're tracking service dates on a wall calendar.",
       },
       {
         icon: "pending_actions",
         title: "Delayed invoicing",
+         link: "/solutions/accounting-payments",
         description:
           "Waiting days for physical PODs to return means you're being paid weeks later than you should.",
       },
       {
         icon: "report_problem",
         title: "Compliance overload",
+         link: "/compliance",
         description:
           "Struggling to keep up with APAD and JPJ renewals and driver permit expirations.",
       },

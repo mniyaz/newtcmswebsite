@@ -7,6 +7,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import PremiumHeroSlider from "./sections/PremiumHeroSlider";
 import ProductHighlights from "./sections/ProductHighlights";
 import { HomepageContent } from "@/lib/content/schema";
+import { FeatureOrbitSection } from "./sections/FeatureOrbitSection";
 
 const PainPointsSection = dynamic(
   () =>
@@ -83,6 +84,7 @@ interface HomepageProps {
 }
 
 export function Homepage({ content }: HomepageProps) {
+  console.log("Homepage content", content.painPoints.items);
   return (
     <>
       <Header navigation={content.navigation} />
