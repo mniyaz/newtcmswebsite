@@ -8,12 +8,12 @@ export const defaultHomepageContent: HomepageContent = {
   },
   navigation: {
     brand: "TCMS.ai",
-    links: [
-      { label: "Platforms", href: "#solutions", isActive: true },
-      { label: "The Advantage", href: "#advantage" },
-      { label: "Solutions", href: "#platform" },
-      { label: "Contact", href: "#contact" },
-    ],
+links: [
+  { label: "Solutions", href: "#platform" },
+  { label: "The Advantage", href: "#advantage" },
+  { label: "Platforms", href: "#solutions" },
+  { label: "Contact", href: "#contact" },
+],
     loginLabel: "Login",
     cta: { label: "Book Demo", variant: "primary" },
   },

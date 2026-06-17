@@ -1,3 +1,4 @@
+'use client'
 import {
   ArrowRight,
   BadgeCheck,
@@ -9,10 +10,12 @@ import {
   Play,
   Shield,
   Users,
+  X,
 } from "lucide-react";
 import { PreviewCard } from "@/components/solutions/PreviewCard";
 import { payrollCompliancePage } from "@/lib/content/solutions";
 import { cn } from "@/lib/utils/cn";
+import { useState } from "react";
 
 const page = payrollCompliancePage;
 
@@ -83,6 +86,7 @@ const complianceCards = [
 ];
 
 export function PayrollCompliancePreview() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
   return (
     <div className="space-y-10 md:space-y-14">
       {/* Hero */}
@@ -101,6 +105,7 @@ export function PayrollCompliancePreview() {
         <div className="flex flex-col gap-3 sm:flex-row">
           <button
             type="button"
+            onClick={() => setIsVideoOpen(true)}
             className="flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-4 text-sm font-bold text-white shadow-lg"
           >
             <Play className="h-4 w-4" />
@@ -114,6 +119,26 @@ export function PayrollCompliancePreview() {
             Download Statutory Reports
           </button>
         </div>
+        {isVideoOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+            <div className="relative w-full max-w-4xl rounded-2xl p-4">
+              <button
+                onClick={() => setIsVideoOpen(false)}
+                className="absolute lg:-right-4 lg:-top-4 right-0 -top-6 bg-white rounded-full p-2 cursor-pointer"
+              >
+                <X  size={16}/>
+              </button>
+
+              <video
+                controls
+                autoPlay
+                className="w-full rounded-xl"
+              >
+                <source src="/payrollSumary.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        )}
       </section>
 
       {/* Dashboard */}

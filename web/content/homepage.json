@@ -7,17 +7,16 @@
     "brand": "TCMS.ai",
     "links": [
       {
-        "label": "Platforms",
-        "href": "#solutions",
-        "isActive": true
+        "label": "Solutions",
+        "href": "#platform"
       },
       {
         "label": "The Advantage",
         "href": "#advantage"
       },
       {
-        "label": "Solutions",
-        "href": "#platform"
+        "label": "Platforms",
+        "href": "#solutions"
       },
       {
         "label": "Contact",

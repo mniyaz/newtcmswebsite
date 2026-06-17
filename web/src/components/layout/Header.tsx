@@ -57,119 +57,119 @@ export function Header({ navigation }: HeaderProps) {
         </Link>
 
         {/* Desktop Nav */}
-{/* Desktop Nav */}
-<nav className="hidden items-center gap-8 lg:flex">
-  {navigation.links.map((link) => {
-    if (link.label === "Platform") {
-      return (
-        <div key={link.label} className="relative" ref={dropdownRef}>
-          <button
-            type="button"
-            onClick={() => setPlatformOpen((p) => !p)}
-            className={cn(
-              "relative flex items-center gap-1 text-sm font-medium transition-colors",
-              "after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:bg-[#00327D] after:transition-all after:duration-300",
-              isPlatformPage
-                ? "text-[#00327D] after:w-full"
-                : "text-[#434653] hover:text-[#00327D] after:w-0 hover:after:w-full"
-            )}
-          >
-            Platforms
+        {/* Desktop Nav */}
+        <nav className="hidden items-center gap-8 lg:flex">
+          {navigation.links.map((link) => {
+            if (link.label === "Platforms") {
+              return (
+                <div key={link.label} className="relative" ref={dropdownRef}>
+                  <button
+                    type="button"
+                    onClick={() => setPlatformOpen((p) => !p)}
+                    className={cn(
+                      "relative flex items-center gap-1 text-sm font-medium transition-colors",
+                      "after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:bg-[#00327D] after:transition-all after:duration-300",
+                      isPlatformPage
+                        ? "text-[#00327D] after:w-full"
+                        : "text-[#434653] hover:text-[#00327D] after:w-0 hover:after:w-full"
+                    )}
+                  >
+                    Platforms
 
-            <MaterialIcon
-              name="expand_more"
-              className={cn(
-                "text-[18px] transition-transform",
-                platformOpen && "rotate-180"
-              )}
-            />
-          </button>
+                    <MaterialIcon
+                      name="expand_more"
+                      className={cn(
+                        "text-[18px] transition-transform",
+                        platformOpen && "rotate-180"
+                      )}
+                    />
+                  </button>
 
-          {platformOpen && (
-            <div className="absolute left-0 top-full z-50 mt-2 w-72 rounded-2xl border border-[#c3c6d5] bg-white p-2 shadow-card-hover">
-              {/* GPS */}
-              <Link
-                href="/platform/gps"
-                onClick={() => setPlatformOpen(false)}
-                className="block rounded-xl px-4 py-3 hover:bg-slate-200"
-              >
-                <p className="text-sm font-semibold">GPS</p>
-                <p className="text-xs text-slate-500">
-                  Live vehicle tracking
-                </p>
-              </Link>
+                  {platformOpen && (
+                    <div className="absolute left-0 top-full z-50 mt-2 w-72 rounded-2xl border border-[#c3c6d5] bg-white p-2 shadow-card-hover">
+                      {/* GPS */}
+                      <Link
+                        href="/platform/gps"
+                        onClick={() => setPlatformOpen(false)}
+                        className="block rounded-xl px-4 py-3 hover:bg-slate-200"
+                      >
+                        <p className="text-sm font-semibold">GPS</p>
+                        <p className="text-xs text-slate-500">
+                          Live vehicle tracking
+                        </p>
+                      </Link>
 
-              {/* TCMS Parent */}
-              <button
-                onClick={() => setTcmsOpen((prev) => !prev)}
-                className="flex w-full items-center justify-between rounded-xl px-4 py-3 hover:bg-slate-50"
-              >
-                <div className="text-left">
-                  <p className="text-sm font-semibold">TCMS</p>
-                  <p className="text-xs text-slate-500">
-                    Transport Management Suite
-                  </p>
-                </div>
+                      {/* TCMS Parent */}
+                      <button
+                        onClick={() => setTcmsOpen((prev) => !prev)}
+                        className="flex w-full items-center justify-between rounded-xl px-4 py-3 hover:bg-slate-50"
+                      >
+                        <div className="text-left">
+                          <p className="text-sm font-semibold">TCMS</p>
+                          <p className="text-xs text-slate-500">
+                            Transport Management Suite
+                          </p>
+                        </div>
 
-                <MaterialIcon
-                  name="chevron_right"
-                  className={cn(
-                    "transition-transform",
-                    tcmsOpen && "rotate-90"
+                        <MaterialIcon
+                          name="chevron_right"
+                          className={cn(
+                            "transition-transform",
+                            tcmsOpen && "rotate-90"
+                          )}
+                        />
+                      </button>
+
+                      {/* TCMS Submenu */}
+                      {tcmsOpen && (
+                        <div className="ml-4 border-l border-[#c3c6d5] pl-3">
+                          {platformMenu[1].children?.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              onClick={() => {
+                                setPlatformOpen(false);
+                                setTcmsOpen(false);
+                              }}
+                              className="block rounded-lg px-3 py-2 hover:bg-slate-200"
+                            >
+                              <p className="text-sm font-medium">
+                                {item.label}
+                              </p>
+                              <p className="text-xs text-slate-500">
+                                {item.description}
+                              </p>
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   )}
-                />
-              </button>
-
-              {/* TCMS Submenu */}
-              {tcmsOpen && (
-                <div className="ml-4 border-l border-[#c3c6d5] pl-3">
-                  {platformMenu[1].children?.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => {
-                        setPlatformOpen(false);
-                        setTcmsOpen(false);
-                      }}
-                      className="block rounded-lg px-3 py-2 hover:bg-slate-200"
-                    >
-                      <p className="text-sm font-medium">
-                        {item.label}
-                      </p>
-                      <p className="text-xs text-slate-500">
-                        {item.description}
-                      </p>
-                    </Link>
-                  ))}
                 </div>
-              )}
-            </div>
-          )}
-        </div>
-      );
-    }
+              );
+            }
 
-    const isActive =
-      pathname === link.href ||
-      (link.href !== "/" && pathname.startsWith(link.href));
+            const isActive =
+              pathname === link.href ||
+              (link.href !== "/" && pathname.startsWith(link.href));
 
-    return (
-      <Link
-        key={link.label}
-        href={link.href}
-        className={cn(
-          "relative text-sm font-medium transition-colors",
-          "after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:bg-[#00327D] after:transition-all after:duration-300",
-          isActive
-            ? "text-[#00327D] after:w-full"
-            : "text-[#434653] hover:text-[#00327D] after:w-0 hover:after:w-full"
-        )}
-      >
-        {link.label}
-      </Link>
-    );
-  })}
-</nav>
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={cn(
+                  "relative text-sm font-medium transition-colors",
+                  "after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:bg-[#00327D] after:transition-all after:duration-300",
+                  isActive
+                    ? "text-[#00327D] after:w-full"
+                    : "text-[#434653] hover:text-[#00327D] after:w-0 hover:after:w-full"
+                )}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+        </nav>
 
         {/* Right Actions */}
         <div className="flex items-center gap-3">
