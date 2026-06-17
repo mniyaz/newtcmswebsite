@@ -113,7 +113,7 @@ export function EcosystemSection({
   ];
 
   return (
-    <div className="py-8 md:py-16 bg-[#F8F9FA] px-5">
+    <div className="py-8 md:py-16 bg-[#F8F9FA] px-5 md:px-10">
       <SectionHeader
         title={ecosystem.title}
         subtitle={ecosystem.subtitle}

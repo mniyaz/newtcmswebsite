@@ -45,7 +45,7 @@ const slides = [
         title: "Simplify APAD Compliance Reporting",
         description: "Automate compliance processes and reduce manual administrative work with built-in reporting tools.",
         image:
-            "/webpImages/hero3.webp",
+            "/webpImages/report.webp",
     },
     {
         id: 4,
@@ -54,7 +54,7 @@ const slides = [
         title: "Reduce Fuel Costs and Improve Efficiency",
         description: "Identify fuel wastage, optimize routes, and improve fleet profitability through actionable insights.",
         image:
-            "/webpImages/hero4.webp",
+            "/webpImages/fuelChar.webp",
     },
 ];
 
