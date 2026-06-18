@@ -7,6 +7,7 @@ import type { HomepageContent } from "@/lib/content/schema";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { MaterialIcon } from "@/components/ui/MaterialIcon";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import PremiumFeatureCard from "./Premiumfeaturecard";
 
 interface EcosystemSectionProps {
   ecosystem: HomepageContent["ecosystem"];
@@ -143,9 +144,8 @@ export function EcosystemSection({
       </div>
 
       {/* Desktop */}
-      <RevealOnScroll>
+      {/* <RevealOnScroll>
         <div className="relative hidden lg:flex items-center justify-center h-[600px] overflow-hidden">
-          {/* Glow Layer */}
           <motion.div
             animate={{
               scale: [1, 1.08, 1],
@@ -159,7 +159,6 @@ export function EcosystemSection({
             className="absolute w-[340px] h-[340px] rounded-full bg-blue-500/20 blur-3xl"
           />
 
-          {/* Animated Cards */}
           {cards.map(
             (card, index) =>
               card.data && (
@@ -194,7 +193,6 @@ export function EcosystemSection({
               )
           )}
 
-          {/* Hub */}
           <motion.div
             animate={hubControls}
             className="relative z-30 w-[220px] h-[220px]"
@@ -214,7 +212,8 @@ export function EcosystemSection({
             </div>
           </motion.div>
         </div>
-      </RevealOnScroll>
+      </RevealOnScroll> */}
+      <PremiumFeatureCard/>
     </div>
   );
 }

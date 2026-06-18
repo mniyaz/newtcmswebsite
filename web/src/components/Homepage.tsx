@@ -8,6 +8,7 @@ import PremiumHeroSlider from "./sections/PremiumHeroSlider";
 import ProductHighlights from "./sections/ProductHighlights";
 import { HomepageContent } from "@/lib/content/schema";
 import { FeatureOrbitSection } from "./sections/FeatureOrbitSection";
+import PremiumFeatureCard from "./sections/Premiumfeaturecard";
 
 const PainPointsSection = dynamic(
   () =>
