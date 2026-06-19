@@ -196,7 +196,7 @@ export function Header({ navigation }: HeaderProps) {
       {mobileOpen && (
         <div className="lg:hidden border-t bg-white px-6 py-4 space-y-4">
           {navigation.links.map((link) => {
-            if (link.label === "Platform") {
+            if (link.label === "Platforms") {
               return (
                 <div key={link.label}>
                   <button

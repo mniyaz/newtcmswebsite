@@ -9,6 +9,8 @@ import ProductHighlights from "./sections/ProductHighlights";
 import { HomepageContent } from "@/lib/content/schema";
 import { FeatureOrbitSection } from "./sections/FeatureOrbitSection";
 import PremiumFeatureCard from "./sections/Premiumfeaturecard";
+import MovingPlanSection from "./sections/Movingplansection";
+import MovingPlanMobile from "./sections/MovingPlanMobile";
 
 const PainPointsSection = dynamic(
   () =>
@@ -102,7 +104,12 @@ export function Homepage({ content }: HomepageProps) {
         />
         <FuelCostSection fuelCost={content.fuelCost} />
         <ComplianceSection compliance={content.compliance} />
-        <EcosystemSection ecosystem={content.ecosystem} />
+        {/* <EcosystemSection ecosystem={content.ecosystem} /> */}
+        <div className="block lg:hidden">
+          <MovingPlanMobile />
+        </div>
+
+        <MovingPlanSection />
         <RoiCalculatorSection roiCalculator={content.roiCalculator} />
         <SocialProofSection socialProof={content.socialProof} />
         <PricingSection pricing={content.pricing} />

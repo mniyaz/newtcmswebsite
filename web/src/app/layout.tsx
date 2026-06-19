@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { WhatsAppSticky } from "@/components/sections/WhatsAppSticky";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,6 +30,10 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} bg-background text-on-surface antialiased`}>
         {children}
+                      <WhatsAppSticky
+                phone="919876543210"
+                message="Hi! I'm interested in your transport management solution."
+              />
       </body>
     </html>
   );
