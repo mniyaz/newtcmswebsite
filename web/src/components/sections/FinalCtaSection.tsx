@@ -2,6 +2,7 @@ import type { HomepageContent } from "@/lib/content/schema";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import Link from "next/link";
 
 interface FinalCtaSectionProps {
   finalCta: HomepageContent["finalCta"];
@@ -23,6 +24,7 @@ export function FinalCtaSection({ finalCta }: FinalCtaSectionProps) {
               {finalCta.description}
             </p>
             <div className="block md:hidden">
+<Link href="/#demoBook">
               <Button
                 variant="white"
                 pulse
@@ -30,8 +32,10 @@ export function FinalCtaSection({ finalCta }: FinalCtaSectionProps) {
               >
                 {finalCta.cta.label}
               </Button>
+              </Link>
             </div>
             <div className="pt-2 hidden md:block">
+              <Link href="/#demoBook">
               <Button
                 variant="white"
                 size="lg"
@@ -40,6 +44,7 @@ export function FinalCtaSection({ finalCta }: FinalCtaSectionProps) {
               >
                 {finalCta.cta.label}
               </Button>
+              </Link>
             </div>
             <p className="text-sm text-white/65">{finalCta.footnote}</p>
           </div>

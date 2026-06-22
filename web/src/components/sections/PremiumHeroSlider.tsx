@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { useSwipeable } from "react-swipeable";
 import "swiper/css";
+import Link from "next/link";
 const AUTO_PLAY_DELAY = 5000;
 const BG_TRANSITION_DURATION = 1800;
 
@@ -213,9 +214,11 @@ export default function PremiumHeroSlider({ hero }: HeroSectionProps) {
                                 </p>
 
                                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:hidden">
-                                    <Button variant="ghost" pulse className="w-full sm:w-auto bg-[#00327D] text-white !rounded-md">
-                                        {hero.primaryCta.label}
-                                    </Button>
+                                    <Link href="/#demoBook">
+                                        <Button variant="ghost" pulse className="w-full sm:w-auto bg-[#00327D] text-white !rounded-md">
+                                            {hero.primaryCta.label}
+                                        </Button>
+                                    </Link>
                                     <Button
                                         variant="ghost"
                                         className="group w-full sm:w-auto border border-[#C3C6D5] !rounded-md bg-white !text-black"
@@ -228,9 +231,11 @@ export default function PremiumHeroSlider({ hero }: HeroSectionProps) {
                                     </Button>
                                 </div>
                                 <div className="lg:flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center hidden">
-                                    <Button variant="ghost" size="lg" pulse className="w-full sm:w-auto bg-[#00327D] text-white !rounded-md">
-                                        {hero.primaryCta.label}
-                                    </Button>
+                                    <Link href="/#demoBook">
+                                        <Button variant="ghost" size="lg" pulse className="w-full sm:w-auto bg-[#00327D] text-white !rounded-md">
+                                            {hero.primaryCta.label}
+                                        </Button>
+                                    </Link>
                                     <Button
                                         variant="ghost"
                                         size="lg"
@@ -329,34 +334,33 @@ export default function PremiumHeroSlider({ hero }: HeroSectionProps) {
 
 
             {/* Indicators */}
-<div className="absolute bottom-10 left-1/2 z-30 flex items-center -translate-x-1/2 gap-3">
-    <button
-        onClick={prevSlide}
-        className="flex h-10 w-10 items-center justify-center rounded-full cursor-pointer"
-    >
-        <MaterialIcon name="chevron_left" />
-    </button>
+            <div className="absolute bottom-10 left-1/2 z-30 flex items-center -translate-x-1/2 gap-3">
+                <button
+                    onClick={prevSlide}
+                    className="flex h-10 w-10 items-center justify-center rounded-full cursor-pointer"
+                >
+                    <MaterialIcon name="chevron_left" />
+                </button>
 
-    {slides.map((slide, index) => (
-        <button
-            key={slide.id}
-            onClick={() => goToSlide(index)}
-            aria-label={`Go to slide ${index + 1}`}
-            className={`h-2 rounded-full transition-all duration-500 cursor-pointer ${
-                index === activeIndex
-                    ? "w-10 bg-[#003b8f]"
-                    : "w-2 bg-[#003b8f]/40 hover:bg-[#003b8f]"
-            }`}
-        />
-    ))}
+                {slides.map((slide, index) => (
+                    <button
+                        key={slide.id}
+                        onClick={() => goToSlide(index)}
+                        aria-label={`Go to slide ${index + 1}`}
+                        className={`h-2 rounded-full transition-all duration-500 cursor-pointer ${index === activeIndex
+                                ? "w-10 bg-[#003b8f]"
+                                : "w-2 bg-[#003b8f]/40 hover:bg-[#003b8f]"
+                            }`}
+                    />
+                ))}
 
-    <button
-        onClick={nextSlide}
-        className="flex h-10 w-10 items-center justify-center rounded-full cursor-pointer"
-    >
-        <MaterialIcon name="chevron_right" />
-    </button>
-</div>
+                <button
+                    onClick={nextSlide}
+                    className="flex h-10 w-10 items-center justify-center rounded-full cursor-pointer"
+                >
+                    <MaterialIcon name="chevron_right" />
+                </button>
+            </div>
 
         </section>
     );

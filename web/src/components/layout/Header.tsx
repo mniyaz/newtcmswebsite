@@ -177,9 +177,11 @@ export function Header({ navigation }: HeaderProps) {
             {navigation.loginLabel}
           </button>
           <div className="hidden lg:block">
-            <Button size="sm" className="bg-[#00327D] ">
-              {navigation.cta.label}
-            </Button>
+            <Link href="/#demoBook">
+              <Button size="sm" className="bg-[#00327D]  cursor-pointer">
+                {navigation.cta.label}
+              </Button>
+            </Link>
           </div>
 
           {/* Hamburger */}

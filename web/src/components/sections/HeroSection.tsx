@@ -12,6 +12,7 @@ import { Autoplay, EffectFade } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
+import Link from "next/link";
 
 interface HeroSectionProps {
   hero: HomepageContent["hero"];
@@ -109,13 +110,14 @@ export function HeroSection({ hero }: HeroSectionProps) {
 
                   <RevealOnScroll delayMs={300}>
                     <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-start justify-start">
+                      <Link href="/#demoBook">
                       <Button
                         variant="ghost"
                         className="w-full sm:w-auto bg-[#00327D] text-white  !rounded-md"
                       >
                         {hero.primaryCta.label}
                       </Button>
-
+</Link>
                       <Button
                         variant="ghost"
                         className="group w-full sm:w-auto border border-[#C3C6D5] bg-white !text-black !rounded-md"

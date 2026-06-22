@@ -11,6 +11,8 @@ import { FeatureOrbitSection } from "./sections/FeatureOrbitSection";
 import PremiumFeatureCard from "./sections/Premiumfeaturecard";
 import MovingPlanSection from "./sections/Movingplansection";
 import MovingPlanMobile from "./sections/MovingPlanMobile";
+import TCMSContact from "./sections/TCMSContact";
+import NotFound404 from "./sections/Notfound404";
 
 const PainPointsSection = dynamic(
   () =>
@@ -114,6 +116,7 @@ export function Homepage({ content }: HomepageProps) {
         <SocialProofSection socialProof={content.socialProof} />
         <PricingSection pricing={content.pricing} />
         <FinalCtaSection finalCta={content.finalCta} />
+        <TCMSContact/>
       </main>
 
       <Footer footer={content.footer} />
