@@ -44,8 +44,8 @@ export default function TCMSContact() {
     };
 
     return (
-        <section id="demoBook" className="min-h-screen flex items-center justify-center bg-white p-6">
-            <div className="w-full max-w-6xl overflow-hidden rounded-3xl shadow-xl border border-gray-200 grid grid-cols-1 md:grid-cols-2 items-stretch">
+        <section id="demoBook" className="min-h-screen flex items-center justify-center bg-white lg:py-10 px-5 py-10">
+            <div className="w-full max-w-6xl overflow-hidden rounded-lg md:rounded-3xl shadow-xl border border-gray-200 grid grid-cols-1 md:grid-cols-2 items-stretch">
 
                 {/* Left Image Section */}
                 <div className="hidden md:block relative">
@@ -72,10 +72,10 @@ export default function TCMSContact() {
 
 
                 {/* Form Section */}
-                <div className="bg-white px-8 py-5 md:px-10 w-full">
+                <div className="bg-white px-4 py-5 md:px-10 w-full">
 
 
-                    <h1 className="text-4xl font-bold text-slate-900">
+                    <h1 className="md:text-4xl text-2xl font-bold text-slate-900">
                         Book Your TCMS Demo.
                     </h1>
 
@@ -89,7 +89,7 @@ export default function TCMSContact() {
                         onSubmit={sendEmail}
                         className="mt-8 space-y-5">
 
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid lg:grid-cols-2 gap-4">
 
                             <div>
                                 <label className="text-sm font-semibold">
@@ -122,7 +122,7 @@ export default function TCMSContact() {
 
                         </div>
 
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid lg:grid-cols-2 gap-4">
                             <div>
                                 <label className="text-sm font-semibold">
                                     Email Address

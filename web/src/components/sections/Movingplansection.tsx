@@ -30,7 +30,7 @@ const STEPS: Step[] = [
         title: "Drivers",
         desc: "Monitor driver assignments, licenses, trip history, attendance, and performance to ensure safe and efficient transportation operations.",
         image:
-            "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=500&h=500&fit=crop&crop=center",
+            "https://img.magnific.com/free-photo/professional-truck-driver-casual-clothing-wearing-seat-belt-driving-his-truck-destination_342744-1267.jpg?t=st=1782195085~exp=1782198685~hmac=8c965c9a27173e2599f395c7f4935f1e6a19ecf1b481116df0df0983b2691b43&w=1480",
     },
     {
         id: 3,
@@ -38,7 +38,7 @@ const STEPS: Step[] = [
         title: "Customers",
         desc: "Streamline customer management with shipment tracking, delivery updates, communication history, and service records in one place.",
         image:
-            "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=500&h=500&fit=crop&crop=center",
+            "https://img.magnific.com/free-photo/mature-manager-communicating-with-female-distribution-warehouse-worker-industrial-building_637285-4899.jpg?uid=R175611833&ga=GA1.1.149756539.1777702811&semt=ais_hybrid&w=740&q=80",
     },
     {
         id: 4,

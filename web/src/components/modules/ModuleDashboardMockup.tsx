@@ -57,8 +57,8 @@ function OperationsDashboard() {
   ];
 
   return (
-    <PreviewCard className="shadow-md">
-      <div className="mb-5 flex items-center justify-between">
+    <div className="xl:h-[380px]">
+      {/* <div className="mb-5 flex items-center justify-between">
         <div>
           <h3 className="text-lg font-semibold text-slate-900">Live Dispatch Board</h3>
           <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
@@ -100,8 +100,9 @@ function OperationsDashboard() {
             </div>
           </div>
         ))}
-      </div>
-    </PreviewCard>
+      </div> */}
+      <img src='/masterDashBoard.png' className="shadow-lg rounded-lg h-full w-full border border-gray-200"/>
+    </div>
   );
 }
 

@@ -24,26 +24,26 @@ export function FinalCtaSection({ finalCta }: FinalCtaSectionProps) {
               {finalCta.description}
             </p>
             <div className="block md:hidden">
-<Link href="/#demoBook">
-              <Button
-                variant="white"
-                pulse
-                className="min-w-[240px] text-base font-bold"
-              >
-                {finalCta.cta.label}
-              </Button>
+              <Link href="/#demoBook">
+                <Button
+                  variant="white"
+                  pulse
+                  className="min-w-[240px] text-base font-bold"
+                >
+                  {finalCta.cta.label}
+                </Button>
               </Link>
             </div>
             <div className="pt-2 hidden md:block">
               <Link href="/#demoBook">
-              <Button
-                variant="white"
-                size="lg"
-                pulse
-                className="min-w-[240px] text-base font-bold"
-              >
-                {finalCta.cta.label}
-              </Button>
+                <Button
+                  variant="white"
+                  size="lg"
+                  pulse
+                  className="min-w-[240px] text-base font-bold"
+                >
+                  {finalCta.cta.label}
+                </Button>
               </Link>
             </div>
             <p className="text-sm text-white/65">{finalCta.footnote}</p>

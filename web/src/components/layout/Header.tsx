@@ -89,7 +89,7 @@ export function Header({ navigation }: HeaderProps) {
                     <div className="absolute left-0 top-full z-50 mt-2 w-72 rounded-2xl border border-[#c3c6d5] bg-white p-2 shadow-card-hover">
                       {/* GPS */}
                       <Link
-                        href="/platform/gps"
+                        href="#"
                         onClick={() => setPlatformOpen(false)}
                         className="block rounded-xl px-4 py-3 hover:bg-slate-200"
                       >
@@ -222,7 +222,7 @@ export function Header({ navigation }: HeaderProps) {
 
                       {/* GPS */}
                       <Link
-                        href="/platform/gps"
+                        href="#"
                         onClick={closeMobile}
                         className="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100"
                       >
@@ -283,9 +283,11 @@ export function Header({ navigation }: HeaderProps) {
             <button className="text-sm text-[#00327D]">
               {navigation.loginLabel}
             </button>
-            <Button className="w-full bg-[#00327D]">
-              {navigation.cta.label}
-            </Button>
+            <Link href="/#demoBook">
+              <Button className="w-full bg-[#00327D]">
+                {navigation.cta.label}
+              </Button>
+            </Link>
           </div>
         </div>
       )}

@@ -68,6 +68,13 @@ export function PricingSection({ pricing }: PricingSectionProps) {
                 >
                   {plan.cta.label}
                 </Button>
+                {plan.trail && (
+                  <p
+                    className="text-sm md:text-base font-semibold text-[#00327D] mt-4"
+                  >
+                    {plan.trail}
+                  </p>
+                )}
               </div>
               <div className="block md:hidden">
                 <Button
@@ -78,6 +85,13 @@ export function PricingSection({ pricing }: PricingSectionProps) {
                 >
                   {plan.cta.label}
                 </Button>
+                {plan.trail && (
+                  <p
+                    className="text-sm md:text-base font-semibold text-[#00327D] mt-4"
+                  >
+                    {plan.trail}
+                  </p>
+                )}
               </div>
             </div>
           </StaggerItem>

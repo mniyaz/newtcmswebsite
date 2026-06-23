@@ -286,6 +286,7 @@ links: [
           { label: "Fuel Monitoring", included: false },
         ],
         cta: { label: "Start Free Trial", variant: "outline" },
+        trail:"Full access for 14 days.Cancel anytime. No card needed.",
       },
       {
         name: "Growth",
@@ -319,9 +320,9 @@ links: [
   finalCta: {
     title: "Ready To Grow Your Transport Business?",
     description:
-      "Join 500+ Malaysian transport companies using TCMS.ai to increase efficiency and cut costs.",
+      "Join 150+ Malaysian fleet operators. Start your 14-day free trial and experience the complete TCMS.ai platform with no commitment.",
     cta: { label: "Book Live Demo Now", variant: "primary" },
-    footnote: "No credit card required. Setup in less than 48 hours.",
+    footnote: "Free for 14 days. No credit card required. Setup in less than 48 hours.",
   },
   footer: {
     brand: "TCMS.ai",
@@ -332,9 +333,9 @@ links: [
         title: "Product",
         links: [
           { label: "GPS Tracking", href: "#" },
-          { label: "Fuel Management", href: "#" },
-          { label: "Customer Portal", href: "#" },
-          { label: "Compliance", href: "#" },
+          { label: "Fuel Management", href: "/fleet#fuel" },
+          { label: "Customer Portal", href: "/crm" },
+          { label: "Compliance", href: "/compliance" },
         ],
       },
       {

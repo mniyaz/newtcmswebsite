@@ -14,6 +14,8 @@ import {
   Receipt,
 } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
+import { Header } from "../layout/Header";
+import { defaultHomepageContent } from "@/lib/content/default-content";
 
 export type CommandCenterMenu =
   | "operations"
@@ -76,7 +78,7 @@ export function CommandCenterShell({
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f7f8fd] text-slate-900">
       {/* Top navigation */}
-      <header className="fixed top-0 z-50 flex h-16 w-full items-center justify-between border-b border-slate-200/80 bg-white/95 px-4 backdrop-blur-md sm:px-6 lg:px-8">
+      {/* <header className="fixed top-0 z-50 flex h-16 w-full items-center justify-between border-b border-slate-200/80 bg-white/95 px-4 backdrop-blur-md sm:px-6 lg:px-8">
         <div className="flex items-center gap-6 lg:gap-10">
           <Link href="/" className="text-xl font-bold tracking-tight text-primary">
             TCMS.ai
@@ -108,7 +110,8 @@ export function CommandCenterShell({
             <User className="h-4 w-4" />
           </div>
         </div>
-      </header>
+      </header> */}
+      <Header navigation={defaultHomepageContent.navigation} />
 
       {/* Sidebar — desktop only */}
       <aside className="fixed left-0 top-16 z-40 hidden h-[calc(100vh-4rem)] w-[232px] flex-col border-r border-slate-200/80 bg-white px-4 py-8 md:flex">
@@ -149,7 +152,7 @@ export function CommandCenterShell({
           })}
         </nav>
 
-        <div className="mt-auto space-y-4 border-t border-slate-200 pt-6">
+        {/* <div className="mt-auto space-y-4 border-t border-slate-200 pt-6">
           <button
             type="button"
             className="w-full rounded-xl bg-emerald-400 py-3 text-sm font-bold uppercase tracking-tight text-emerald-950 shadow-sm"
@@ -163,7 +166,7 @@ export function CommandCenterShell({
             </p>
             <p>{apiLinkLabel}</p>
           </div>
-        </div>
+        </div> */}
       </aside>
 
       {/* Main content */}

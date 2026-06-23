@@ -19,43 +19,43 @@ interface HeroSectionProps {
 }
 
 const slides = [
-    {
-        id: 1,
-        bgColor: "#EEEEEE",
-        textColor: "#111111",
-        title: "Malaysia's Complete Transport Management System",
-        description:
-            "Manage vehicles, drivers, fuel consumption, compliance, and fleet operations from a single platform.",
-        image:
-            "/webpImages/dashboard.webp",
-    },
-    {
-        id: 2,
-        bgColor: "#F3F4F5",
-        textColor: "#111111",
-        title: "Track Your Entire Fleet in Real Time",
-        description: "Monitor vehicle locations, routes, driver activities, and operational performance from a centralized dashboard.",
-        image:
-            "/webpImages/fleetHero.webp",
-    },
-    {
-        id: 3,
-        bgColor: "#F8F9FA",
-        textColor: "#111111",
-        title: "Simplify APAD Compliance Reporting",
-        description: "Automate compliance processes and reduce manual administrative work with built-in reporting tools.",
-        image:
-            "/webpImages/report.webp",
-    },
-    {
-        id: 4,
-        bgColor: "#FFFFFF",
-        textColor: "#111111",
-        title: "Reduce Fuel Costs and Improve Efficiency",
-        description: "Identify fuel wastage, optimize routes, and improve fleet profitability through actionable insights.",
-        image:
-            "/webpImages/fuelChar.webp",
-    },
+  {
+    id: 1,
+    bgColor: "#EEEEEE",
+    textColor: "#111111",
+    title: "Malaysia's Complete Transport Management System",
+    description:
+      "Manage vehicles, drivers, fuel consumption, compliance, and fleet operations from a single platform.",
+    image:
+      "/webpImages/dashboard.webp",
+  },
+  {
+    id: 2,
+    bgColor: "#F3F4F5",
+    textColor: "#111111",
+    title: "Track Your Entire Fleet in Real Time",
+    description: "Monitor vehicle locations, routes, driver activities, and operational performance from a centralized dashboard.",
+    image:
+      "/webpImages/fleetHero.webp",
+  },
+  {
+    id: 3,
+    bgColor: "#F8F9FA",
+    textColor: "#111111",
+    title: "Simplify APAD Compliance Reporting",
+    description: "Automate compliance processes and reduce manual administrative work with built-in reporting tools.",
+    image:
+      "/webpImages/report.webp",
+  },
+  {
+    id: 4,
+    bgColor: "#FFFFFF",
+    textColor: "#111111",
+    title: "Reduce Fuel Costs and Improve Efficiency",
+    description: "Identify fuel wastage, optimize routes, and improve fleet profitability through actionable insights.",
+    image:
+      "/webpImages/fuelChar.webp",
+  },
 ];
 
 export function HeroSection({ hero }: HeroSectionProps) {
@@ -108,16 +108,22 @@ export function HeroSection({ hero }: HeroSectionProps) {
                     </p>
                   </RevealOnScroll>
 
+                  <p
+                    className="text-sm md:text-base font-semibold text-[#00327D]"
+                  >
+                    14-day free trial. No credit card required.
+                  </p>
+
                   <RevealOnScroll delayMs={300}>
                     <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-start justify-start">
                       <Link href="/#demoBook">
-                      <Button
-                        variant="ghost"
-                        className="w-full sm:w-auto bg-[#00327D] text-white  !rounded-md"
-                      >
-                        {hero.primaryCta.label}
-                      </Button>
-</Link>
+                        <Button
+                          variant="ghost"
+                          className="w-full sm:w-auto bg-[#00327D] text-white  !rounded-md"
+                        >
+                          {hero.primaryCta.label}
+                        </Button>
+                      </Link>
                       <Button
                         variant="ghost"
                         className="group w-full sm:w-auto border border-[#C3C6D5] bg-white !text-black !rounded-md"

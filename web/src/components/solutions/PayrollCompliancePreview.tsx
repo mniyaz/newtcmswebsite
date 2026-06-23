@@ -105,19 +105,18 @@ export function PayrollCompliancePreview() {
         <div className="flex flex-col gap-3 sm:flex-row">
           <button
             type="button"
-            onClick={() => setIsVideoOpen(true)}
             className="flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-4 text-sm font-bold text-white shadow-lg"
           >
-            <Play className="h-4 w-4" />
-            Run March Payroll
+            Book Demo
           </button>
           <button
             type="button"
+            onClick={() => setIsVideoOpen(true)}
             className="flex items-center justify-center gap-2 rounded-xl border-2 border-slate-200 px-6 py-4 text-sm font-bold text-primary"
           >
-            <Download className="h-4 w-4" />
-            Download Statutory Reports
+            Watch a video
           </button>
+
         </div>
         {isVideoOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
@@ -126,7 +125,7 @@ export function PayrollCompliancePreview() {
                 onClick={() => setIsVideoOpen(false)}
                 className="absolute lg:-right-4 lg:-top-4 right-0 -top-6 bg-white rounded-full p-2 cursor-pointer"
               >
-                <X  size={16}/>
+                <X size={16} />
               </button>
 
               <video

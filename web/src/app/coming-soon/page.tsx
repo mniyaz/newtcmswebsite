@@ -1,15 +1,17 @@
+'use client'
 import Link from "next/link";
-
-export default function NotFound404() {
+import Lottie from "lottie-react";
+import loadingAnimation from "../../assets/Car loading.json";
+export default function ComingSoonPage() {
     return (
         <div className="h-screen bg-[#EEEEE8] flex items-center justify-center px-5 overflow-hidden">
             <div className="text-center flex flex-col items-center">
 
                 {/* Image */}
-                <img
-                    src="/truchHub.png"
-                    alt="Truck"
-                    className="h-72 md:h-100"
+                <Lottie
+                    animationData={loadingAnimation}
+                    loop={true}
+                    className="w-[500px] h-[300px]"
                 />
 
                 {/* Coming Soon Text */}

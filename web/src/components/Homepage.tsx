@@ -12,7 +12,6 @@ import PremiumFeatureCard from "./sections/Premiumfeaturecard";
 import MovingPlanSection from "./sections/Movingplansection";
 import MovingPlanMobile from "./sections/MovingPlanMobile";
 import TCMSContact from "./sections/TCMSContact";
-import NotFound404 from "./sections/Notfound404";
 
 const PainPointsSection = dynamic(
   () =>
@@ -89,7 +88,6 @@ interface HomepageProps {
 }
 
 export function Homepage({ content }: HomepageProps) {
-  console.log("Homepage content", content.painPoints.items);
   return (
     <>
       <Header navigation={content.navigation} />
@@ -115,8 +113,9 @@ export function Homepage({ content }: HomepageProps) {
         <RoiCalculatorSection roiCalculator={content.roiCalculator} />
         <SocialProofSection socialProof={content.socialProof} />
         <PricingSection pricing={content.pricing} />
+        <TCMSContact />
         <FinalCtaSection finalCta={content.finalCta} />
-        <TCMSContact/>
+
       </main>
 
       <Footer footer={content.footer} />

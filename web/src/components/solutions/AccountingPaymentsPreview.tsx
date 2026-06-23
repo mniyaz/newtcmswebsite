@@ -31,13 +31,13 @@ export function AccountingPaymentsPreview() {
               type="button"
               className="rounded-xl bg-primary px-8 py-4 text-sm font-bold text-white shadow-lg transition hover:bg-primary-dark"
             >
-              Get Started
+              Book Demo
             </button>
             <button
               type="button"
               className="rounded-xl border-2 border-slate-200 px-8 py-4 text-sm font-bold text-primary transition hover:bg-white"
             >
-              View Demo
+              Watch a video
             </button>
           </div>
         </div>

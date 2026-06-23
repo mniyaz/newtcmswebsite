@@ -92,6 +92,7 @@ export const pricingPlanSchema = z.object({
   period: z.string().optional(),
   isFeatured: z.boolean().optional(),
   badge: z.string().optional(),
+  trail: z.string().optional(),
   features: z.array(pricingFeatureSchema),
   cta: ctaButtonSchema,
 });

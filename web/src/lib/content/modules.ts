@@ -53,8 +53,8 @@ export const operationsPage: ModulePageContent = {
   headline: "Transportation Management Software for End-to-End Shipment Operations",
   description:
     "TCMS is a cloud-based Transportation Management Software (TMS) that helps businesses manage shipment booking, route planning, fleet operations, delivery tracking, freight billing, and logistics analytics from a single platform.",
-  primaryCta: "Get Started",
-  secondaryCta: "View Demo",
+  primaryCta: "Book Demo",
+  secondaryCta: "Watch a video",
   sidebarSubtitle: "LOGISTICS CORE",
   activeMenu: "operations",
   features: [
@@ -120,8 +120,8 @@ export const fleetPage: ModulePageContent = {
   headline: "Maximize Vehicle Utilization. Minimize Downtime.",
   description:
     "Track vehicle availability, maintenance, fuel usage, inspections, documents, and operating costs in one place.",
-  primaryCta: "Get Started",
-  secondaryCta: "View Demo",
+  primaryCta: "Book Demo",
+  secondaryCta: "Watch a video",
   sidebarSubtitle: "PRECISION LOGISTICS",
   activeMenu: "fleet",
   features: [
@@ -187,8 +187,8 @@ export const compliancePage: ModulePageContent = {
   headline: "Stay Audit-Ready and Fully Compliant.",
   description:
     "Manage driver documents, vehicle permits, insurance, road tax, inspections, safety records, and compliance alerts.",
-  primaryCta: "Get Started",
-  secondaryCta: "View Demo",
+  primaryCta: "Book Demo",
+  secondaryCta: "Watch a video",
   sidebarSubtitle: "LOGISTICS CORE",
   activeMenu: "compliance",
   features: [
@@ -254,8 +254,8 @@ export const crmPage: ModulePageContent = {
   headline: "Turn Every Shipment Into a Better Customer Experience.",
   description:
     "Manage customers, quotations, contracts, support requests, shipment history, invoices, and account performance.",
-  primaryCta: "Get Started",
-  secondaryCta: "View Demo",
+  primaryCta: "Book Demo",
+  secondaryCta: "Watch a video",
   sidebarSubtitle: "LOGISTICS CORE",
   activeMenu: "crm",
   features: [
@@ -321,8 +321,8 @@ export const securityPage: ModulePageContent = {
   headline: "Protect Every Load, User, and Business Operation.",
   description:
     "Secure your logistics business with role-based access, audit trails, login protection, customer data safeguards, and operational activity monitoring.",
-  primaryCta: "View Security Controls",
-  secondaryCta: "Download Audit Log",
+  primaryCta: "Book Demo",
+  secondaryCta: "Watch a video",
   sidebarSubtitle: "PRECISION LOGISTICS",
   activeMenu: "security",
   features: [

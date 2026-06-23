@@ -213,6 +213,12 @@ export default function PremiumHeroSlider({ hero }: HeroSectionProps) {
                                     {currentSlide.description}
                                 </p>
 
+                                <p
+                                    className="text-sm md:text-base font-semibold text-[#00327D]"
+                                >
+                                    14-day free trial. No credit card required.
+                                </p>
+
                                 <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:hidden">
                                     <Link href="/#demoBook">
                                         <Button variant="ghost" pulse className="w-full sm:w-auto bg-[#00327D] text-white !rounded-md">
@@ -348,8 +354,8 @@ export default function PremiumHeroSlider({ hero }: HeroSectionProps) {
                         onClick={() => goToSlide(index)}
                         aria-label={`Go to slide ${index + 1}`}
                         className={`h-2 rounded-full transition-all duration-500 cursor-pointer ${index === activeIndex
-                                ? "w-10 bg-[#003b8f]"
-                                : "w-2 bg-[#003b8f]/40 hover:bg-[#003b8f]"
+                            ? "w-10 bg-[#003b8f]"
+                            : "w-2 bg-[#003b8f]/40 hover:bg-[#003b8f]"
                             }`}
                     />
                 ))}
