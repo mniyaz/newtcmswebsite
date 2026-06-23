@@ -57,7 +57,7 @@ function OperationsDashboard() {
   ];
 
   return (
-    <div className="xl:h-[380px]">
+    <div className="">
       {/* <div className="mb-5 flex items-center justify-between">
         <div>
           <h3 className="text-lg font-semibold text-slate-900">Live Dispatch Board</h3>

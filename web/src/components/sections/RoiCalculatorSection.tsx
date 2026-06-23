@@ -4,13 +4,13 @@ import { useMemo, useState } from "react";
 import type { HomepageContent } from "@/lib/content/schema";
 import { Button } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
-
+import emailjs from "@emailjs/browser";
 interface RoiCalculatorSectionProps {
   roiCalculator: HomepageContent["roiCalculator"];
 }
 
 export function RoiCalculatorSection({ roiCalculator }: RoiCalculatorSectionProps) {
-
+  const [loading, setLoading] = useState(false);
   const [fleetSize, setFleetSize] = useState(
     roiCalculator.fleetSizeDefault
   );
@@ -19,7 +19,8 @@ export function RoiCalculatorSection({ roiCalculator }: RoiCalculatorSectionProp
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-
+  const [fuelSpend, setFuelSpend] = useState("");
+  const [manualHours, setManualHours] = useState("");
 
   const calculations = useMemo(
     () => ({
@@ -31,17 +32,40 @@ export function RoiCalculatorSection({ roiCalculator }: RoiCalculatorSectionProp
   );
 
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // here you can send email to backend
-    console.log({
-      name,
-      email,
-      fleetSize
-    });
+    setLoading(true);
 
-    setShowResult(true);
+    try {
+      await emailjs.send(
+        "service_p3hl8oh",
+        "template_gx1wsk9",
+        {
+          name,
+          email,
+          fleet_size: fleetSize,
+          fuel_spend: fuelSpend,
+          manual_admin_hours: manualHours,
+          estimated_fuel_savings: calculations.fuelSavings,
+          estimated_admin_hours_saved: calculations.adminHours,
+          estimated_collection_days: calculations.collectionDays,
+        },
+        "nkhrEtfX2u3Si0NyV"
+      );
+
+      setShowResult(true);
+
+      setName("");
+      setEmail("");
+      setFuelSpend("");
+      setManualHours("");
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      alert("Failed to submit.");
+    } finally {
+      setLoading(false);
+    }
   };
 
 
@@ -112,6 +136,8 @@ export function RoiCalculatorSection({ roiCalculator }: RoiCalculatorSectionProp
 
                 <input
                   type="number"
+                  value={fuelSpend}
+                  onChange={(e) => setFuelSpend(e.target.value)}
                   placeholder={roiCalculator.fuelSpendPlaceholder}
                   className="w-full rounded-md border border-[#C3C6D5] bg-white px-4 py-4 text-sm"
                 />
@@ -129,6 +155,8 @@ export function RoiCalculatorSection({ roiCalculator }: RoiCalculatorSectionProp
 
                 <input
                   type="number"
+                  value={manualHours}
+                  onChange={(e) => setManualHours(e.target.value)}
                   placeholder={roiCalculator.adminHoursPlaceholder}
                   className="w-full rounded-md border border-[#C3C6D5] bg-white px-4 py-4 text-sm"
                 />
@@ -218,11 +246,10 @@ export function RoiCalculatorSection({ roiCalculator }: RoiCalculatorSectionProp
 
                   <Button
                     type="submit"
+                    disabled={loading}
                     className="mt-2 w-full !rounded-md bg-[#00327D] text-white !text-base"
                   >
-
-                    Get Full Report
-
+                    {loading ? "Sending..." : "Get Full Report"}
                   </Button>
 
 
