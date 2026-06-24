@@ -11,7 +11,7 @@ const highlights = [
     {
         title: "GPS Tracking",
         description:
-            "Real-time vehicle location tracking with route history and live updates.",
+            "See every lorry moving on a live map. Know exactly where they are, which route they took, and how fast they drove — without calling anyone.",
         icon: MapPinned,
         link: "/platform/gps"
 
@@ -19,35 +19,35 @@ const highlights = [
     {
         title: "APAD Compliance",
         description:
-            "Stay compliant with regulations through automated monitoring and reporting.",
+            "APAD and JPJ paperwork done for you. We remind you before permits expire so you never pay a fine again.",
         icon: ShieldCheck,
         link: "/compliance"
     },
     {
         title: "Fuel Monitoring",
         description:
-            "Track fuel consumption, detect anomalies, and optimize operating costs.",
+            "Someone stealing your diesel? We catch it instantly. See which trips waste fuel and which drivers are costing you money.",
         icon: Fuel,
         link: "/fleet/#fuel"
     },
     {
         title: "Driver Management",
         description:
-            "Monitor driver performance, behavior, and safety metrics efficiently.",
+            "Know which drivers are speeding, braking hard, or sitting idle. Keep good drivers. Fix bad habits before they cost you.",
         icon: UserCog,
         link: "/fleet"
     },
     {
         title: "Fleet Analytics",
         description:
-            "Gain actionable insights with advanced reports and performance dashboards.",
+            "Simple reports that show you: which lorry makes money, which one doesn't, and what to do about it.",
         icon: BarChart3,
         link: "/fleet"
     },
     {
         title: "Customer Portal",
         description:
-            "Provide customers with transparent access to tracking and service updates.",
+            "Give your customer a link. They track their own shipment. No more 'Where is my cargo?' calls to your office.",
         icon: MonitorSmartphone,
         link: "/crm"
     },

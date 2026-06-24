@@ -7,25 +7,25 @@
     "brand": "TCMS.ai",
     "links": [
       {
-        "label": "Solutions",
-        "href": "#platform"
+        "label": "How It Works",
+        "href": "#howitworks"
       },
       {
-        "label": "The Advantage",
-        "href": "#advantage"
+        "label": "Features",
+        "href": "#Features"
       },
       {
-        "label": "Platforms",
-        "href": "#solutions"
+        "label": "Pricing",
+        "href": "#Pricing"
       },
       {
-        "label": "Contact",
+        "label": "Contact Us",
         "href": "#contact"
       }
     ],
-    "loginLabel": "Login",
+    "loginLabel": "Log In",
     "cta": {
-      "label": "Book Demo",
+      "label": "Get Free Demo",
       "variant": "primary"
     }
   },
@@ -52,19 +52,19 @@
       },
       {
         "icon": "verified",
-        "label": "APAD Compliance"
+        "label": "APAD & JPJ —  Done Automatically"
       },
       {
         "icon": "local_shipping",
-        "label": "Fleet Management"
+        "label": "Manage All Your Lorries in One App"
       },
       {
         "icon": "hub",
-        "label": "Customer Portal"
+        "label": "Let Customers Track Their Own Shipment"
       },
       {
         "icon": "account_balance_wallet",
-        "label": "Payroll & Accounting"
+        "label": "Invoices & Payroll — No More Excel"
       }
     ]
   },

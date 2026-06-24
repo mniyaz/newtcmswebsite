@@ -8,14 +8,14 @@ export const defaultHomepageContent: HomepageContent = {
   },
   navigation: {
     brand: "TCMS.ai",
-links: [
-  { label: "Solutions", href: "#platform" },
-  { label: "The Advantage", href: "#advantage" },
-  { label: "Platforms", href: "#solutions" },
-  { label: "Contact", href: "#contact" },
-],
-    loginLabel: "Login",
-    cta: { label: "Book Demo", variant: "primary" },
+    links: [
+      { label: "How It Works", href: "#howitworks" },
+      { label: "Features", href: "#Features" },
+      { label: "Pricing", href: "#Pricing" },
+      { label: "Contact Us", href: "#contact" },
+    ],
+    loginLabel: "Log In",
+    cta: { label: "Get Free Demo", variant: "primary" },
   },
   hero: {
     headline: "Run Your Entire Transport Business From",
@@ -30,56 +30,56 @@ links: [
     },
     trustBadges: [
       { icon: "location_on", label: "GPS Tracking" },
-      { icon: "verified", label: "APAD Compliance" },
-      { icon: "local_shipping", label: "Fleet Management" },
-      { icon: "hub", label: "Customer Portal" },
-      { icon: "account_balance_wallet", label: "Payroll & Accounting" },
+      { icon: "verified", label: "APAD & JPJ —  Done Automatically" },
+      { icon: "local_shipping", label: "Manage All Your Lorries in One App" },
+      { icon: "hub", label: "Let Customers Track Their Own Shipment" },
+      { icon: "account_balance_wallet", label: "Invoices & Payroll — No More Excel" },
     ],
   },
   painPoints: {
-    title: "Still Managing Your Fleet Through Calls, WhatsApp and Excel?",
+    title: "Still Chasing Drivers on WhatsApp?",
     subtitle:
-      "Manual operations lead to hidden costs and lost time. TCMS.ai eliminates the chaos.",
+      "You are not alone. 90% of Malaysian lorry owners manage their fleet the same way — and losing money every single day without knowing it.",
     items: [
       {
         icon: "phone_disabled",
-        title: "Drivers not answering calls",
+        title: "Driver Not Picking Up Again?",
         link: "/operations/#benefits",
         description:
-          "Constant calling to check location disrupts drivers and wastes your dispatch team's time.",
+          "You call 5 times. No answer. Meanwhile your customer is waiting. With TCMS.ai, just open the app — you see exactly where the lorry is.",
       },
       {
         icon: "forum",
-        title: "Customers requesting updates",
+        title: "Customers Calling Every Hour?",
         link: "/crm",
         description:
-          'Dealing with repetitive "Where is my shipment?" calls prevents you from focusing on growth.',
+          "'Boss, where is my cargo?' You spend half the day answering this. Give customers a tracking link — they check themselves. Your phone stays quiet.",
       },
       {
         icon: "gas_meter",
-        title: "Fuel wastage/theft",
-         link: "/fleet",
+        title: "Is Someone Stealing Your Diesel?",
+        link: "/fleet",
         description:
-          "Undetected siphoning and excessive idling are silently eating into your monthly margins.",
+          "Fuel disappears and nobody admits it. Our system detects sudden drops and flags the driver — automatically. Most owners save RM 3,000–8,000 a month.",
       },
       {
         icon: "build_circle",
-        title: "Missed maintenance",
-         link: "/compliance",
+        title: " Lorry Broke Down Mid-Trip?",
+        link: "/compliance",
         description:
-          "Unplanned breakdowns happen because you're tracking service dates on a wall calendar.",
+          "Maintenance tracked on a paper calendar gets missed. We remind you 2 weeks before every service is due. No more surprise breakdowns.",
       },
       {
         icon: "pending_actions",
-        title: "Delayed invoicing",
-         link: "/solutions/accounting-payments",
+        title: " Waiting Weeks to Get Paid?",
+        link: "/solutions/accounting-payments",
         description:
-          "Waiting days for physical PODs to return means you're being paid weeks later than you should.",
+          "Driver comes back 3 days later with the physical POD. Only then you can invoice. With digital POD, the signature is captured on delivery — you invoice the same day.",
       },
       {
         icon: "report_problem",
         title: "Compliance overload",
-         link: "/compliance",
+        link: "/compliance",
         description:
           "Struggling to keep up with APAD and JPJ renewals and driver permit expirations.",
       },
@@ -286,7 +286,7 @@ links: [
           { label: "Fuel Monitoring", included: false },
         ],
         cta: { label: "Start Free Trial", variant: "outline" },
-        trail:"Full access for 14 days.Cancel anytime. No card needed.",
+        trail: "Full access for 14 days.Cancel anytime. No card needed.",
       },
       {
         name: "Growth",

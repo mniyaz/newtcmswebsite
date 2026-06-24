@@ -24,9 +24,10 @@ const slides = [
         id: 1,
         bgColor: "#EEEEEE",
         textColor: "#111111",
-        title: "Malaysia's Complete Transport Management System",
+        title: "Know Where Every Lorry Is. Right Now.",
+        p1: "GPS. Fuel Control. APAD Done For You. Al In One Place",
         description:
-            "Manage vehicles, drivers, fuel consumption, compliance, and fleet operations from a single platform.",
+            "Stop chasing drivers on WhatsApp. Stop guessing where your lorries are. TCMS.ai shows you everything — on your phone, right now.",
         image:
             "/tcmsH1.png",
     },
@@ -34,8 +35,8 @@ const slides = [
         id: 2,
         bgColor: "#F3F4F5",
         textColor: "#111111",
-        title: "Track Your Entire Fleet in Real Time",
-        description: "Monitor vehicle locations, routes, driver activities, and operational performance from a centralized dashboard.",
+        title: "You Know. Right Now. Where Every Lorry Is",
+        description: "No more calling drivers every hour. Open the app and see every lorry moving on the map — live. It's that simple.",
         image:
             "/webpImages/dashboard.webp",
     },
@@ -43,8 +44,8 @@ const slides = [
         id: 3,
         bgColor: "#F8F9FA",
         textColor: "#111111",
-        title: "Simplify APAD Compliance Reporting",
-        description: "Automate compliance processes and reduce manual administrative work with built-in reporting tools.",
+        title: "Never Get Fined Again. APAD & JPJ Handled For You.",
+        description: "Permit expiring? We remind you 30 days early. License due for renewal? We handle the paperwork. You just run your business.",
         image:
             "/webpImages/report.webp",
     },
@@ -52,8 +53,8 @@ const slides = [
         id: 4,
         bgColor: "#FFFFFF",
         textColor: "#111111",
-        title: "Reduce Fuel Costs and Improve Efficiency",
-        description: "Identify fuel wastage, optimize routes, and improve fleet profitability through actionable insights.",
+        title: "Stop Losing RM 10,000 a Month on Fuel You Can't See.",
+        description: "Fuel being stolen? We catch it. Driver leaving engine on? We alert you. Most fleets save 20–30% on fuel in the first month.",
         image:
             "/webpImages/fuelChar.webp",
     },
@@ -192,7 +193,7 @@ export default function PremiumHeroSlider({ hero }: HeroSectionProps) {
                                     duration: 0.7,
                                     ease: [0.22, 1, 0.36, 1],
                                 }}
-                                className="space-y-6 md:space-y-8"
+                                className="space-y-6 md:space-y-4"
                             >
                                 <h1
                                     className="text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl lg:text-[3.25rem] lg:leading-[1.08]"
@@ -202,7 +203,20 @@ export default function PremiumHeroSlider({ hero }: HeroSectionProps) {
                                 >
                                     {currentSlide.title}
                                 </h1>
+                                {currentSlide.p1 && (
 
+
+                                    <p
+                                        className="max-w-xl text-sm leading-relaxed text-[#434653] md:text-base"
+                                        style={{
+                                            color: currentSlide.textColor,
+                                            opacity: 0.8,
+                                        }}
+                                    >
+
+                                        {currentSlide.p1}
+                                    </p>
+                                )}
                                 <p
                                     className="max-w-xl text-sm leading-relaxed text-[#434653] md:text-base"
                                     style={{
@@ -297,19 +311,28 @@ export default function PremiumHeroSlider({ hero }: HeroSectionProps) {
                 </div>
                 <RevealOnScroll delayMs={500} className="mt-12 border-t border-[#C3C6D5] pt-6 md:mt-15 w-full">
                     {/* Mobile Swiper */}
-                    <div className="md:hidden">
+                    <div className="">
                         <Swiper
                             modules={[Autoplay]}
                             slidesPerView={1}
                             spaceBetween={16}
                             loop
                             autoplay={{
-                                delay: 2500,
+                                delay: 5500,
                                 disableOnInteraction: false,
                             }}
+                            breakpoints={{
+                                1024: {
+                                    slidesPerView: 3,
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                }
+                            }}
+
                         >
                             {hero.trustBadges.map((badge) => (
-                                <SwiperSlide key={badge.label}>
+                                <SwiperSlide key={badge.label} className="justify-center">
                                     <div className="flex justify-center items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#434653]">
                                         <MaterialIcon
                                             name={badge.icon}
@@ -322,7 +345,7 @@ export default function PremiumHeroSlider({ hero }: HeroSectionProps) {
                             ))}
                         </Swiper>
                     </div>
-                    <div className="md:flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:justify-between hidden">
+                    {/* <div className="flex-wrap items-center justify-center gap-x-8 gap-y-4 md:justify-between hidden">
                         {hero.trustBadges.map((badge) => (
                             <div
                                 key={badge.label}
@@ -332,7 +355,7 @@ export default function PremiumHeroSlider({ hero }: HeroSectionProps) {
                                 {badge.label}
                             </div>
                         ))}
-                    </div>
+                    </div> */}
                 </RevealOnScroll>
 
             </div>
